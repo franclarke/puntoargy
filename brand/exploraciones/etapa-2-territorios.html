@@ -1,0 +1,571 @@
+<title>Territorios .argy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400..800&display=swap">
+<style>
+:root{
+  --bg:#F5F6F7; --surface:#FFFFFF; --text:#14171B; --muted:#58616B; --line:#DCE0E5; --chip:#E9ECEF;
+  --link:#2A6599; --focus:#2A6599;
+  --cel:#74ACDF;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1114; --surface:#171A1E; --text:#E9EBEE; --muted:#9AA3AD; --line:#2A2F36; --chip:#21252B;
+    --link:#8FC0E9; --focus:#8FC0E9; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1114; --surface:#171A1E; --text:#E9EBEE; --muted:#9AA3AD; --line:#2A2F36; --chip:#21252B;
+  --link:#8FC0E9; --focus:#8FC0E9; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--text); font:15px/1.55 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif; padding-inline:20px; padding-block:40px 96px}
+.wrap{max-width:1160px; margin:0 auto; display:flex; flex-direction:column; gap:72px}
+h1,h2,h3{text-wrap:balance}
+code{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.88em; background:var(--chip); padding:.08em .35em; border-radius:4px}
+
+/* ---------- Page header ---------- */
+.intro{display:flex; flex-direction:column; gap:20px; max-width:760px}
+.eyebrow{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.intro h1{font-size:clamp(32px,4.6vw,54px); line-height:1.02; letter-spacing:-.03em; margin:0; font-weight:700}
+.intro p{margin:0; font-size:17px; max-width:64ch}
+.fixed{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px 32px; padding-top:8px; border-top:1px solid var(--line); max-width:none}
+.fixed div{padding-top:14px}
+.fixed strong{display:block; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
+.fixed p{font-size:14.5px}
+.sw{display:inline-block; width:.8em; height:.8em; border-radius:50%; background:var(--cel); vertical-align:-.05em; margin-right:.25em}
+
+/* ---------- View toggle ---------- */
+.bar{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--bg); padding-block:12px; margin-block:-12px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; border-bottom:1px solid var(--line)}
+.seg{display:inline-flex; background:var(--chip); border-radius:999px; padding:3px}
+.seg button{font:inherit; font-size:14px; font-weight:600; border:0; background:transparent; color:var(--muted); padding:7px 16px; border-radius:999px; cursor:pointer}
+.seg button[aria-selected="true"]{background:var(--surface); color:var(--text); box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.seg button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.jump{display:flex; gap:6px 18px; flex-wrap:wrap; font-size:14px}
+.jump a{color:var(--muted); text-decoration:none; font-weight:500}
+.jump a:hover{color:var(--text)}
+
+/* ---------- Territory section ---------- */
+.terr{display:flex; flex-direction:column; gap:22px; scroll-margin-top:72px}
+.terr-head{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:8px 40px; align-items:end}
+.terr-head h2{margin:0; font-size:clamp(28px,3.4vw,40px); letter-spacing:-.025em; line-height:1}
+.terr-head p{margin:0; font-size:16px; max-width:62ch}
+.pieces{display:grid; grid-template-columns:.884fr 1fr; gap:14px}
+.pieces .slot-hero{grid-column:1 / -1}
+.slot{display:flex; flex-direction:column; gap:8px}
+.slot > span, figcaption{font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+.notes{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px 32px; margin:0; padding-top:18px; border-top:1px solid var(--line)}
+.notes div{display:flex; flex-direction:column; gap:4px}
+.notes dt{font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+.notes dd{margin:0; font-size:14.5px}
+.meter{display:grid; grid-template-columns:62px 1fr; align-items:center; gap:4px 10px; font-size:13.5px}
+.pips{display:flex; gap:4px}
+.pips i{width:18px; height:6px; border-radius:3px; background:var(--line)}
+.pips i.on{background:var(--text)}
+.swatches{display:flex; flex-wrap:wrap; gap:6px 14px; font-size:13px}
+.swatches span{display:inline-flex; align-items:center; gap:6px}
+.swatches i{width:16px; height:16px; border-radius:4px; border:1px solid rgba(128,128,128,.35)}
+.swatches code{background:none; padding:0; color:var(--muted)}
+
+/* ---------- By-piece view ---------- */
+.bypiece{display:flex; flex-direction:column; gap:56px}
+.bypiece section{display:flex; flex-direction:column; gap:16px}
+.bypiece h2{margin:0; font-size:26px; letter-spacing:-.02em}
+.grid-hero{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px}
+.grid-4{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px}
+figure{margin:0; display:flex; flex-direction:column; gap:8px}
+
+/* ---------- Comparison + reading ---------- */
+.compare h2,.reading h2{margin:0 0 16px; font-size:clamp(26px,3vw,34px); letter-spacing:-.025em}
+.tbl{overflow-x:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:720px; font-size:14px}
+th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top}
+thead th{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600}
+tbody th{font-weight:600}
+tr:last-child td, tr:last-child th{border-bottom:0}
+.hi{font-weight:700}
+.reading{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:24px 48px}
+.reading .body{display:flex; flex-direction:column; gap:14px; font-size:16px}
+.reading .body p{margin:0; max-width:66ch}
+.reading .ask{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; gap:8px}
+.reading .ask ol{margin:0; padding-left:1.2em; display:flex; flex-direction:column; gap:6px}
+footer{font-size:13px; color:var(--muted); border-top:1px solid var(--line); padding-top:18px}
+
+@media (max-width:760px){
+  .terr-head,.reading{grid-template-columns:1fr}
+  .grid-hero{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:480px){
+  .pieces{grid-template-columns:1fr}
+}
+
+/* =========================================================
+   Brand pieces — fixed colors (they are the proposals)
+   ========================================================= */
+.frame{position:relative; width:100%; max-width:100%; overflow:hidden; container-type:inline-size; border-radius:4px; box-shadow:0 0 0 1px var(--line)}
+.frame.hero{aspect-ratio:16/10}
+.frame.cover{aspect-ratio:1/1.4142}
+.frame.post{aspect-ratio:4/5}
+.art{--cel:#74ACDF; position:absolute; inset:0; overflow:hidden; font-size:1.4cqw; line-height:1.4; background:var(--paper); color:var(--ink)}
+.art .abs{position:absolute; margin:0}
+.art svg.abs{inset:0; width:100%; height:100%}
+.nav{position:absolute; left:5cqw; right:5cqw; top:3.4cqw; display:flex; align-items:center; gap:2.4cqw; font-size:1.25cqw; font-weight:500}
+.nav .lg{margin-right:auto}
+.lg{font-weight:800; font-size:2.3cqw; letter-spacing:-.03em; line-height:1}
+.lg b{color:var(--cel); font-weight:inherit}
+.oncel .lg b{color:var(--ink)}
+.btn{display:inline-block; background:var(--ink); color:var(--paper); border-radius:99px; padding:.7cqw 1.5cqw; font-weight:600; white-space:nowrap}
+.btn.big{font-size:1.45cqw; padding:1.1cqw 2.2cqw}
+.sub{font-size:1.5cqw; line-height:1.45; opacity:.84}
+.ok::before{content:"✓"; display:inline-grid; place-items:center; width:1.6cqw; height:1.6cqw; border-radius:50%; background:var(--ink); color:#fff; font-size:.95cqw; margin-right:.7cqw; vertical-align:middle}
+.card{background:#fff; color:var(--ink); border-radius:1cqw; padding:1.4cqw 1.6cqw; display:flex; flex-direction:column; gap:.75cqw; font-size:1.25cqw; box-shadow:0 .6cqw 2.2cqw rgba(11,27,51,.13)}
+.card strong{font-size:1.45cqw}
+
+/* La vuelta */
+.t1{--ink:#101B2B; --paper:#F3F3EF; font-family:'Bricolage Grotesque', 'Hanken Grotesk', system-ui, sans-serif}
+.t1 .h{font-weight:800; line-height:.92; letter-spacing:-.035em; white-space:nowrap}
+.t1 .disc{border-radius:50%; background:var(--cel)}
+.t1 .per{display:inline-block; width:.19em; height:.19em; border-radius:50%; background:var(--cel); margin-left:.04em}
+.t1 .strike{position:relative; display:inline-block}
+.t1 .strike::after{content:""; position:absolute; left:-8%; right:-8%; top:48%; height:.13em; background:var(--paper); transform:rotate(-7deg)}
+
+/* Taller */
+.t2{--ink:#1B1D20; --paper:#ECEBE6; font-family:'Schibsted Grotesk', 'Hanken Grotesk', system-ui, sans-serif;
+  background-image:linear-gradient(rgba(27,29,32,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(27,29,32,.06) 1px, transparent 1px);
+  background-size:4cqw 4cqw}
+.t2 .h{font-weight:700; line-height:1; letter-spacing:-.03em; white-space:nowrap}
+.t2 .btn{border-radius:.3cqw}
+.mono{font-family:'JetBrains Mono', ui-monospace, Consolas, monospace; text-transform:uppercase; letter-spacing:.06em; font-size:.85em; font-weight:400}
+.dim{opacity:.62}
+.t2 .note{text-transform:none; letter-spacing:0}
+.cota{height:0; border-top:1px solid currentColor; font-family:'JetBrains Mono', ui-monospace, monospace; font-size:1.05cqw; text-transform:uppercase; letter-spacing:.05em}
+.cota::before,.cota::after{content:""; position:absolute; top:-.7cqw; width:1px; height:1.4cqw; background:currentColor}
+.cota::before{left:0} .cota::after{right:0}
+.cota span{position:absolute; left:50%; top:-.75em; transform:translateX(-50%); background:var(--paper); padding:0 .8em; white-space:nowrap; line-height:1.4}
+.tape{background:rgba(116,172,223,.88)}
+.sheet{background:#fff; border:1px solid var(--ink); border-radius:.3cqw; padding:.4cqw 1.4cqw; font-size:1.3cqw}
+.sheet .row{display:flex; justify-content:space-between; gap:1cqw; padding:.8cqw 0; border-bottom:1px dashed rgba(27,29,32,.28)}
+.sheet .row:last-child{border-bottom:0}
+.sheet .row.hd{border-bottom:1px solid var(--ink)}
+.sheet .mono{text-transform:none}
+.crop{position:absolute; width:4cqw; height:4cqw; border:0 solid var(--ink)}
+.crop.tl{left:4cqw; top:4cqw; border-left-width:1px; border-top-width:1px}
+.crop.tr{right:4cqw; top:4cqw; border-right-width:1px; border-top-width:1px}
+.crop.bl{left:4cqw; bottom:4cqw; border-left-width:1px; border-bottom-width:1px}
+.crop.br{right:4cqw; bottom:4cqw; border-right-width:1px; border-bottom-width:1px}
+.mods{background:var(--cel); display:grid; grid-template-columns:repeat(3,1fr)}
+.mods div{padding:2.4cqw; display:flex; flex-direction:column; justify-content:space-between; border-right:1px solid rgba(27,29,32,.25)}
+.mods div:last-child{border-right:0}
+.mods strong{font-size:3.6cqw; letter-spacing:-.02em; line-height:1}
+.mods .mono{font-size:1.7cqw}
+.ledger{font-size:2.2cqw}
+.ledger div{display:flex; justify-content:space-between; gap:2cqw; padding:1.3cqw 0; border-bottom:1px solid rgba(27,29,32,.35)}
+.ledger .mono{font-size:1.8cqw}
+.circ{position:relative; display:inline-block}
+.circ::after{content:""; position:absolute; inset:-.1em -.24em -.02em -.24em; border:.07em solid var(--cel); border-radius:50%; transform:rotate(-6deg)}
+.hl{background:linear-gradient(transparent 58%, var(--cel) 58%, var(--cel) 92%, transparent 92%); -webkit-box-decoration-break:clone; box-decoration-break:clone}
+
+/* Encastre */
+.t3{--ink:#0F2440; --paper:#FFFFFF; --acc:#FF7A45; --mist:#E6EFF8; font-family:'Archivo', 'Hanken Grotesk', system-ui, sans-serif}
+.t3 .lg,.t3 .h,.t3 .bn,.t3 .bl{font-stretch:125%}
+.t3 .h{font-weight:800; line-height:.98; letter-spacing:-.02em; white-space:nowrap}
+.t3 .btn{border-radius:.8cqw}
+.blk{border-radius:1.2cqw; padding:1.8cqw; display:flex; flex-direction:column; justify-content:flex-end; gap:.5cqw; font-size:1.3cqw; font-weight:600}
+.bn{font-size:8cqw; font-weight:800; line-height:.9; letter-spacing:-.03em}
+.bl{font-size:2.2cqw; font-weight:800; letter-spacing:-.01em; line-height:1.05}
+.jn{position:absolute; border-radius:50%; background:var(--paper); display:grid; place-items:center}
+.jn::after{content:""; width:38%; height:38%; border-radius:50%; background:var(--cel)}
+.t3.oncel .jn{background:var(--cel)}
+.t3.oncel .jn::after{background:var(--ink)}
+.t3.onink .jn{background:var(--ink)}
+
+/* Trayecto */
+.t4{--ink:#0B1B33; --paper:#F5F7FA; font-family:'Instrument Sans', 'Hanken Grotesk', system-ui, sans-serif}
+.t4 .lg{font-weight:700}
+.t4 .h{font-weight:500; line-height:1; letter-spacing:-.035em; white-space:nowrap}
+.t4 em{font-family:'Instrument Serif', Georgia, serif; font-style:italic; font-weight:400; font-size:1.1em; letter-spacing:-.01em}
+.t4 .card{border-radius:1.2cqw}
+
+@media (prefers-reduced-motion: no-preference){
+  .draw{stroke-dasharray:1; stroke-dashoffset:0; animation:draw 1.6s cubic-bezier(.6,0,.2,1) both}
+  @keyframes draw{from{stroke-dashoffset:1}}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="intro">
+    <span class="eyebrow">.argy · Etapa 2 · Territorio creativo</span>
+    <h1>Cuatro maneras de mostrar ingenio</h1>
+    <p>Cada territorio traduce la misma idea central, <em>ingenio bien terminado</em>, a una gramática visual distinta. Las tres piezas se repiten en todos: la home, la portada de una propuesta y un post. Así se comparan en igualdad de condiciones.</p>
+    <div class="fixed">
+      <div>
+        <strong>Fijo en todos</strong>
+        <p><span class="sw"></span>Argy Blue <code>#74ACDF</code>, usado como superficie con tinta oscura encima. Idea central: Ingenio. Rasgos: enérgica, ingeniosa, hacedora, optimista, honesta.</p>
+      </div>
+      <div>
+        <strong>Placeholder, no se evalúa</strong>
+        <p>El logotipo (es texto plano), los textos, el cliente de la propuesta. Las tipografías son indicativas del carácter y los colores secundarios, exploratorios.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="bar">
+    <div class="seg" role="tablist" aria-label="Modo de comparación">
+      <button id="tab-terr" role="tab" aria-selected="true" aria-controls="view-terr">Por territorio</button>
+      <button id="tab-piece" role="tab" aria-selected="false" aria-controls="view-piece">Por pieza</button>
+    </div>
+    <nav class="jump" aria-label="Ir a">
+      <a href="#vuelta">La vuelta</a><a href="#taller">Taller</a><a href="#encastre">Encastre</a><a href="#trayecto">Trayecto</a><a href="#lectura">Lectura</a>
+    </nav>
+  </div>
+
+  <div id="view-terr" role="tabpanel" aria-labelledby="tab-terr" class="wrap" style="gap:88px">
+
+    <section class="terr" id="vuelta" data-t="t1">
+      <div class="terr-head">
+        <h2>La vuelta</h2>
+        <p>El ingenio como giro: un solo gesto inesperado por pieza. El punto de <code>.argy</code> pasa a ser protagonista: es el punto final de un titular, lo que tacha, lo que completa.</p>
+      </div>
+      <div class="pieces">
+        <div class="slot slot-hero" data-k="hero"><span>Home</span></div>
+        <div class="slot" data-k="cover"><span>Portada de propuesta</span></div>
+        <div class="slot" data-k="post"><span>Post</span></div>
+      </div>
+      <dl class="notes">
+        <div><dt>El ingenio aparece como</dt><dd>Una ocurrencia visual concreta en cada pieza.</dd></div>
+        <div><dt>Se reconoce por</dt><dd>El punto celeste gigante y una tipografía grande y segura de sí misma.</dd></div>
+        <div><dt>Comunica</dt><dd>Seguridad, humor, claridad. Una marca que piensa antes de hacer.</dd></div>
+        <div><dt>Riesgo</dt><dd>Cada pieza necesita una idea nueva, y eso es difícil de sostener trabajando solo. Si el gesto se repite sin idea, se vuelve un truco. Es la más cercana al ingenio de agencia.</dd></div>
+        <div><dt>Balance</dt><dd class="meter"><span>Energía</span><span class="pips" data-n="4"></span><span>Oficio</span><span class="pips" data-n="3"></span></dd></div>
+        <div><dt>Paleta y tipo</dt><dd class="swatches"><span><i style="background:#F3F3EF"></i><code>#F3F3EF</code></span><span><i style="background:#101B2B"></i><code>#101B2B</code></span><span><i style="background:#74ACDF"></i><code>#74ACDF</code></span><span>Bricolage Grotesque</span></dd></div>
+      </dl>
+    </section>
+
+    <section class="terr" id="taller" data-t="t2">
+      <div class="terr-head">
+        <h2>Taller</h2>
+        <p>El ingenio a la vista: se muestra cómo está hecho. Anotaciones, cotas, cinta de enmascarar, hojas con referencia. El celeste funciona como capa de trabajo.</p>
+      </div>
+      <div class="pieces">
+        <div class="slot slot-hero" data-k="hero"><span>Home</span></div>
+        <div class="slot" data-k="cover"><span>Portada de propuesta</span></div>
+        <div class="slot" data-k="post"><span>Post</span></div>
+      </div>
+      <dl class="notes">
+        <div><dt>El ingenio aparece como</dt><dd>La explicación: se ve el razonamiento detrás de cada solución.</dd></div>
+        <div><dt>Se reconoce por</dt><dd>Anotaciones en monoespaciada, cotas, cuadrícula y la cinta celeste.</dd></div>
+        <div><dt>Comunica</dt><dd>Oficio, transparencia, rigor. El premium honesto en estado puro.</dd></div>
+        <div><dt>Riesgo</dt><dd>Es la menos enérgica, y el carácter dominante es la energía. Puede parecer un estudio de arquitectura o de ingeniería. Su lugar natural es el registro "hacia adentro".</dd></div>
+        <div><dt>Balance</dt><dd class="meter"><span>Energía</span><span class="pips" data-n="2"></span><span>Oficio</span><span class="pips" data-n="5"></span></dd></div>
+        <div><dt>Paleta y tipo</dt><dd class="swatches"><span><i style="background:#ECEBE6"></i><code>#ECEBE6</code></span><span><i style="background:#1B1D20"></i><code>#1B1D20</code></span><span><i style="background:#74ACDF"></i><code>#74ACDF</code></span><span>Schibsted Grotesk + JetBrains Mono</span></dd></div>
+      </dl>
+    </section>
+
+    <section class="terr" id="encastre" data-t="t3">
+      <div class="terr-head">
+        <h2>Encastre</h2>
+        <p>El ingenio como piezas que encajan. Módulos de color que se unen en un punto: el punto de <code>.argy</code> es la unión entre sistemas.</p>
+      </div>
+      <div class="pieces">
+        <div class="slot slot-hero" data-k="hero"><span>Home</span></div>
+        <div class="slot" data-k="cover"><span>Portada de propuesta</span></div>
+        <div class="slot" data-k="post"><span>Post</span></div>
+      </div>
+      <dl class="notes">
+        <div><dt>El ingenio aparece como</dt><dd>La solución que conecta: pedidos, stock y facturación trabajando juntos.</dd></div>
+        <div><dt>Se reconoce por</dt><dd>Los bloques de color con la unión circular. Cada unión es un punto.</dd></div>
+        <div><dt>Comunica</dt><dd>Energía, sistema, integración. Es software de forma literal: módulos que se conectan.</dd></div>
+        <div><dt>Riesgo</dt><dd>Puede caer en el bento genérico de SaaS o verse de juguete. El acento mandarina es una decisión extra que hay que justificar.</dd></div>
+        <div><dt>Balance</dt><dd class="meter"><span>Energía</span><span class="pips" data-n="5"></span><span>Oficio</span><span class="pips" data-n="3"></span></dd></div>
+        <div><dt>Paleta y tipo</dt><dd class="swatches"><span><i style="background:#FFFFFF"></i><code>#FFFFFF</code></span><span><i style="background:#0F2440"></i><code>#0F2440</code></span><span><i style="background:#74ACDF"></i><code>#74ACDF</code></span><span><i style="background:#FF7A45"></i><code>#FF7A45</code></span><span>Archivo Expanded</span></dd></div>
+      </dl>
+    </section>
+
+    <section class="terr" id="trayecto" data-t="t4">
+      <div class="terr-head">
+        <h2>Trayecto</h2>
+        <p>El ingenio como el camino corto: algo enredado se convierte en una línea limpia que termina en un punto. Es lo que hace <code>.argy</code> con un proceso.</p>
+      </div>
+      <div class="pieces">
+        <div class="slot slot-hero" data-k="hero"><span>Home</span></div>
+        <div class="slot" data-k="cover"><span>Portada de propuesta</span></div>
+        <div class="slot" data-k="post"><span>Post</span></div>
+      </div>
+      <dl class="notes">
+        <div><dt>El ingenio aparece como</dt><dd>La simplificación: de lo enredado a lo claro.</dd></div>
+        <div><dt>Se reconoce por</dt><dd>El hilo enredado que se convierte en línea celeste y termina en un punto.</dd></div>
+        <div><dt>Comunica</dt><dd>Claridad, progreso, calma. Es la más narrativa de las cuatro.</dd></div>
+        <div><dt>Riesgo</dt><dd>La línea puede volverse ornamento o parecer un diagrama de logística. La serif itálica empuja hacia lo editorial o la consultora. Energía media.</dd></div>
+        <div><dt>Balance</dt><dd class="meter"><span>Energía</span><span class="pips" data-n="3"></span><span>Oficio</span><span class="pips" data-n="4"></span></dd></div>
+        <div><dt>Paleta y tipo</dt><dd class="swatches"><span><i style="background:#F5F7FA"></i><code>#F5F7FA</code></span><span><i style="background:#0B1B33"></i><code>#0B1B33</code></span><span><i style="background:#74ACDF"></i><code>#74ACDF</code></span><span><i style="background:#9AA6B4"></i><code>#9AA6B4</code></span><span>Instrument Sans + Serif</span></dd></div>
+      </dl>
+    </section>
+  </div>
+
+  <div id="view-piece" role="tabpanel" aria-labelledby="tab-piece" class="bypiece" hidden>
+    <section><h2>Home</h2><div class="grid-hero" data-k="hero"></div></section>
+    <section><h2>Portada de propuesta</h2><div class="grid-4" data-k="cover"></div></section>
+    <section><h2>Post</h2><div class="grid-4" data-k="post"></div></section>
+  </div>
+
+  <section class="compare">
+    <h2>Comparación</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th scope="col">Criterio</th><th scope="col">La vuelta</th><th scope="col">Taller</th><th scope="col">Encastre</th><th scope="col">Trayecto</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Reconocible sin logo</th><td>Alta</td><td>Media</td><td class="hi">Muy alta</td><td>Alta</td></tr>
+          <tr><th scope="row">Energía (carácter dominante)</th><td>Alta</td><td>Baja</td><td class="hi">Muy alta</td><td>Media</td></tr>
+          <tr><th scope="row">Oficio y premium</th><td>Media</td><td class="hi">Muy alta</td><td>Media</td><td>Alta</td></tr>
+          <tr><th scope="row">Distancia de "agencia"</th><td>Baja</td><td>Media</td><td class="hi">Alta</td><td class="hi">Alta</td></tr>
+          <tr><th scope="row">Escala a UI, favicon y producto</th><td>Media</td><td>Media</td><td class="hi">Muy alta</td><td>Media</td></tr>
+          <tr><th scope="row">Sostenible por una persona</th><td>Baja</td><td class="hi">Alta</td><td class="hi">Alta</td><td>Media</td></tr>
+          <tr><th scope="row">Potencial de motion</th><td>Media</td><td>Baja</td><td>Alta</td><td class="hi">Muy alta</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="reading" id="lectura">
+    <h2>Lectura</h2>
+    <div class="body">
+      <p><strong>Encastre es la candidata más fuerte como gramática principal.</strong> Es la única donde la forma dice software (módulos que se integran), donde el punto del nombre tiene una función (la unión) y donde la energía sale de la estructura y no de la decoración, que es justo la regla anti-agencia. Además escala directo a UI, favicon y producto.</p>
+      <p><strong>Trayecto cuenta la mejor historia.</strong> "Desenredar" puede ser el lenguaje de movimiento o la forma de contar casos, aunque no la gramática principal.</p>
+      <p><strong>Taller no sirve como dominante</strong> porque le falta energía. Pero sus anotaciones son candidatas al registro "hacia adentro": propuestas y documentación.</p>
+      <p><strong>La vuelta tiene el gesto más memorable</strong>, pero depende de una idea nueva por pieza. Es un riesgo para una marca que hoy sostiene una sola persona.</p>
+      <div class="ask">
+        <strong>Para decidir</strong>
+        <ol>
+          <li>¿Qué territorio sentís más <code>.argy</code> a primera vista, antes de leer las notas?</li>
+          <li>¿Cuáles querés que desarrolle a fondo? Recomiendo Encastre como principal, con Trayecto y Taller como candidatos a capas.</li>
+          <li>¿Hay algún elemento suelto que te guste aunque su territorio no?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <footer>Exploración de la etapa 2 · Documento de marca v0.3 · Nada de esta página es canon hasta que se apruebe.</footer>
+</div>
+
+<!-- ================= PIECES ================= -->
+
+<!-- La vuelta -->
+<template id="t1-hero">
+<div class="art t1">
+  <div class="abs disc" style="left:63cqw;top:-8cqw;width:42cqw;height:42cqw"></div>
+  <div class="nav"><span class="lg"><b>.</b>argy</span><span>Servicios</span><span>Casos</span><span>Cómo trabajamos</span><span class="btn">Contanos</span></div>
+  <h3 class="abs h" style="left:5cqw;top:14cqw;font-size:7.2cqw">Hagamos que<br>tu negocio<br>funcione mejor</h3>
+  <div class="abs card" style="left:69cqw;top:12.5cqw;width:23cqw"><strong>Pedido #1042</strong><span class="ok">Stock actualizado</span><span class="ok">Factura emitida</span><span class="ok">Cliente avisado</span></div>
+  <p class="abs sub" style="left:5cqw;top:39cqw;width:40cqw">Webs, e-commerce, sistemas internos y automatizaciones. Con ingenio para encontrar la solución y oficio para terminarla bien.</p>
+  <span class="abs btn big" style="left:5cqw;top:50cqw">Contanos qué necesitás →</span>
+</div>
+</template>
+<template id="t1-cover">
+<div class="art t1">
+  <div class="abs disc" style="left:30cqw;top:-26cqw;width:96cqw;height:96cqw"></div>
+  <span class="abs lg" style="left:8cqw;top:8cqw;font-size:4.4cqw"><b>.</b>argy</span>
+  <span class="abs" style="right:8cqw;top:8.6cqw;font-size:2.6cqw;font-weight:700">Propuesta</span>
+  <h3 class="abs h" style="left:8cqw;top:80cqw;font-size:10cqw">Sistema<br>de pedidos<br>y stock<i class="per"></i></h3>
+  <p class="abs" style="left:8cqw;top:118cqw;font-size:2.6cqw;line-height:1.45;opacity:.8">Para Distribuidora del Litoral<br>Septiembre 2026 · Versión 1</p>
+</div>
+</template>
+<template id="t1-post">
+<div class="art t1 oncel" style="--paper:#74ACDF">
+  <h3 class="abs h" style="left:8cqw;top:10cqw;font-size:11.5cqw">No todo<br>problema<br>necesita <span class="strike">IA</span>.</h3>
+  <p class="abs" style="left:8cqw;top:55cqw;width:74cqw;font-size:5.6cqw;font-weight:700;line-height:1.06;letter-spacing:-.02em">Algunos necesitan una integración bien hecha.</p>
+  <span class="abs lg" style="left:8cqw;top:111cqw;font-size:4.2cqw"><b>.</b>argy</span>
+</div>
+</template>
+
+<!-- Taller -->
+<template id="t2-hero">
+<div class="art t2">
+  <div class="nav"><span class="lg"><b>.</b>argy</span><span class="mono">Servicios</span><span class="mono">Casos</span><span class="mono">Proceso</span><span class="btn">Contanos</span></div>
+  <span class="abs mono dim" style="left:5cqw;top:14cqw;font-size:1.1cqw">Webs · E-commerce · Sistemas · Automatización</span>
+  <h3 class="abs h" style="left:5cqw;top:18cqw;font-size:5.4cqw">Hagamos que tu<br>negocio funcione<br>mejor.</h3>
+  <p class="abs sub" style="left:5cqw;top:38cqw;width:38cqw">Webs, e-commerce, sistemas internos y automatizaciones. Con ingenio para encontrar la solución y oficio para terminarla bien.</p>
+  <span class="abs btn big" style="left:5cqw;top:49cqw">Contanos qué necesitás <span class="mono">→</span></span>
+  <span class="abs cota" style="left:59cqw;top:16cqw;width:33cqw"><span>3 sistemas → 1 panel</span></span>
+  <div class="abs sheet" style="left:59cqw;top:20cqw;width:33cqw">
+    <div class="row hd"><strong>Pedidos · hoy</strong><span class="mono">38</span></div>
+    <div class="row"><span class="mono">#1042</span><span>Entregado</span></div>
+    <div class="row"><span class="mono">#1043</span><span>En camino</span></div>
+    <div class="row"><span class="mono">#1044</span><span>Facturado</span></div>
+  </div>
+  <div class="abs tape" style="left:56.6cqw;top:18.4cqw;width:8cqw;height:2.6cqw;transform:rotate(-14deg)"></div>
+  <div class="abs tape" style="left:86.5cqw;top:33.6cqw;width:8cqw;height:2.6cqw;transform:rotate(-11deg)"></div>
+  <span class="abs mono note" style="left:59cqw;top:40cqw;font-size:1.2cqw">↳ stock y facturación se actualizan solos</span>
+</div>
+</template>
+<template id="t2-cover">
+<div class="art t2">
+  <i class="crop tl"></i><i class="crop tr"></i><i class="crop bl"></i><i class="crop br"></i>
+  <span class="abs mono" style="left:9cqw;top:8.5cqw;font-size:1.9cqw">Propuesta</span>
+  <span class="abs mono" style="right:9cqw;top:8.5cqw;font-size:1.9cqw">Ref. PRO-2026-014</span>
+  <span class="abs lg" style="left:9cqw;top:17cqw;font-size:5cqw"><b>.</b>argy</span>
+  <h3 class="abs h" style="left:9cqw;top:38cqw;font-size:9cqw">Sistema de<br>pedidos<br>y stock.</h3>
+  <span class="abs cota" style="left:9cqw;top:72cqw;width:82cqw;font-size:1.8cqw"><span>Alcance v1</span></span>
+  <div class="abs mods" style="left:9cqw;top:75cqw;width:82cqw;height:20cqw">
+    <div><span class="mono">Módulo</span><strong>Pedidos</strong></div>
+    <div><span class="mono">Módulo</span><strong>Stock</strong></div>
+    <div><span class="mono">Módulo</span><strong>Facturas</strong></div>
+  </div>
+  <div class="abs ledger" style="left:9cqw;top:103cqw;width:82cqw">
+    <div><span class="mono">Cliente</span><span>Distribuidora del Litoral</span></div>
+    <div><span class="mono">Fecha</span><span>Septiembre 2026</span></div>
+    <div><span class="mono">Versión</span><span>1.0</span></div>
+  </div>
+</div>
+</template>
+<template id="t2-post">
+<div class="art t2">
+  <span class="abs mono dim" style="left:8cqw;top:8cqw;font-size:2cqw">Nota de taller</span>
+  <h3 class="abs h" style="left:8cqw;top:15cqw;font-size:9.6cqw">No todo<br>problema<br>necesita <span class="circ">IA</span>.</h3>
+  <span class="abs mono note" style="left:50cqw;top:46cqw;font-size:2.4cqw;line-height:1.35">↑ a veces sí.<br>casi siempre, no.</span>
+  <p class="abs" style="left:8cqw;top:62cqw;width:80cqw;font-size:5.4cqw;font-weight:700;line-height:1.14;letter-spacing:-.02em"><span class="hl">Algunos necesitan una integración bien hecha.</span></p>
+  <span class="abs lg" style="left:8cqw;top:110cqw;font-size:4cqw"><b>.</b>argy</span>
+  <span class="abs mono dim" style="right:8cqw;top:111.4cqw;font-size:1.8cqw">Hoja 1/1</span>
+</div>
+</template>
+
+<!-- Encastre -->
+<template id="t3-hero">
+<div class="art t3">
+  <div class="nav"><span class="lg"><b>.</b>argy</span><span>Servicios</span><span>Casos</span><span>Cómo trabajamos</span><span class="btn">Contanos</span></div>
+  <h3 class="abs h" style="left:5cqw;top:15cqw;font-size:4.6cqw">Hagamos que<br>tu negocio<br>funcione mejor.</h3>
+  <p class="abs sub" style="left:5cqw;top:34cqw;width:40cqw">Webs, e-commerce, sistemas internos y automatizaciones. Con ingenio para encontrar la solución y oficio para terminarla bien.</p>
+  <span class="abs btn big" style="left:5cqw;top:46cqw">Contanos qué necesitás →</span>
+  <div class="abs blk" style="left:57cqw;top:11cqw;width:22.5cqw;height:26cqw;background:var(--ink);color:#fff"><span class="bn">38</span><span>pedidos hoy</span></div>
+  <div class="abs blk" style="left:80.3cqw;top:11cqw;width:14.7cqw;height:26cqw;background:var(--cel)"><span class="bl">Stock</span><span class="ok">al día</span></div>
+  <div class="abs blk" style="left:57cqw;top:37.8cqw;width:14.7cqw;height:17cqw;background:var(--acc)"><span class="bl">Factura</span><span class="ok">emitida</span></div>
+  <div class="abs blk" style="left:72.5cqw;top:37.8cqw;width:22.5cqw;height:17cqw;background:var(--mist)"><span class="bl">Cliente</span><span class="ok">avisado</span></div>
+  <i class="jn" style="left:78.2cqw;top:22.3cqw;width:3.4cqw;height:3.4cqw"></i>
+  <i class="jn" style="left:62.6cqw;top:35.7cqw;width:3.4cqw;height:3.4cqw"></i>
+  <i class="jn" style="left:85.9cqw;top:35.7cqw;width:3.4cqw;height:3.4cqw"></i>
+  <i class="jn" style="left:70.4cqw;top:44.6cqw;width:3.4cqw;height:3.4cqw"></i>
+</div>
+</template>
+<template id="t3-cover">
+<div class="art t3 oncel" style="--paper:#74ACDF">
+  <span class="abs lg" style="left:8cqw;top:8cqw;font-size:4.6cqw"><b>.</b>argy</span>
+  <span class="abs" style="right:8cqw;top:8.6cqw;font-size:2.6cqw;font-weight:700">Propuesta</span>
+  <h3 class="abs h" style="left:8cqw;top:30cqw;font-size:8.2cqw">Sistema de<br>pedidos<br>y stock.</h3>
+  <div class="abs blk" style="left:8cqw;top:78cqw;width:51.6cqw;height:25cqw;background:var(--ink);color:#fff;font-size:2.4cqw;font-weight:500;padding:3cqw">Para Distribuidora del Litoral<br>Septiembre 2026</div>
+  <div class="abs blk" style="left:60.4cqw;top:78cqw;width:31.6cqw;height:25cqw;background:#fff;padding:3cqw"><span class="bn" style="font-size:11cqw">v1</span></div>
+  <div class="abs blk" style="left:8cqw;top:103.8cqw;width:84cqw;height:15cqw;background:var(--acc);padding:3cqw"><span class="bl" style="font-size:3.2cqw">Pedidos · Stock · Facturas</span></div>
+  <i class="jn" style="left:57.5cqw;top:88cqw;width:5cqw;height:5cqw"></i>
+  <i class="jn" style="left:31.3cqw;top:100.9cqw;width:5cqw;height:5cqw"></i>
+  <i class="jn" style="left:73.7cqw;top:100.9cqw;width:5cqw;height:5cqw"></i>
+</div>
+</template>
+<template id="t3-post">
+<div class="art t3 onink" style="--paper:#0F2440;color:#fff">
+  <h3 class="abs h" style="left:8cqw;top:9cqw;font-size:8.6cqw">No todo<br>problema<br>necesita IA.</h3>
+  <p class="abs" style="left:8cqw;top:47cqw;font-size:4cqw;font-weight:600">Algunos necesitan</p>
+  <div class="abs blk" style="left:8cqw;top:56cqw;width:45.6cqw;height:27cqw;background:var(--cel);color:var(--ink);padding:3cqw"><span class="bl" style="font-size:3.6cqw">una integración</span></div>
+  <div class="abs blk" style="left:54.4cqw;top:56cqw;width:37.6cqw;height:27cqw;background:var(--acc);color:var(--ink);padding:3cqw"><span class="bl" style="font-size:3.6cqw">bien hecha.</span></div>
+  <i class="jn" style="left:51.5cqw;top:67cqw;width:5cqw;height:5cqw"></i>
+  <span class="abs lg" style="left:8cqw;top:110cqw;font-size:4.2cqw"><b>.</b>argy</span>
+</div>
+</template>
+
+<!-- Trayecto -->
+<template id="t4-hero">
+<div class="art t4">
+  <svg class="abs" viewBox="0 0 1600 1000" aria-hidden="true">
+    <path d="M 860 330 C 980 240, 1070 420, 960 470 S 810 560, 930 610 S 1110 660, 1060 560 S 890 420, 1000 380 S 1160 470, 1060 650 S 940 710, 1020 570 S 1090 510, 1120 520" fill="none" stroke="#9AA6B4" stroke-width="3" stroke-linecap="round"/>
+    <path class="draw" pathLength="1" d="M 1120 520 C 1210 550, 1220 800, 1350 800 L 1450 800" fill="none" stroke="#74ACDF" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="1450" cy="800" r="22" fill="#74ACDF"/>
+  </svg>
+  <div class="nav"><span class="lg"><b>.</b>argy</span><span>Servicios</span><span>Casos</span><span>Cómo trabajamos</span><span class="btn">Contanos</span></div>
+  <h3 class="abs h" style="left:5cqw;top:15cqw;font-size:5.8cqw">Hagamos que tu<br>negocio <em>funcione</em><br><em>mejor.</em></h3>
+  <p class="abs sub" style="left:5cqw;top:37cqw;width:38cqw">Webs, e-commerce, sistemas internos y automatizaciones. Con ingenio para encontrar la solución y oficio para terminarla bien.</p>
+  <span class="abs btn big" style="left:5cqw;top:48cqw">Contanos qué necesitás →</span>
+  <div class="abs card" style="left:80cqw;top:25cqw;width:16cqw"><strong>Pedido #1042</strong><span>Recibido → <em>entregado</em></span><span style="opacity:.6">Sin pasos a mano</span></div>
+</div>
+</template>
+<template id="t4-cover">
+<div class="art t4">
+  <svg class="abs" viewBox="0 0 1000 1414" aria-hidden="true">
+    <path d="M 80 250 C 760 250, 940 380, 900 610 C 870 800, 660 890, 80 890" fill="none" stroke="#74ACDF" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="80" cy="250" r="16" fill="#74ACDF"/>
+  </svg>
+  <span class="abs lg" style="left:8cqw;top:8cqw;font-size:4.6cqw"><b>.</b>argy</span>
+  <span class="abs" style="right:8cqw;top:7.4cqw;font-size:3.6cqw"><em>Propuesta</em></span>
+  <h3 class="abs h" style="left:8cqw;top:66cqw;font-size:8.6cqw">Sistema de<br><em>pedidos</em> y stock.</h3>
+  <p class="abs" style="left:8cqw;top:108cqw;font-size:2.8cqw;line-height:1.45;opacity:.7">Para Distribuidora del Litoral<br>Septiembre 2026 · Versión 1</p>
+</div>
+</template>
+<template id="t4-post">
+<div class="art t4">
+  <svg class="abs" viewBox="0 0 1000 1250" aria-hidden="true">
+    <path d="M 100 560 C 180 420, 320 470, 250 570 S 110 690, 220 670 S 420 500, 330 460 S 180 580, 330 640 S 450 620, 470 580" fill="none" stroke="#9AA6B4" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 470 580 L 880 580" fill="none" stroke="#74ACDF" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="880" cy="580" r="18" fill="#74ACDF"/>
+  </svg>
+  <h3 class="abs h" style="left:8cqw;top:9cqw;font-size:8.8cqw">No todo problema<br>necesita <em>IA.</em></h3>
+  <p class="abs" style="left:8cqw;top:72cqw;width:80cqw;font-size:5.4cqw;font-weight:500;line-height:1.1;letter-spacing:-.025em">Algunos necesitan una integración <em>bien hecha.</em></p>
+  <span class="abs lg" style="left:8cqw;top:110cqw;font-size:4.2cqw"><b>.</b>argy</span>
+</div>
+</template>
+
+<script>
+(function(){
+  var T = [
+    {t:'t1', name:'La vuelta'},
+    {t:'t2', name:'Taller'},
+    {t:'t3', name:'Encastre'},
+    {t:'t4', name:'Trayecto'}
+  ];
+  function frame(t, k){
+    var f = document.createElement('div');
+    f.className = 'frame ' + k;
+    f.appendChild(document.getElementById(t + '-' + k).content.cloneNode(true));
+    return f;
+  }
+  // Territory view
+  document.querySelectorAll('.terr').forEach(function(sec){
+    var t = sec.getAttribute('data-t');
+    sec.querySelectorAll('.slot').forEach(function(slot){
+      slot.appendChild(frame(t, slot.getAttribute('data-k')));
+    });
+  });
+  // Piece view
+  document.querySelectorAll('#view-piece [data-k]').forEach(function(grid){
+    var k = grid.getAttribute('data-k');
+    T.forEach(function(x){
+      var fig = document.createElement('figure');
+      fig.appendChild(frame(x.t, k));
+      var cap = document.createElement('figcaption');
+      cap.textContent = x.name;
+      fig.appendChild(cap);
+      grid.appendChild(fig);
+    });
+  });
+  // Meters
+  document.querySelectorAll('.pips').forEach(function(p){
+    var n = +p.getAttribute('data-n');
+    for (var i = 0; i < 5; i++){ var d = document.createElement('i'); if (i < n) d.className = 'on'; p.appendChild(d); }
+  });
+  // Toggle
+  var tabs = {terr: document.getElementById('tab-terr'), piece: document.getElementById('tab-piece')};
+  var views = {terr: document.getElementById('view-terr'), piece: document.getElementById('view-piece')};
+  var jump = document.querySelector('.jump');
+  function show(v){
+    Object.keys(tabs).forEach(function(k){
+      tabs[k].setAttribute('aria-selected', k === v ? 'true' : 'false');
+      views[k].hidden = k !== v;
+    });
+    jump.style.visibility = v === 'terr' ? 'visible' : 'hidden';
+    try { localStorage.setItem('argy-t-view', v); } catch(e){}
+  }
+  tabs.terr.addEventListener('click', function(){ show('terr'); });
+  tabs.piece.addEventListener('click', function(){ show('piece'); });
+  var saved = null;
+  try { saved = localStorage.getItem('argy-t-view'); } catch(e){}
+  if (saved === 'piece') show('piece');
+})();
+</script>

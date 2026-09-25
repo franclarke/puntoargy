@@ -1,0 +1,365 @@
+<title>Logo y símbolo .argy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F2F1ED; --surface:#FAF9F6; --text:#1C1B19; --muted:#625E57; --line:#E1DED7; --chip:#E9E7E1;
+  --link:#2A6599; --focus:#2A6599;
+  --d:'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif;
+  --t:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --s:'Instrument Serif', Georgia, serif;
+  --m:'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --cel:#74ACDF; --tinta:#1C1B19; --piedra:#F2F1ED;
+  --e-dec:cubic-bezier(.65,0,.15,1); --e-arr:cubic-bezier(.34,1.56,.64,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#161513; --surface:#1F1E1B; --text:#EDEBE6; --muted:#A8A39A; --line:#34322E; --chip:#2A2825; --link:#8FC0E9; --focus:#8FC0E9; color-scheme:dark; }
+}
+:root[data-theme="dark"]{ --bg:#161513; --surface:#1F1E1B; --text:#EDEBE6; --muted:#A8A39A; --line:#34322E; --chip:#2A2825; --link:#8FC0E9; --focus:#8FC0E9; color-scheme:dark; }
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--text); font:16px/1.55 var(--t); padding-inline:20px; padding-block:44px 72px}
+.wrap{max-width:1160px; margin:0 auto; display:flex; flex-direction:column; gap:84px}
+.ph{font-family:var(--d); text-wrap:balance; margin:0}
+code{font-family:var(--m); font-size:.84em; background:var(--chip); padding:.08em .35em; border-radius:4px}
+:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+button{font:inherit}
+
+.intro{display:flex; flex-direction:column; gap:18px; max-width:800px}
+.eyebrow{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.intro h1{font-size:clamp(36px,5.4vw,64px); line-height:.98; letter-spacing:-.04em; font-weight:700}
+.intro p{margin:0; font-size:17.5px; max-width:64ch}
+.given{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; max-width:none}
+.given div{border-top:2px solid var(--text); padding-top:10px; font-size:14.5px}
+.given b{display:block; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:4px}
+
+.part{display:flex; flex-direction:column; gap:28px; scroll-margin-top:24px}
+.part-head{display:flex; flex-direction:column; gap:10px; max-width:800px; padding-top:26px; border-top:2px solid var(--text)}
+.part-head .n{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.part-head h2{font-size:clamp(28px,3.4vw,40px); letter-spacing:-.03em; line-height:1.03; font-weight:700}
+.part-head p{margin:0; max-width:66ch}
+
+.grid2{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
+.grid3{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
+.card.rec{box-shadow:0 0 0 2px var(--cel)}
+.card .body{padding:16px 18px 18px; display:flex; flex-direction:column; gap:6px}
+.card .body h3{margin:0; font:700 20px var(--d); letter-spacing:-.02em; display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.card .body p{margin:0; font-size:14.5px}
+.card .tr{color:var(--muted)}
+.badge{font:700 11px var(--t); letter-spacing:.08em; text-transform:uppercase; background:var(--cel); color:var(--tinta); padding:3px 8px; border-radius:99px}
+
+/* wordmark specimen boards (fixed brand colors) */
+.board{display:flex; flex-direction:column}
+.board .lt{background:var(--piedra); color:var(--tinta); padding:34px 24px 26px; display:flex; flex-direction:column; gap:18px}
+.board .dk{background:var(--tinta); color:var(--piedra); padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.board .sm{display:flex; align-items:baseline; gap:22px; flex-wrap:wrap; color:#625E57; font:500 12px var(--t)}
+.board .ns{display:flex; flex-direction:column; gap:6px}
+
+.wm{font-family:var(--d); font-weight:800; letter-spacing:-.045em; line-height:1; white-space:nowrap; display:inline-block}
+.wm .p{color:var(--cel)}
+.wm .c{display:inline-block; width:.2em; height:.2em; border-radius:50%; background:var(--cel); margin:0 .045em 0 .025em; vertical-align:baseline}
+.wm.big .c{width:.46em; height:.46em; margin:0 .07em 0 .035em}
+.wm.sob{font-family:var(--t); font-weight:700; letter-spacing:-.035em}
+.wm.sob .c{width:.18em; height:.18em}
+.wm .co{color:inherit}
+.wm .mut{color:#625E57}
+.dk .wm .mut{color:#A8A39A}
+.wm .lite{font-weight:500}
+
+/* namespace hierarchy */
+.hier .lt{gap:12px; padding:26px 24px}
+.hier .wm{font-size:34px}
+.appbar{display:flex; align-items:center; justify-content:space-between; background:#FFFFFF; border:1px solid #E1DED7; border-radius:8px; padding:10px 14px; color:var(--tinta); font:500 13px var(--t)}
+.appbar .wm{font-size:20px}
+
+/* symbols */
+.sym .lt{flex-direction:row; align-items:flex-end; gap:18px; flex-wrap:wrap; padding:26px 24px}
+.sym svg{display:block; flex:none}
+.tab{display:flex; align-items:center; gap:8px; background:#FFFFFF; border:1px solid #E1DED7; border-radius:8px 8px 0 0; padding:8px 12px; font:500 13px var(--t); color:var(--tinta); width:max-content; max-width:100%}
+.sizes{display:flex; align-items:flex-end; gap:16px; flex-wrap:wrap}
+.sizes span{font:500 11px var(--m); color:#625E57; display:block; margin-top:6px; text-align:center}
+
+/* product icons */
+.picons{display:flex; gap:16px; flex-wrap:wrap; align-items:flex-end}
+.picons figure{margin:0; display:flex; flex-direction:column; align-items:center; gap:6px; font:500 12px var(--t); color:#625E57}
+
+/* destination */
+.frame{position:relative; width:100%; max-width:100%; overflow:hidden; container-type:inline-size; aspect-ratio:16/10}
+.art{position:absolute; inset:0; overflow:hidden; background:var(--piedra); color:var(--tinta); font-family:var(--t); font-size:1.4cqw; line-height:1.4}
+.art .abs{position:absolute; margin:0}
+.art svg.abs{inset:0; width:100%; height:100%}
+.art .h{font-family:var(--d); font-weight:700; line-height:.95; letter-spacing:-.04em; white-space:nowrap}
+.art em{font-family:var(--s); font-style:italic; font-weight:400}
+.art .ans{background:#FFFFFF; border-radius:1.2cqw; padding:1.5cqw 1.7cqw; display:flex; flex-direction:column; gap:.7cqw; font-size:1.3cqw; box-shadow:0 .8cqw 2.4cqw rgba(28,27,25,.16)}
+.art .ans strong{font-size:1.6cqw; line-height:1.2; font-weight:600}
+.art .ans mark{background:#F6B40E; color:#1C1B19; padding:0 .2em; border-radius:.2em}
+.art .kick{font-size:1.05cqw; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#625E57}
+.art .rw{display:flex; justify-content:space-between; border-top:1px solid #E1DED7; padding-top:.6cqw}
+.art .rw b{font-variant-numeric:tabular-nums}
+.art .tag{background:#FAF9F6; border:1px solid #E1DED7; border-radius:99px; padding:.4cqw 1cqw; font-size:1.1cqw; font-weight:500; white-space:nowrap}
+.art .who{font-family:var(--d); font-weight:800; letter-spacing:-.04em; font-size:1.5cqw}
+.art .who b{color:var(--cel)}
+
+/* animation */
+.anim-stage{background:var(--piedra); color:var(--tinta); min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; padding:34px 20px}
+.anim-stage .wm{font-size:clamp(44px,7vw,84px); position:relative}
+.anim-stage .wm.ns{font-size:clamp(34px,5vw,60px)}
+.anim .trail{position:absolute; height:.07em; background:var(--cel); border-radius:1em; width:0; opacity:0}
+@media (prefers-reduced-motion: no-preference){
+  .anim.play .c{animation:land .56s var(--e-arr) .75s both}
+  .anim.play .co{animation:reveal .55s var(--e-dec) 1.2s both}
+  .anim.play .trail{animation:trail .8s var(--e-dec) .05s both}
+  .anim.play .pr{animation:fadein .4s var(--e-dec) both}
+}
+@keyframes land{from{transform:scale(0)} to{transform:scale(1)}}
+@keyframes reveal{from{clip-path:inset(0 100% 0 0)} to{clip-path:inset(0 0 0 0)}}
+@keyframes trail{0%{width:0; opacity:1} 70%{width:1.1em; opacity:1} 100%{width:1.1em; opacity:0}}
+@keyframes fadein{from{opacity:0} to{opacity:1}}
+.replay{border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:999px; padding:6px 14px; font-size:13px; font-weight:600; cursor:pointer}
+
+.discard{font-size:14.5px; margin:0; padding:14px 18px; border-left:3px solid var(--line); background:var(--surface); border-radius:0 8px 8px 0}
+.reco{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:22px 24px; display:flex; flex-direction:column; gap:12px}
+.reco h2{font-size:28px; letter-spacing:-.025em}
+.reco ol{margin:0; padding-left:1.2em; display:flex; flex-direction:column; gap:8px}
+.reco .combo{display:flex; align-items:center; gap:22px; flex-wrap:wrap; background:var(--piedra); color:var(--tinta); border-radius:10px; padding:22px}
+footer{font-size:13px; color:var(--muted); border-top:1px solid var(--line); padding-top:18px}
+
+@media (max-width:860px){
+  .grid2,.grid3,.given{grid-template-columns:1fr}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="intro">
+    <span class="eyebrow">.argy · Etapa 6 · Logo y símbolo</span>
+    <h1 class="ph">Un nombre que ya era un sistema</h1>
+    <p>El logo de <code>.argy</code> no es una pieza suelta: tiene que funcionar solo y como sufijo de cada producto (<code>stock.argy</code>, <code>presu.argy</code>). Hay cuatro decisiones: cómo es el punto, cómo se ordena el nombre de un producto, cuál es el símbolo y cómo se ven los íconos de producto.</p>
+    <div class="given">
+      <div><b>Dado</b>Logotipo tipográfico en Bricolage Grotesque, minúsculas.</div>
+      <div><b>Dado</b>El punto en Argy Blue es la unión entre el producto y la empresa.</div>
+      <div><b>Dado</b>El sol no forma parte del logo.</div>
+      <div><b>Dado</b>Funciona en <code>argy.ar</code> y en <code>stock.argy.ar</code>.</div>
+    </div>
+  </header>
+
+  <!-- 1 · DOT -->
+  <section class="part" id="punto">
+    <div class="part-head">
+      <span class="n">Decisión 1</span>
+      <h2 class="ph">¿Cómo es el punto?</h2>
+      <p>Es la variable que más cambia el logo. En cada opción: el logotipo grande, sobre tinta, como sufijo de producto y en tamaños chicos.</p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <div class="board">
+          <div class="lt"><span class="wm" style="font-size:88px"><span class="p">.</span>argy</span>
+            <div class="ns"><span class="wm" style="font-size:36px">stock<span class="p">.</span>argy</span><span class="wm" style="font-size:36px">presu<span class="p">.</span>argy</span></div>
+            <div class="sm"><span class="wm" style="font-size:24px;color:var(--tinta)"><span class="p">.</span>argy</span><span class="wm" style="font-size:16px;color:var(--tinta)"><span class="p">.</span>argy</span><span>24 px · 16 px</span></div></div>
+          <div class="dk"><span class="wm" style="font-size:44px"><span class="p">.</span>argy</span><span class="wm" style="font-size:28px">data<span class="p">.</span>argy</span></div>
+        </div>
+        <div class="body"><h3>Punto tipográfico</h3><p>El punto de la propia fuente, en celeste. El placeholder que venimos usando.</p><p class="tr">Simple y legible. Es la opción menos propia: cualquiera puede escribir Bricolage con un punto de color. En tamaños chicos el punto casi desaparece.</p></div>
+      </div>
+      <div class="card rec">
+        <div class="board">
+          <div class="lt"><span class="wm" style="font-size:88px"><i class="c"></i>argy</span>
+            <div class="ns"><span class="wm" style="font-size:36px">stock<i class="c"></i>argy</span><span class="wm" style="font-size:36px">presu<i class="c"></i>argy</span></div>
+            <div class="sm"><span class="wm" style="font-size:24px;color:var(--tinta)"><i class="c"></i>argy</span><span class="wm" style="font-size:16px;color:var(--tinta)"><i class="c"></i>argy</span><span>24 px · 16 px</span></div></div>
+          <div class="dk"><span class="wm" style="font-size:44px"><i class="c"></i>argy</span><span class="wm" style="font-size:28px">data<i class="c"></i>argy</span></div>
+        </div>
+        <div class="body"><h3>Punto redondo <span class="badge">Recomendado</span></h3><p>Un círculo perfecto, un poco más grande que el punto de la fuente, apoyado en la línea de base.</p><p class="tr">Es el mismo punto de la línea de Trayecto, así que el sistema y el logo comparten su pieza central. Se sigue leyendo como punto y aguanta mejor en tamaños chicos.</p></div>
+      </div>
+      <div class="card">
+        <div class="board">
+          <div class="lt"><span class="wm big" style="font-size:88px"><i class="c"></i>argy</span>
+            <div class="ns"><span class="wm big" style="font-size:36px">stock<i class="c"></i>argy</span><span class="wm big" style="font-size:36px">presu<i class="c"></i>argy</span></div>
+            <div class="sm"><span class="wm big" style="font-size:24px;color:var(--tinta)"><i class="c"></i>argy</span><span class="wm big" style="font-size:16px;color:var(--tinta)"><i class="c"></i>argy</span><span>24 px · 16 px</span></div></div>
+          <div class="dk"><span class="wm big" style="font-size:44px"><i class="c"></i>argy</span><span class="wm big" style="font-size:28px">data<i class="c"></i>argy</span></div>
+        </div>
+        <div class="body"><h3>Punto destino</h3><p>El punto crece hasta la altura de las minúsculas. Es el punto grande de La vuelta, ahora dentro del nombre.</p><p class="tr">Es la más expresiva y se reconoce de lejos. Pero deja de leerse como punto: <code>stock●argy</code> parece una viñeta, y el nombre pierde su lectura de dominio.</p></div>
+      </div>
+      <div class="card">
+        <div class="board">
+          <div class="lt"><span class="wm sob" style="font-size:88px"><i class="c"></i>argy</span>
+            <div class="ns"><span class="wm sob" style="font-size:36px">stock<i class="c"></i>argy</span><span class="wm sob" style="font-size:36px">presu<i class="c"></i>argy</span></div>
+            <div class="sm"><span class="wm sob" style="font-size:24px;color:var(--tinta)"><i class="c"></i>argy</span><span class="wm sob" style="font-size:16px;color:var(--tinta)"><i class="c"></i>argy</span><span>24 px · 16 px</span></div></div>
+          <div class="dk"><span class="wm sob" style="font-size:44px"><i class="c"></i>argy</span><span class="wm sob" style="font-size:28px">data<i class="c"></i>argy</span></div>
+        </div>
+        <div class="body"><h3>Sobrio</h3><p>Punto redondo, pero en Instrument Sans: la fuente de texto en lugar de la display.</p><p class="tr">Se integra mejor en interfaces de producto. Pierde la personalidad de Bricolage: se parece más a una herramienta que a una marca.</p></div>
+      </div>
+    </div>
+    <p class="discard"><strong>Descartado antes de dibujar:</strong> una línea que sale del punto y subraya la palabra (llevar Trayecto dentro del logo). La <em>g</em> y la <em>y</em> tienen trazos que bajan de la línea de base, y cualquier subrayado choca con ellos o queda flotando lejos.</p>
+  </section>
+
+  <!-- 2 · NAMESPACE -->
+  <section class="part" id="namespace">
+    <div class="part-head">
+      <span class="n">Decisión 2</span>
+      <h2 class="ph">¿Quién manda en <code style="font-size:.8em">stock.argy</code>?</h2>
+      <p>Cuando hay un producto adelante, el nombre tiene dos partes. Hay tres formas de ordenarlas (todas con el punto redondo).</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <div class="board hier"><div class="lt">
+          <span class="wm">data<i class="c"></i>argy</span><span class="wm">stock<i class="c"></i>argy</span><span class="wm">presu<i class="c"></i>argy</span>
+          <div class="appbar"><span class="wm">stock<i class="c"></i>argy</span><span>Pedidos · Stock</span></div>
+        </div></div>
+        <div class="body"><h3>Todo igual</h3><p>Producto y empresa con el mismo peso y color.</p><p class="tr">Es la más simple, pero los nombres largos se leen como un solo bloque y cuesta distinguir un producto del otro.</p></div>
+      </div>
+      <div class="card rec">
+        <div class="board hier"><div class="lt">
+          <span class="wm">data<i class="c"></i><span class="mut">argy</span></span><span class="wm">stock<i class="c"></i><span class="mut">argy</span></span><span class="wm">presu<i class="c"></i><span class="mut">argy</span></span>
+          <div class="appbar"><span class="wm">stock<i class="c"></i><span class="mut">argy</span></span><span>Pedidos · Stock</span></div>
+        </div></div>
+        <div class="body"><h3>El producto manda <span class="badge">Recomendado</span></h3><p>El producto en tinta y <code>argy</code> en gris cálido. El punto conserva su celeste.</p><p class="tr">Se lee primero qué hace (stock) y después de quién es. Todas las letras siguen siendo iguales: cambia solo el color, así que la familia se mantiene.</p></div>
+      </div>
+      <div class="card">
+        <div class="board hier"><div class="lt">
+          <span class="wm">data<i class="c"></i><span class="lite">argy</span></span><span class="wm">stock<i class="c"></i><span class="lite">argy</span></span><span class="wm">presu<i class="c"></i><span class="lite">argy</span></span>
+          <div class="appbar"><span class="wm">stock<i class="c"></i><span class="lite">argy</span></span><span>Pedidos · Stock</span></div>
+        </div></div>
+        <div class="body"><h3>Por peso</h3><p>El producto en negrita y <code>argy</code> en peso liviano.</p><p class="tr">Funciona en una sola tinta (sellos, grabados). Pero dos pesos de Bricolage en una palabra hacen que <code>argy</code> se vea como otra marca.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · SYMBOL -->
+  <section class="part" id="simbolo">
+    <div class="part-head">
+      <span class="n">Decisión 3</span>
+      <h2 class="ph">¿Cuál es el símbolo?</h2>
+      <p>Es lo que aparece donde no entra el nombre: favicon, ícono de app, avatar en redes. Cada opción se muestra en 160, 64, 32 y 16 px, y en una pestaña del navegador.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><div class="board sym"><div class="lt"><div class="sizes" data-sym="dot"></div><div class="tab" data-tab="dot"></div></div></div>
+        <div class="body"><h3>El punto</h3><p>Solo el círculo celeste sobre tinta.</p><p class="tr">Es la raíz del namespace y lo más fiel a la idea. Pero un círculo solo es genérico: lo usan cientos de marcas y no dice <code>.argy</code> por sí mismo.</p></div></div>
+      <div class="card rec"><div class="board sym"><div class="lt"><div class="sizes" data-sym="a"></div><div class="tab" data-tab="a"></div></div></div>
+        <div class="body"><h3>Punto y a <span class="badge">Recomendado</span></h3><p>Las dos primeras letras del logotipo: el punto redondo y la <em>a</em>.</p><p class="tr">Es un recorte del logo, así que no hay nada nuevo que aprender. Y define la regla de los íconos de producto: el punto más las primeras letras.</p></div></div>
+      <div class="card"><div class="board sym"><div class="lt"><div class="sizes" data-sym="route"></div><div class="tab" data-tab="route"></div></div></div>
+        <div class="body"><h3>La ruta</h3><p>Un tramo de ruta con una esquina redondeada que termina en el punto.</p><p class="tr">Es la opción más propia: lleva Trayecto al ícono. Pero es abstracta (puede leerse como una L o la tecla Enter) y no extiende bien a una familia de productos.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 4 · PRODUCT ICONS -->
+  <section class="part" id="productos">
+    <div class="part-head">
+      <span class="n">Decisión 4</span>
+      <h2 class="ph">¿Cómo se ven los productos?</h2>
+      <p>Con ocho productos posibles, cada uno necesita un ícono que se distinga en el celular del dueño de la pyme.</p>
+    </div>
+    <div class="grid2">
+      <div class="card rec"><div class="board"><div class="lt"><div class="picons" data-picons="code"></div></div></div>
+        <div class="body"><h3>Códigos <span class="badge">Recomendado</span></h3><p>El punto más dos letras, como una extensión de dominio: <code>.da</code>, <code>.st</code>, <code>.pr</code>, <code>.ca</code>.</p><p class="tr">Coherente con el nombre (que ya se lee como dominio) y con el símbolo. Escala a cualquier producto nuevo sin diseñar nada. Las letras sin color evitan tener que asignarle un color a cada producto.</p></div></div>
+      <div class="card"><div class="board"><div class="lt"><div class="picons" data-picons="route"></div></div></div>
+        <div class="body"><h3>Rutas</h3><p>Cada producto tiene su propia forma de ruta: escalera para stock, nodos para data, etc.</p><p class="tr">Es la más expresiva, pero cada forma necesita diseño y explicación. Con muchos productos, las formas se vuelven arbitrarias y difíciles de recordar.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ANIMATION -->
+  <section class="part" id="animacion">
+    <div class="part-head">
+      <span class="n">Movimiento</span>
+      <h2 class="ph">El punto llega último</h2>
+      <p>La animación del logo aplica el principio de movimiento que ya aprobaste: una línea corta trae el punto, el punto aterriza con el único rebote permitido y aparece el nombre.</p>
+    </div>
+    <div class="card">
+      <div class="anim-stage">
+        <span class="wm anim"><i class="trail" style="left:-1.15em;bottom:.07em"></i><i class="c"></i><span class="co">argy</span></span>
+        <span class="wm ns anim"><span class="pr">stock</span><i class="c"></i><span class="co mut">argy</span></span>
+      </div>
+      <div class="body" style="flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap"><p class="tr">En productos, el nombre del producto ya está; el punto llega y se suma <code>argy</code>.</p><button class="replay" id="replay">↻ Reproducir</button></div>
+    </div>
+  </section>
+
+  <!-- DESTINATION -->
+  <section class="part" id="destino">
+    <div class="part-head">
+      <span class="n">Pendiente de la etapa 2</span>
+      <h2 class="ph">El punto como destino, resuelto</h2>
+      <p>El disco grande se sentía forzado porque era un contenedor sin razón. Propuesta: el punto de destino es el mismo punto del logo, y la respuesta aparece desde él, como cuando <code>.argy</code> contesta una pregunta.</p>
+    </div>
+    <div class="grid2">
+      <div class="card"><div class="frame"><div class="art">
+        <svg class="abs" viewBox="0 0 1600 1000" aria-hidden="true">
+          <circle cx="1400" cy="380" r="210" fill="#74ACDF"/>
+          <path d="M 760 760 C 800 660, 900 650, 880 720 S 770 830, 820 850 S 960 800, 930 730 S 840 680, 900 660 S 1010 700, 1000 700" fill="none" stroke="#A8A39A" stroke-width="3" stroke-linecap="round"/>
+          <path d="M1000 700 L1220 700 Q1260 700 1260 660 L1260 540" fill="none" stroke="#74ACDF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="abs h" style="left:5cqw;top:12cqw;font-size:6.4cqw">Hagamos que<br>tu negocio<br>funcione <em>mejor.</em></h3>
+        <div class="abs ans" style="left:78.5cqw;top:15.5cqw;width:18.5cqw"><span class="kick">Esta semana</span><strong>Reponé <mark>3 productos</mark> antes del viernes</strong><span class="rw"><span>Yerba 1 kg</span><b>40 u.</b></span><span class="rw"><span>Aceite 900 ml</span><b>24 u.</b></span></div>
+      </div></div><div class="body"><h3>Antes</h3><p class="tr">Un disco grande que contiene una tarjeta.</p></div></div>
+      <div class="card rec"><div class="frame"><div class="art">
+        <svg class="abs" viewBox="0 0 1600 1000" aria-hidden="true">
+          <path d="M 760 760 C 800 660, 900 650, 880 720 S 770 830, 820 850 S 960 800, 930 730 S 840 680, 900 660 S 1010 700, 1000 700" fill="none" stroke="#A8A39A" stroke-width="3" stroke-linecap="round"/>
+          <path d="M1000 700 L1160 700 Q1200 700 1200 660 L1200 500" fill="none" stroke="#74ACDF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="1200" cy="470" r="30" fill="#74ACDF"/>
+        </svg>
+        <h3 class="abs h" style="left:5cqw;top:12cqw;font-size:6.4cqw">Hagamos que<br>tu negocio<br>funcione <em>mejor.</em></h3>
+        <span class="abs tag" style="left:43cqw;top:37.5cqw">WhatsApp</span><span class="abs tag" style="left:55cqw;top:55.5cqw">Excel</span>
+        <div class="abs ans" style="left:78cqw;top:9cqw;width:19cqw"><span class="who"><b>.</b>argy</span><strong>Reponé <mark>3 productos</mark> antes del viernes</strong><span class="rw"><span>Yerba 1 kg</span><b>40 u.</b></span><span class="rw"><span>Aceite 900 ml</span><b>24 u.</b></span></div>
+      </div></div><div class="body"><h3>Propuesta <span class="badge">Recomendado</span></h3><p class="tr">La línea llega al punto (a escala del logo) y la respuesta sale de él, firmada por <code>.argy</code>. Sirve igual para el agente del futuro.</p></div></div>
+    </div>
+  </section>
+
+  <section class="reco">
+    <h2 class="ph">Recomendación combinada</h2>
+    <div class="combo" data-combo></div>
+    <ol>
+      <li><strong>Punto redondo</strong> en Bricolage Grotesque 800: el mismo punto de Trayecto dentro del nombre.</li>
+      <li><strong>El producto manda:</strong> <code>stock</code> en tinta y <code>argy</code> en gris cálido; el punto siempre celeste.</li>
+      <li><strong>Símbolo "punto y a"</strong> para <code>.argy</code>, y <strong>códigos</strong> (<code>.st</code>, <code>.da</code>) para los productos: una sola regla para todo.</li>
+      <li><strong>El punto de destino</strong> pasa a ser el punto del logo, y la respuesta sale de él.</li>
+    </ol>
+    <p style="margin:0;color:var(--muted);font-size:14.5px">Si se aprueba, el siguiente paso es el ajuste fino: espaciado óptico entre letras, tamaño exacto del punto, área de respeto, tamaños mínimos y versiones en una tinta. Recién ahí se exportan los archivos finales (SVG, favicon, íconos de app).</p>
+  </section>
+
+  <footer>Exploración de la etapa 6 · Documento de marca v0.7 · Nada de esta página es canon hasta que se apruebe.</footer>
+</div>
+
+<script>
+(function(){
+  var CEL = '#74ACDF', TINTA = '#1C1B19', PIEDRA = '#F2F1ED';
+  function frameSVG(size, inner){ return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="' + TINTA + '"/>' + inner + '</svg>'; }
+  var SYM = {
+    dot: '<circle cx="50" cy="50" r="19" fill="' + CEL + '"/>',
+    a: '<circle cx="28" cy="60" r="8" fill="' + CEL + '"/><text x="60" y="68" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="66" letter-spacing="-2" fill="' + PIEDRA + '">a</text>',
+    route: '<path d="M33 22 L33 52 Q33 66 47 66 L66 66" fill="none" stroke="' + CEL + '" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><circle cx="68" cy="66" r="13" fill="' + CEL + '"/>'
+  };
+  document.querySelectorAll('[data-sym]').forEach(function(el){
+    var k = el.getAttribute('data-sym');
+    el.innerHTML = [160, 64, 32, 16].map(function(s){ return '<div>' + frameSVG(s, SYM[k]) + '<span>' + s + '</span></div>'; }).join('');
+  });
+  document.querySelectorAll('[data-tab]').forEach(function(el){
+    var k = el.getAttribute('data-tab');
+    el.innerHTML = frameSVG(16, SYM[k]) + '<span>stock.argy · Pedidos</span>';
+  });
+  function code(txt){ return '<circle cx="' + (txt.length > 1 ? 21 : 28) + '" cy="60" r="7" fill="' + CEL + '"/><text x="' + (txt.length > 1 ? 58 : 60) + '" y="67" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="' + (txt.length > 1 ? 46 : 66) + '" letter-spacing="-2" fill="' + PIEDRA + '">' + txt + '</text>'; }
+  var ROUTES = {
+    data: '<path d="M24 72 L24 46 Q24 34 36 34 L62 34" fill="none" stroke="' + CEL + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="72" r="6" fill="' + PIEDRA + '"/><circle cx="24" cy="50" r="6" fill="' + PIEDRA + '"/><circle cx="66" cy="34" r="11" fill="' + CEL + '"/>',
+    stock: '<path d="M22 74 L40 74 L40 56 L58 56 L58 42" fill="none" stroke="' + CEL + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="58" cy="32" r="11" fill="' + CEL + '"/>',
+    presu: '<path d="M30 24 L30 70 Q30 76 36 76 L64 76" fill="none" stroke="' + CEL + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 40 L66 40 M42 56 L58 56" stroke="' + PIEDRA + '" stroke-width="6" stroke-linecap="round"/><circle cx="70" cy="76" r="10" fill="' + CEL + '"/>',
+    caja: '<path d="M26 34 L74 34 L74 70 L26 70 L26 48" fill="none" stroke="' + CEL + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26" cy="46" r="11" fill="' + CEL + '"/>'
+  };
+  var PRODS = [['data','da'],['stock','st'],['presu','pr'],['caja','ca']];
+  document.querySelectorAll('[data-picons]').forEach(function(el){
+    var mode = el.getAttribute('data-picons');
+    el.innerHTML = PRODS.map(function(p){
+      var inner = mode === 'code' ? code(p[1]) : ROUTES[p[0]];
+      return '<figure>' + frameSVG(76, inner) + '<figcaption>' + p[0] + '.argy</figcaption></figure>';
+    }).join('') + (mode === 'code' ? '<figure>' + frameSVG(32, code('st')) + '<figcaption>32 px</figcaption></figure>' : '<figure>' + frameSVG(32, ROUTES.stock) + '<figcaption>32 px</figcaption></figure>');
+  });
+  var combo = document.querySelector('[data-combo]');
+  combo.innerHTML = frameSVG(72, SYM.a) + '<span class="wm" style="font-size:56px"><i class="c"></i>argy</span>' +
+    '<span class="wm" style="font-size:30px">stock<i class="c"></i><span class="mut">argy</span></span>' + frameSVG(48, code('st'));
+
+  var anims = document.querySelectorAll('.anim');
+  function play(){ anims.forEach(function(a){ a.classList.remove('play'); void a.offsetWidth; a.classList.add('play'); }); }
+  document.getElementById('replay').addEventListener('click', play);
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ play(); io.disconnect(); } }); }, {threshold:.6});
+    io.observe(document.querySelector('.anim-stage'));
+  }
+})();
+</script>

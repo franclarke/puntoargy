@@ -1,0 +1,434 @@
+<title>Paleta y tipografía .argy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400..800&family=Geist+Mono:wght@400;500&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F4F5F7; --surface:#FFFFFF; --text:#14171B; --muted:#58616B; --line:#DCE0E5; --chip:#E8EBEE; --focus:#2A6599;
+  --good:#1F7A4D; --warn:#9A6200; --bad:#B3261E;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0F1114; --surface:#171A1E; --text:#E9EBEE; --muted:#9AA3AD; --line:#2A2F36; --chip:#21252B; --focus:#8FC0E9; --good:#6FCF97; --warn:#E6B450; --bad:#F2877F; color-scheme:dark; }
+}
+:root[data-theme="dark"]{ --bg:#0F1114; --surface:#171A1E; --text:#E9EBEE; --muted:#9AA3AD; --line:#2A2F36; --chip:#21252B; --focus:#8FC0E9; --good:#6FCF97; --warn:#E6B450; --bad:#F2877F; color-scheme:dark; }
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--text); font:15px/1.55 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif; padding-inline:20px; padding-block:40px 96px}
+.wrap{max-width:1160px; margin:0 auto; display:flex; flex-direction:column; gap:80px}
+h1,h2,h3{text-wrap:balance}
+code{font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.86em; background:var(--chip); padding:.08em .35em; border-radius:4px}
+:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+.intro{display:flex; flex-direction:column; gap:18px; max-width:780px}
+.eyebrow{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.intro h1{font-size:clamp(32px,4.6vw,54px); line-height:1.02; letter-spacing:-.03em; margin:0}
+.intro p{margin:0; font-size:17px; max-width:64ch}
+.toc{display:flex; gap:8px 20px; flex-wrap:wrap; font-size:14px}
+.toc a{color:var(--muted); font-weight:600; text-decoration:none}
+.toc a:hover{color:var(--text)}
+
+.part{display:flex; flex-direction:column; gap:40px; scroll-margin-top:24px}
+.part-head{display:flex; flex-direction:column; gap:10px; max-width:780px; padding-top:28px; border-top:2px solid var(--text)}
+.part-head .n{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.part-head h2{margin:0; font-size:clamp(28px,3.4vw,40px); letter-spacing:-.025em; line-height:1.05}
+.part-head p{margin:0; font-size:16px; max-width:66ch}
+
+.dir{display:flex; flex-direction:column; gap:16px}
+.dir-head{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:6px 40px; align-items:end}
+.dir-head h3{margin:0; font-size:26px; letter-spacing:-.02em; line-height:1.05}
+.dir-head p{margin:0; font-size:15.5px; max-width:62ch}
+.trio{display:grid; grid-template-columns:1.6fr 1.6fr .8fr; gap:12px}
+.info{display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:16px 32px; padding-top:14px; border-top:1px solid var(--line)}
+.info h4{margin:0 0 4px; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+.info p{margin:0; font-size:14.5px}
+.checks{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:3px; font-size:13.5px}
+.checks li{display:flex; justify-content:space-between; gap:10px; border-bottom:1px dashed var(--line); padding:2px 0}
+.checks b{font-variant-numeric:tabular-nums; font-weight:600}
+.ok{color:var(--good)} .mid{color:var(--warn)} .no{color:var(--bad)}
+.sw{display:flex; flex-wrap:wrap; gap:6px 12px; font-size:12.5px; margin-top:8px}
+.sw span{display:inline-flex; align-items:center; gap:6px}
+.sw i{width:14px; height:14px; border-radius:3px; box-shadow:inset 0 0 0 1px rgba(128,128,128,.4)}
+.sw code{background:none; padding:0; color:var(--muted)}
+
+.reco{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px 24px; display:flex; flex-direction:column; gap:14px}
+.reco h3{margin:0; font-size:22px; letter-spacing:-.015em}
+.reco p{margin:0; font-size:15.5px; max-width:70ch}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse; width:100%; min-width:560px; font-size:14px}
+th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+thead th{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600}
+tr:last-child td{border-bottom:0}
+
+.cards3{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+.cardx{background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden; display:flex; flex-direction:column}
+.cardx.rec{box-shadow:0 0 0 2px #74ACDF}
+.cardx .body{padding:14px 18px 18px; display:flex; flex-direction:column; gap:6px}
+.cardx .body h3{margin:0; font-size:18px; display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.cardx .body p{margin:0; font-size:14px}
+.cardx .tr{color:var(--muted)}
+.badge{font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; background:#74ACDF; color:#0B1B33; padding:3px 8px; border-radius:99px}
+.note{font-size:14.5px; margin:0; padding:14px 18px; border-left:3px solid #74ACDF; background:var(--surface); border-radius:0 6px 6px 0; max-width:none}
+
+.types{display:flex; flex-direction:column; gap:48px}
+.type{display:grid; grid-template-columns:1.6fr 1fr; gap:18px 28px; align-items:start}
+.type .meta{display:flex; flex-direction:column; gap:10px}
+.type .meta h3{margin:0; font-size:24px; letter-spacing:-.02em; display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.type .meta p{margin:0; font-size:14.5px}
+.type .tr{color:var(--muted)}
+.spec{background:#F6F7F9; color:#0B1B33; border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; gap:10px; box-shadow:0 0 0 1px var(--line)}
+.spec .big{font-size:40px; line-height:1; letter-spacing:-.03em}
+.spec .para{font-size:15px; line-height:1.5}
+.spec .nums{font-size:15px; font-variant-numeric:tabular-nums}
+.spec .lab{font-size:11px; letter-spacing:.1em; text-transform:uppercase; opacity:.6}
+.fam{font-size:13px; color:var(--muted)}
+
+.ask{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px 24px; display:flex; flex-direction:column; gap:10px; max-width:860px}
+.ask h2{margin:0; font-size:26px; letter-spacing:-.02em}
+.ask ol{margin:0; padding-left:1.2em; display:flex; flex-direction:column; gap:8px; font-size:15.5px}
+footer{font-size:13px; color:var(--muted); border-top:1px solid var(--line); padding-top:18px}
+
+@media (max-width:860px){
+  .trio{grid-template-columns:1fr 1fr}
+  .trio .f-hero{grid-column:1/-1}
+  .info,.cards3{grid-template-columns:1fr}
+  .dir-head{grid-template-columns:1fr}
+  .type{grid-template-columns:1fr}
+}
+@media (max-width:480px){ .trio{grid-template-columns:1fr} }
+
+/* ================= brand frames ================= */
+.frame{position:relative; width:100%; max-width:100%; overflow:hidden; container-type:inline-size; border-radius:6px; box-shadow:0 0 0 1px var(--line)}
+.frame.hero,.frame.ui{aspect-ratio:16/10}
+.frame.post{aspect-ratio:4/5}
+.frame.mini{aspect-ratio:4/3}
+.art{--fd:'Bricolage Grotesque', system-ui, sans-serif; --ft:'Instrument Sans', system-ui, sans-serif;
+  --fe:'Instrument Serif', Georgia, serif; --fes:italic; --few:400; --feu:none; --fdw:700; --fdl:-.04em; --fdx:normal;
+  position:absolute; inset:0; overflow:hidden; background:var(--bg); color:var(--ink); font-family:var(--ft); font-size:1.4cqw; line-height:1.4}
+.art .abs{position:absolute; margin:0}
+.art svg.abs{inset:0; width:100%; height:100%}
+.art .h{font-family:var(--fd); font-weight:var(--fdw); letter-spacing:var(--fdl); font-stretch:var(--fdx); line-height:.96; white-space:nowrap}
+.art em{font-family:var(--fe); font-style:var(--fes); font-weight:var(--few); box-shadow:var(--feu); letter-spacing:-.01em}
+.nav{position:absolute; left:5cqw; right:5cqw; top:3.6cqw; display:flex; align-items:center; gap:2.6cqw; font-size:1.25cqw; font-weight:500}
+.nav .lg{margin-right:auto}
+.lg{font-family:var(--fd); font-weight:800; font-size:2.3cqw; letter-spacing:-.035em; line-height:1; font-stretch:var(--fdx)}
+.lg b{color:var(--logoDot); font-weight:inherit}
+.pill{display:inline-flex; align-items:center; gap:.8cqw; background:var(--btn); color:var(--btnInk); border-radius:99px; padding:.75cqw 1.6cqw; font-weight:600; white-space:nowrap}
+.pill.big{font-size:1.45cqw; padding:1.15cqw 2cqw 1.15cqw 2.3cqw}
+.pill .ld{position:relative; width:1.6cqw; height:.16cqw; background:currentColor; margin-right:.5cqw; opacity:.9}
+.pill .ld::after{content:""; position:absolute; right:-.45cqw; top:50%; width:.75cqw; height:.75cqw; border-radius:50%; background:currentColor; transform:translateY(-50%)}
+.sub{font-size:1.55cqw; line-height:1.45; color:var(--muted)}
+.card{background:var(--card); color:var(--cardInk); border-radius:1.2cqw; padding:1.5cqw 1.7cqw; display:flex; flex-direction:column; gap:.8cqw; font-size:1.25cqw; box-shadow:0 .8cqw 2.4cqw rgba(11,27,51,.16)}
+.card strong{font-size:1.5cqw}
+.ck{display:flex; align-items:center; gap:.8cqw}
+.ck::before{content:"✓"; display:inline-grid; place-items:center; flex:none; width:1.7cqw; height:1.7cqw; border-radius:50%; background:var(--check); color:var(--checkInk); font-size:1cqw}
+.tg{fill:none; stroke:var(--hilo); stroke-width:3; stroke-linecap:round}
+.pt{fill:none; stroke:var(--path); stroke-linecap:round; stroke-linejoin:round}
+.ds{fill:var(--dest)}
+
+/* UI */
+.side{position:absolute; left:0; top:0; bottom:0; width:18cqw; background:var(--side); border-right:1px solid var(--line); padding:3cqw 1.6cqw; display:flex; flex-direction:column; gap:.6cqw; font-size:1.3cqw}
+.side .lg{font-size:2.2cqw; margin:0 0 2.4cqw .9cqw}
+.side span{padding:.8cqw .9cqw; border-radius:.7cqw; display:flex; align-items:center; gap:.8cqw}
+.side span.on{background:var(--activeBg); font-weight:600}
+.side span.on::before{content:""; width:.7cqw; height:.7cqw; border-radius:50%; background:var(--prog)}
+.main{position:absolute; left:18cqw; right:0; top:0; bottom:0; background:var(--uibg); padding:3.4cqw 3cqw; display:flex; flex-direction:column; gap:1.6cqw}
+.main .top{display:flex; justify-content:space-between; align-items:baseline}
+.main h4{margin:0; font-family:var(--fd); font-weight:var(--fdw); font-stretch:var(--fdx); font-size:2.6cqw; letter-spacing:-.03em}
+.main a{color:var(--link); font-weight:600; text-decoration:none; font-size:1.25cqw}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4cqw}
+.stat{background:var(--card2); border:1px solid var(--line); border-radius:1cqw; padding:1.3cqw 1.5cqw}
+.stat b{display:block; font-family:var(--fd); font-stretch:var(--fdx); font-size:3.4cqw; line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums}
+.stat span{font-size:1.15cqw; color:var(--muted)}
+.prog{background:var(--card2); border:1px solid var(--line); border-radius:1cqw; padding:1.4cqw 1.6cqw; display:flex; flex-direction:column; gap:1.2cqw; font-size:1.2cqw}
+.prog .trk{position:relative; height:1.4cqw}
+.prog .trk::before{content:""; position:absolute; left:.7cqw; right:.7cqw; top:.6cqw; height:.2cqw; background:var(--line)}
+.prog .trk i{position:absolute; top:0; width:1.4cqw; height:1.4cqw; border-radius:50%; background:var(--card2); box-shadow:inset 0 0 0 .2cqw var(--line)}
+.prog .trk i.d{background:var(--prog); box-shadow:none}
+.prog .trk em.f{position:absolute; left:.7cqw; top:.55cqw; height:.35cqw; width:66.6%; background:var(--prog); font-style:normal; box-shadow:none}
+.prog .lbl{display:flex; justify-content:space-between; color:var(--muted)}
+.rows{background:var(--card2); border:1px solid var(--line); border-radius:1cqw; padding:.4cqw 1.6cqw; font-size:1.2cqw}
+.rows div{display:flex; justify-content:space-between; align-items:center; padding:.8cqw 0; border-bottom:1px solid var(--line)}
+.rows div:last-child{border-bottom:0}
+.tagp{background:var(--pillBg); color:var(--pillInk); border-radius:99px; padding:.2cqw .9cqw; font-weight:600; font-size:1.05cqw}
+
+/* palettes */
+.p-aire{--bg:#F6F7F9;--ink:#0B1B33;--muted:#56647A;--hilo:#9AA6B4;--path:#74ACDF;--dest:#74ACDF;--card:#FFFFFF;--cardInk:#0B1B33;--btn:#0B1B33;--btnInk:#FFFFFF;--logoDot:#74ACDF;--side:#FFFFFF;--uibg:#F6F7F9;--card2:#FFFFFF;--line:#E3E7ED;--activeBg:#EEF4FA;--link:#2A6599;--prog:#74ACDF;--pillBg:#E3EEF8;--pillInk:#1F4E78;--check:#0B1B33;--checkInk:#FFFFFF}
+.p-piedra{--bg:#F2F1ED;--ink:#1C1B19;--muted:#625E57;--hilo:#A8A39A;--path:#74ACDF;--dest:#74ACDF;--card:#FFFFFF;--cardInk:#1C1B19;--btn:#1C1B19;--btnInk:#FFFFFF;--logoDot:#74ACDF;--side:#FAF9F6;--uibg:#F2F1ED;--card2:#FAF9F6;--line:#E1DED7;--activeBg:#E9EFF4;--link:#2A6599;--prog:#74ACDF;--pillBg:#E3EEF8;--pillInk:#1F4E78;--check:#1C1B19;--checkInk:#FFFFFF}
+.p-noche{--bg:#0A1628;--ink:#EEF3F9;--muted:#9DB0C8;--hilo:#44587A;--path:#74ACDF;--dest:#74ACDF;--card:#0F2340;--cardInk:#EEF3F9;--btn:#74ACDF;--btnInk:#0A1628;--logoDot:#74ACDF;--side:#081222;--uibg:#0C1A30;--card2:#11223D;--line:#1D3050;--activeBg:#15294A;--link:#8FC0E9;--prog:#74ACDF;--pillBg:#173257;--pillInk:#A9CDEE;--check:#74ACDF;--checkInk:#0A1628}
+.p-campo{--bg:#74ACDF;--ink:#0B1B33;--muted:#173556;--hilo:rgba(11,27,51,.4);--path:#FFFFFF;--dest:#FFFFFF;--card:#0B1B33;--cardInk:#FFFFFF;--btn:#0B1B33;--btnInk:#FFFFFF;--logoDot:#FFFFFF;--side:#74ACDF;--uibg:#EEF4FA;--card2:#FFFFFF;--line:#D6E3F0;--activeBg:rgba(255,255,255,.5);--link:#2A6599;--prog:#74ACDF;--pillBg:#DCEAF7;--pillInk:#1F4E78;--check:#74ACDF;--checkInk:#0B1B33}
+.p-campo .side{border-right-color:transparent}
+.p-campo .side .lg b{color:#FFFFFF}
+
+/* type pairings */
+.f-car{}
+.f-pre{--fd:'Geist', 'Hanken Grotesk', system-ui, sans-serif; --ft:'Geist', 'Hanken Grotesk', system-ui, sans-serif; --fe:inherit; --fes:normal; --few:inherit; --feu:inset 0 -.09em 0 #74ACDF; --fdw:600; --fdl:-.045em}
+.f-edi{--fd:'Instrument Serif', Georgia, serif; --ft:'Instrument Sans', system-ui, sans-serif; --fdw:400; --fdl:-.02em; --fe:'Instrument Serif', Georgia, serif; --fes:italic}
+.f-exp{--fd:'Archivo', 'Hanken Grotesk', system-ui, sans-serif; --ft:'Archivo', system-ui, sans-serif; --fdx:118%; --fdw:800; --fdl:-.03em; --fe:inherit; --fes:normal; --few:inherit; --feu:inset 0 -.09em 0 #74ACDF}
+.f-edi .h{line-height:.92}
+.f-edi .lg,.f-edi .main h4{font-family:'Instrument Sans', system-ui, sans-serif; font-weight:700}
+
+/* mini accent cards */
+.mini .art{padding:5cqw 6cqw; display:flex; flex-direction:column; gap:3cqw; font-size:3.4cqw}
+.mini .mt{display:flex; justify-content:space-between; align-items:center}
+.mini h5{margin:0; font-family:var(--fd); font-weight:700; font-size:6cqw; letter-spacing:-.03em}
+.mini .bdg{border-radius:99px; padding:.6cqw 2cqw; font-weight:700; font-size:2.8cqw}
+.mini p{margin:0; line-height:1.4}
+.mini p a{color:#2A6599; font-weight:600; text-decoration:none; box-shadow:inset 0 -.1em 0 #74ACDF}
+.mini .bars{display:flex; align-items:flex-end; gap:2.4cqw; height:22cqw; margin-top:auto}
+.mini .bars i{flex:1; border-radius:1cqw 1cqw 0 0}
+.mini .foot{display:flex; justify-content:space-between; align-items:center}
+.mini .btnm{background:#0B1B33; color:#fff; border-radius:99px; padding:1.8cqw 3.6cqw; font-weight:600; font-size:3cqw}
+</style>
+
+<div class="wrap">
+
+  <header class="intro">
+    <span class="eyebrow">.argy · Etapa 3</span>
+    <h1>Base, paleta y tipografía</h1>
+    <p>Tres decisiones que cierran casi todo lo que hoy es placeholder. Cada opción se muestra aplicada a las mismas piezas: la home de Trayecto, una pantalla de producto y un post. Así se ve cómo funciona tanto hacia afuera como hacia adentro.</p>
+    <nav class="toc" aria-label="Secciones"><a href="#base">1 · Base clara u oscura</a><a href="#acento">2 · Acento</a><a href="#tipo">3 · Tipografía</a><a href="#decidir">Para decidir</a></nav>
+  </header>
+
+  <!-- ================= BASE ================= -->
+  <section class="part" id="base">
+    <div class="part-head">
+      <span class="n">Decisión 1</span>
+      <h2>¿Sobre qué fondo vive .argy?</h2>
+      <p>Argy Blue es canon y funciona como superficie con tinta oscura encima. Lo que falta decidir es qué lo rodea: el fondo dominante, la temperatura de los neutros y el color de la tinta. Debajo de cada dirección están los contrastes calculados en vivo.</p>
+    </div>
+
+    <div class="dir" data-p="p-aire">
+      <div class="dir-head"><h3>Aire · claro frío</h3><p>Neutros levemente azulados y tinta azul marino. Todo pertenece a la familia del celeste. Es la continuación natural de Trayecto.</p></div>
+      <div class="trio"></div>
+      <div class="info">
+        <div><h4>Comunica</h4><p>Claridad, limpieza, confianza. Es la más fácil de sostener en producto y documentos.</p></div>
+        <div><h4>Riesgo</h4><p>Puede sentirse fría y con poca energía. Está en la zona de "fintech azul" y SaaS genérico si la tipografía y el movimiento no la empujan.</p></div>
+        <div><h4>Contraste</h4><ul class="checks"></ul><div class="sw"></div></div>
+      </div>
+    </div>
+
+    <div class="dir" data-p="p-piedra">
+      <div class="dir-head"><h3>Piedra · claro cálido</h3><p>Neutros con un grado de temperatura y tinta casi negra cálida. El celeste resalta más por contraste de temperatura.</p></div>
+      <div class="trio"></div>
+      <div class="info">
+        <div><h4>Comunica</h4><p>Más humana y más cercana al oficio. Se siente hecha a mano, como papel.</p></div>
+        <div><h4>Riesgo</h4><p>Se acerca al beige editorial de moda. El celeste sobre cálido puede leerse retro. Pierde la coherencia de "familia azul".</p></div>
+        <div><h4>Contraste</h4><ul class="checks"></ul><div class="sw"></div></div>
+      </div>
+    </div>
+
+    <div class="dir" data-p="p-noche">
+      <div class="dir-head"><h3>Noche · oscuro</h3><p>Azul marino profundo como fondo. El celeste se vuelve luminoso y hasta puede ser texto o botón.</p></div>
+      <div class="trio"></div>
+      <div class="info">
+        <div><h4>Comunica</h4><p>Premium, tecnológica, intensa. El celeste brilla más que en cualquier otra opción.</p></div>
+        <div><h4>Riesgo</h4><p>Es exactamente lo que el documento marcó como genérico: dark + minimal + tech + blue. Menos humana, más "startup de IA".</p></div>
+        <div><h4>Contraste</h4><ul class="checks"></ul><div class="sw"></div></div>
+      </div>
+    </div>
+
+    <div class="dir" data-p="p-campo">
+      <div class="dir-head"><h3>Campo · celeste dominante</h3><p>El celeste es el fondo. La línea y el punto pasan a blanco, y la tinta sigue siendo azul marino. En producto, el celeste queda en la barra lateral.</p></div>
+      <div class="trio"></div>
+      <div class="info">
+        <div><h4>Comunica</h4><p>La más propia y la más enérgica. Nadie tiene este celeste como campo. Se reconoce de lejos sin logo.</p></div>
+        <div><h4>Riesgo</h4><p>Cansa en lectura larga y no sirve como fondo de producto. Celeste y blanco a gran escala pueden evocar la bandera: hay que evitar franjas horizontales.</p></div>
+        <div><h4>Contraste</h4><ul class="checks"></ul><div class="sw"></div></div>
+      </div>
+    </div>
+
+    <div class="reco">
+      <h3>Recomendación: base por registro</h3>
+      <p>No elegir un solo fondo, sino asignarlo según el balance que ya aprobaste: <strong>más energía hacia afuera, más oficio hacia adentro</strong>. Aire es la base de todo el sistema y Campo aparece en los momentos de marca. Noche queda fuera por ahora, salvo como modo oscuro de algún producto.</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col">Registro</th><th scope="col">Base</th><th scope="col">Piezas</th></tr></thead>
+          <tbody>
+            <tr><td>Hacia afuera, momento de marca</td><td>Campo</td><td>Hero de la home, portadas, social, avatar, presentaciones</td></tr>
+            <tr><td>Hacia afuera, contenido</td><td>Aire</td><td>Resto del sitio, casos, landing pages</td></tr>
+            <tr><td>Hacia adentro</td><td>Aire</td><td>Propuestas (interior), documentación, producto, portales</td></tr>
+            <tr><td>Opcional</td><td>Noche</td><td>Modo oscuro de producto, si algún día hace falta</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Aire o Piedra</strong> es la duda real. Recomiendo Aire por coherencia con el celeste, y que la calidez venga de las imágenes y de la voz. Si Aire te resulta frío, Piedra es una alternativa válida.</p>
+    </div>
+  </section>
+
+  <!-- ================= ACCENT ================= -->
+  <section class="part" id="acento">
+    <div class="part-head">
+      <span class="n">Decisión 2</span>
+      <h2>¿Hace falta un segundo color?</h2>
+      <p>El celeste no puede ser texto sobre blanco (2,4:1). Por eso, en cualquier opción se suma un <strong>celeste profundo</strong> funcional para links, texto destacado y foco: <code>#2A6599</code> (6,1:1 sobre blanco). La pregunta es si además hay un acento de otro color.</p>
+    </div>
+    <div class="cards3">
+      <div class="cardx rec">
+        <div class="frame mini"><div class="art p-aire" style="--hilo:#9AA6B4">
+          <div class="mt"><h5>Pedidos</h5><span class="bdg" style="background:#E3EEF8;color:#1F4E78">Nuevo</span></div>
+          <p>38 pedidos hoy. <a>Ver detalle</a></p>
+          <div class="bars"><i style="height:55%;background:#C9DDF1"></i><i style="height:80%;background:#74ACDF"></i><i style="height:100%;background:#2A6599"></i><i style="height:70%;background:#0B1B33"></i></div>
+          <div class="foot"><span class="btnm">Contanos</span></div>
+        </div></div>
+        <div class="body"><h3>Monocromo <span class="badge">Recomendado</span></h3><p>Celeste, celeste profundo, tinta y neutros. La energía viene de la escala y el movimiento.</p><p class="tr">El celeste se vuelve más propio por disciplina. Riesgo: puede sentirse contenido si todo lo demás también lo es.</p></div>
+      </div>
+      <div class="cardx">
+        <div class="frame mini"><div class="art p-aire">
+          <div class="mt"><h5>Pedidos</h5><span class="bdg" style="background:#FF6B4A;color:#0B1B33">Nuevo</span></div>
+          <p>38 pedidos hoy. <a>Ver detalle</a></p>
+          <div class="bars"><i style="height:55%;background:#C9DDF1"></i><i style="height:80%;background:#74ACDF"></i><i style="height:100%;background:#FF6B4A"></i><i style="height:70%;background:#0B1B33"></i></div>
+          <div class="foot"><span class="btnm">Contanos</span></div>
+        </div></div>
+        <div class="body"><h3>Acento cálido puntual</h3><p>Coral <code>#FF6B4A</code> para novedades y llamadas de atención, una vez por pantalla.</p><p class="tr">Suma energía y calidez. Riesgo: compite con el celeste y abre la puerta a la "startup colorida".</p></div>
+      </div>
+      <div class="cardx">
+        <div class="frame mini"><div class="art p-aire">
+          <div class="mt"><h5>Pedidos</h5><span class="bdg" style="background:#E3EEF8;color:#1F4E78">Nuevo</span></div>
+          <p>38 pedidos hoy. <a>Ver detalle</a></p>
+          <div class="bars"><i style="height:55%;background:#74ACDF"></i><i style="height:80%;background:#0B1B33"></i><i style="height:100%;background:#E26D5A"></i><i style="height:70%;background:#3FA796"></i></div>
+          <div class="foot"><span class="btnm">Contanos</span></div>
+        </div></div>
+        <div class="body"><h3>Color solo en datos</h3><p>La marca es monocroma, pero gráficos y estados usan una paleta categórica propia.</p><p class="tr">Es la opción más práctica para producto. Riesgo: si la paleta de datos está mal cuidada, se filtra a la marca.</p></div>
+      </div>
+    </div>
+    <p class="note">Mi sugerencia: monocromo ahora, y revisar el acento cálido cuando definamos las imágenes, porque ellas pueden aportar el color cálido que falta. Los colores funcionales (éxito, advertencia, error) y la paleta de datos se definen en el design system.</p>
+  </section>
+
+  <!-- ================= TYPE ================= -->
+  <section class="part" id="tipo">
+    <div class="part-head">
+      <span class="n">Decisión 3</span>
+      <h2>¿Con qué voz tipográfica habla?</h2>
+      <p>Cuatro combinaciones aplicadas a la misma home, en base Aire. En cada una cambia también cómo se marca el acento de voz: itálica serif o subrayado celeste (el comportamiento "subrayar"). Todas son de Google Fonts, gratuitas para uso comercial. Más adelante se puede evaluar una familia paga o un lettering propio para el logo.</p>
+    </div>
+    <div class="types">
+      <div class="type" data-f="f-car">
+        <div class="slot"></div>
+        <div class="meta">
+          <h3>Carácter <span class="badge">Recomendado</span></h3>
+          <p class="fam">Bricolage Grotesque + Instrument Sans · acento Instrument Serif itálica</p>
+          <p>Una grotesca con rarezas que se acentúan en tamaños grandes (eje óptico) y se calman en texto. El ingenio queda en los detalles.</p>
+          <p class="tr">Riesgo: Bricolage está de moda en startups desde 2024. Hay que usarla con disciplina para que no se vea "del momento".</p>
+          <div class="spec"><span class="lab">Pedido · stock · factura</span><span class="big h" style="font-family:'Bricolage Grotesque';font-weight:700">Ingenio bien terminado.</span><span class="para" style="font-family:'Instrument Sans'">Webs, e-commerce, sistemas internos y automatizaciones hechos para que funcionen el lunes a la mañana.</span><span class="nums" style="font-family:'Instrument Sans'">#1042 · $ 38.500 · 24/09/2026 · 12:40</span></div>
+        </div>
+      </div>
+      <div class="type" data-f="f-pre">
+        <div class="slot"></div>
+        <div class="meta">
+          <h3>Precisión</h3>
+          <p class="fam">Geist + Geist Mono · acento subrayado celeste</p>
+          <p>Una sola familia, neutra y exacta. Sin gestos: la personalidad la llevan la línea y el color.</p>
+          <p class="tr">Riesgo: es la tipografía de Vercel y está muy asociada a herramientas para desarrolladores. Se siente técnica, lo contrario a "más humana que técnica".</p>
+          <div class="spec"><span class="lab" style="font-family:'Geist Mono'">Pedido · stock · factura</span><span class="big" style="font-family:'Geist';font-weight:600;letter-spacing:-.045em">Ingenio bien terminado.</span><span class="para" style="font-family:'Geist'">Webs, e-commerce, sistemas internos y automatizaciones hechos para que funcionen el lunes a la mañana.</span><span class="nums" style="font-family:'Geist Mono'">#1042 · $ 38.500 · 24/09/2026 · 12:40</span></div>
+        </div>
+      </div>
+      <div class="type" data-f="f-edi">
+        <div class="slot"></div>
+        <div class="meta">
+          <h3>Voz editorial</h3>
+          <p class="fam">Instrument Serif (display) + Instrument Sans</p>
+          <p>Titulares en serif y texto en sans. La más humana y premium: parece escrita por una persona.</p>
+          <p class="tr">Riesgo: se acerca a una revista, un estudio o una consultora. Tiene menos energía y le cuesta sostenerse en la interfaz del producto.</p>
+          <div class="spec"><span class="lab">Pedido · stock · factura</span><span class="big" style="font-family:'Instrument Serif';font-weight:400;letter-spacing:-.02em">Ingenio bien terminado.</span><span class="para" style="font-family:'Instrument Sans'">Webs, e-commerce, sistemas internos y automatizaciones hechos para que funcionen el lunes a la mañana.</span><span class="nums" style="font-family:'Instrument Sans'">#1042 · $ 38.500 · 24/09/2026 · 12:40</span></div>
+        </div>
+      </div>
+      <div class="type" data-f="f-exp">
+        <div class="slot"></div>
+        <div class="meta">
+          <h3>Expansiva</h3>
+          <p class="fam">Archivo Expanded (display) + Archivo · acento subrayado celeste</p>
+          <p>Titulares anchos y pesados. Es la opción con más energía y la que más grita "hagamos cosas".</p>
+          <p class="tr">Riesgo: ruidosa, cerca del brutalismo y de lo que usa una agencia. Ocupa mucho ancho en mobile.</p>
+          <div class="spec"><span class="lab">Pedido · stock · factura</span><span class="big" style="font-family:'Archivo';font-stretch:118%;font-weight:800;letter-spacing:-.03em;font-size:34px">Ingenio bien terminado.</span><span class="para" style="font-family:'Archivo'">Webs, e-commerce, sistemas internos y automatizaciones hechos para que funcionen el lunes a la mañana.</span><span class="nums" style="font-family:'Archivo'">#1042 · $ 38.500 · 24/09/2026 · 12:40</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">En todas las opciones los números usan cifras tabulares en la interfaz. Una monoespaciada solo tiene sentido para documentación técnica: no es parte de la voz de marca.</p>
+  </section>
+
+  <div class="ask" id="decidir">
+    <h2>Para decidir</h2>
+    <ol>
+      <li><strong>Base:</strong> ¿te convence la base por registro (Aire + Campo)? ¿Aire o Piedra como neutro?</li>
+      <li><strong>Acento:</strong> ¿monocromo, acento cálido o color solo en datos?</li>
+      <li><strong>Tipografía:</strong> ¿cuál sentís más <code>.argy</code>? Recomiendo Carácter.</li>
+    </ol>
+    <p style="margin:0;font-size:14.5px;color:var(--muted)">Después de esto viene tu replanteo de la dirección. Estas decisiones pueden quedar en suspenso hasta entonces.</p>
+  </div>
+
+  <footer>Exploración de la etapa 3 · Documento de marca v0.5 · Nada de esta página es canon hasta que se apruebe.</footer>
+</div>
+
+<template id="tp-hero">
+  <div class="frame hero f-hero"><div class="art">
+    <svg class="abs" viewBox="0 0 1600 1000" aria-hidden="true">
+      <circle class="ds" cx="1400" cy="380" r="210"/>
+      <path class="tg" d="M 760 760 C 800 660, 900 650, 880 720 S 770 830, 820 850 S 960 800, 930 730 S 840 680, 900 660 S 1010 700, 1000 700"/>
+      <path class="pt" stroke-width="12" d="M1000 700 L1220 700 Q1260 700 1260 660 L1260 540"/>
+    </svg>
+    <div class="nav"><span class="lg"><b>.</b>argy</span><span>Servicios</span><span>Casos</span><span>Cómo trabajamos</span><span class="pill">Contanos</span></div>
+    <h3 class="abs h" style="left:5cqw;top:14cqw;font-size:6.4cqw">Hagamos que<br>tu negocio<br>funcione <em>mejor.</em></h3>
+    <p class="abs sub" style="left:5cqw;top:37cqw;width:36cqw">Webs, e-commerce, sistemas internos y automatizaciones. Con ingenio para encontrar la solución y oficio para terminarla bien.</p>
+    <span class="abs pill big" style="left:5cqw;top:49cqw">Contanos qué necesitás <i class="ld"></i></span>
+    <div class="abs card" style="left:78.5cqw;top:16cqw;width:18.5cqw"><strong>Pedido #1042</strong><span class="ck">Stock actualizado</span><span class="ck">Factura emitida</span><span class="ck">Cliente avisado</span></div>
+  </div></div>
+</template>
+<template id="tp-ui">
+  <div class="frame ui"><div class="art">
+    <div class="side"><span class="lg" style="padding:0"><b>.</b>argy</span><span class="on">Pedidos</span><span>Stock</span><span>Facturas</span><span>Clientes</span></div>
+    <div class="main">
+      <div class="top"><h4>Pedidos de hoy</h4><a>Ver todos</a></div>
+      <div class="stats"><div class="stat"><b>38</b><span>pedidos</span></div><div class="stat"><b>12</b><span>en camino</span></div><div class="stat"><b>0</b><span>cargados a mano</span></div></div>
+      <div class="prog"><strong>Pedido #1043 · Ferretería Sur</strong><div class="trk"><em class="f"></em><i class="d" style="left:0"></i><i class="d" style="left:calc(33.3% - .47cqw)"></i><i class="d" style="left:calc(66.6% - .93cqw)"></i><i style="left:calc(100% - 1.4cqw)"></i></div><div class="lbl"><span>Pedido</span><span>Stock</span><span>Factura</span><span>Entregado</span></div></div>
+      <div class="rows"><div><span>#1042 · Almacén Rivas</span><span class="tagp">Entregado</span></div><div><span>#1044 · Kiosco 9</span><span class="tagp">Facturado</span></div></div>
+    </div>
+  </div></div>
+</template>
+<template id="tp-post">
+  <div class="frame post"><div class="art">
+    <svg class="abs" viewBox="0 0 1000 1250" aria-hidden="true">
+      <path class="tg" d="M100 640 C 160 520, 300 540, 260 630 S 120 760, 200 760 S 380 640, 330 580 S 200 660, 320 700 S 440 720, 420 640"/>
+      <path class="pt" stroke-width="10" d="M420 640 L 800 640"/>
+      <circle class="ds" cx="840" cy="640" r="36"/>
+    </svg>
+    <h3 class="abs h" style="left:8cqw;top:8cqw;font-size:9.4cqw">No todo<br>problema<br>necesita <em>IA.</em></h3>
+    <p class="abs" style="left:8cqw;top:72cqw;width:80cqw;font-size:5.4cqw;font-weight:500;line-height:1.1;letter-spacing:-.025em">Algunos necesitan una integración <em>bien hecha.</em></p>
+    <span class="abs lg" style="left:8cqw;top:111cqw;font-size:4.2cqw"><b>.</b>argy</span>
+  </div></div>
+</template>
+
+<script>
+(function(){
+  function clone(id){ return document.getElementById(id).content.firstElementChild.cloneNode(true); }
+  function hex(c){ c = c.replace('#',''); return [0,2,4].map(function(i){ return parseInt(c.substr(i,2),16)/255; }); }
+  function lum(c){ var v = hex(c).map(function(x){ return x <= .03928 ? x/12.92 : Math.pow((x+.055)/1.055, 2.4); }); return .2126*v[0] + .7152*v[1] + .0722*v[2]; }
+  function ratio(a,b){ var l1 = lum(a), l2 = lum(b); return (Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05); }
+  function grade(r){ return r >= 7 ? ['AAA','ok'] : r >= 4.5 ? ['AA','ok'] : r >= 3 ? ['Solo texto grande','mid'] : ['No pasa','no']; }
+
+  document.querySelectorAll('.dir').forEach(function(d){
+    var p = d.getAttribute('data-p'), trio = d.querySelector('.trio');
+    ['tp-hero','tp-ui','tp-post'].forEach(function(t){ var f = clone(t); f.querySelector('.art').classList.add(p); trio.appendChild(f); });
+    var cs = getComputedStyle(trio.querySelector('.art'));
+    function v(n){ return cs.getPropertyValue(n).trim(); }
+    var pairs = [['Texto sobre fondo', v('--ink'), v('--bg')], ['Texto secundario', v('--muted'), v('--bg')], ['Botón', v('--btnInk'), v('--btn')], ['Link en producto', v('--link'), v('--card2')], ['Tarjeta', v('--cardInk'), v('--card')]];
+    var ul = d.querySelector('.checks');
+    pairs.forEach(function(x){
+      if (x[1].charAt(0) !== '#' || x[2].charAt(0) !== '#') return;
+      var r = ratio(x[1], x[2]), g = grade(r), li = document.createElement('li');
+      li.innerHTML = '<span>' + x[0] + '</span><b class="' + g[1] + '">' + r.toFixed(1) + ':1 · ' + g[0] + '</b>';
+      ul.appendChild(li);
+    });
+    var sw = d.querySelector('.sw');
+    [['Fondo','--bg'],['Tinta','--ink'],['Hilo','--hilo'],['Línea','--path'],['Link','--link']].forEach(function(s){
+      var c = v(s[1]), el = document.createElement('span');
+      el.innerHTML = '<i style="background:' + c + '"></i>' + s[0] + ' <code>' + c.toUpperCase() + '</code>';
+      sw.appendChild(el);
+    });
+  });
+
+  document.querySelectorAll('.type').forEach(function(t){
+    var f = clone('tp-hero'); var a = f.querySelector('.art'); a.classList.add('p-aire'); a.classList.add(t.getAttribute('data-f'));
+    t.querySelector('.slot').appendChild(f);
+  });
+})();
+</script>

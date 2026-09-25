@@ -1,0 +1,552 @@
+<title>Identidad visual .argy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F2F1ED; --surface:#FAF9F6; --text:#1C1B19; --muted:#625E57; --line:#E1DED7; --chip:#E9E7E1;
+  --link:#2A6599; --focus:#2A6599; --good:#1F7A4D; --bad:#B3261E;
+  --d:'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif;
+  --t:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --s:'Instrument Serif', Georgia, serif;
+  --m:'JetBrains Mono', ui-monospace, Consolas, monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#161513; --surface:#1F1E1B; --text:#EDEBE6; --muted:#A8A39A; --line:#34322E; --chip:#2A2825; --link:#8FC0E9; --focus:#8FC0E9; --good:#6FCF97; --bad:#F2877F; color-scheme:dark; }
+}
+:root[data-theme="dark"]{ --bg:#161513; --surface:#1F1E1B; --text:#EDEBE6; --muted:#A8A39A; --line:#34322E; --chip:#2A2825; --link:#8FC0E9; --focus:#8FC0E9; --good:#6FCF97; --bad:#F2877F; color-scheme:dark; }
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--text); font:16px/1.55 var(--t); padding-inline:20px; padding-block:44px 64px}
+.wrap{max-width:1160px; margin:0 auto; display:flex; flex-direction:column; gap:88px}
+.page-h{font-family:var(--d); text-wrap:balance; margin:0}
+code{font-family:var(--m); font-size:.84em; background:var(--chip); padding:.08em .35em; border-radius:4px}
+:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+/* intro */
+.intro{display:flex; flex-direction:column; gap:20px}
+.eyebrow{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.intro h1{font-size:clamp(38px,6vw,72px); line-height:.95; letter-spacing:-.04em; font-weight:700; max-width:14ch}
+.intro h1 em{font-family:var(--s); font-weight:400; letter-spacing:-.01em}
+.intro .lead{margin:0; font-size:18px; max-width:62ch}
+.status{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:8px}
+.st{border-top:2px solid var(--text); padding-top:12px; display:flex; flex-direction:column; gap:8px}
+.st.enc{border-top-style:dashed}
+.st.abi{border-top-color:var(--line)}
+.st h2{font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:0; font-family:var(--t)}
+.st ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px; font-size:15px}
+
+/* sections */
+.sec{display:flex; flex-direction:column; gap:26px; scroll-margin-top:24px}
+.sec-head{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:8px 40px; align-items:end}
+.sec-head h2{font-size:clamp(28px,3.6vw,40px); line-height:1.02; letter-spacing:-.03em; font-weight:700}
+.sec-head p{margin:0; max-width:62ch}
+.cap{font-size:14px; color:var(--muted); margin:0}
+.stack{display:flex; flex-direction:column; gap:12px}
+
+/* palette */
+.sw-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
+.swc{background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden; display:flex; flex-direction:column}
+.swc .chipc{height:112px; display:flex; align-items:flex-end; justify-content:space-between; padding:12px 14px; font:700 30px/1 var(--d); letter-spacing:-.03em; box-shadow:inset 0 -1px 0 rgba(0,0,0,.06)}
+.swc .chipc small{font:500 12px var(--m); letter-spacing:0}
+.swc .meta{padding:12px 14px 14px; display:flex; flex-direction:column; gap:3px}
+.swc .nm{font-weight:600; font-size:15.5px}
+.swc .role{font-size:14px; color:var(--muted)}
+.swc .ct{font-size:13px; font-variant-numeric:tabular-nums}
+.sw-mini{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
+.swm{display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 12px; font-size:14px}
+.swm i{width:36px; height:36px; border-radius:6px; flex:none; box-shadow:inset 0 0 0 1px rgba(128,128,128,.35)}
+.swm span{display:flex; flex-direction:column; line-height:1.35}
+.swm code{background:none; padding:0; color:var(--muted)}
+.prop{display:flex; flex-direction:column; gap:8px}
+.bar{display:flex; height:48px; border-radius:8px; overflow:hidden; box-shadow:0 0 0 1px var(--line)}
+.bar i{display:block}
+.bar-l{display:flex; font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums}
+.bar-l span{white-space:nowrap; overflow:hidden; text-overflow:clip; padding-right:6px}
+.rules{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.rcol{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:16px 18px; display:flex; flex-direction:column; gap:10px}
+.rcol h3{margin:0; font:600 13px var(--t); letter-spacing:.1em; text-transform:uppercase}
+.rcol.si h3{color:var(--good)} .rcol.no h3{color:var(--bad)}
+.rcol ul{margin:0; padding-left:1.1em; display:flex; flex-direction:column; gap:6px; font-size:15px}
+
+/* type */
+.tbl{overflow-x:auto; background:var(--surface); border:1px solid var(--line); border-radius:10px}
+table{border-collapse:collapse; width:100%; min-width:720px}
+th,td{text-align:left; padding:14px 16px; border-bottom:1px solid var(--line); vertical-align:middle}
+thead th{font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:600; padding-block:10px}
+tr:last-child td{border-bottom:0}
+td.tk{font-weight:600; font-size:14px; white-space:nowrap}
+td.sp{font-size:13px; color:var(--muted); font-family:var(--m); white-space:nowrap}
+.fams{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
+.fam{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:16px 18px; display:flex; flex-direction:column; gap:6px}
+.fam .big{font-size:44px; line-height:1; letter-spacing:-.03em}
+.fam .nm{font-weight:600}
+.fam p{margin:0; font-size:14px; color:var(--muted)}
+
+/* sun */
+.sun-build{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:24px; align-items:center}
+.tile{background:#1C1B19; border-radius:12px; display:grid; place-items:center; aspect-ratio:1/1; max-width:100%; padding:14%; box-shadow:0 0 0 1px var(--line)}
+.tile svg{width:100%; height:auto; display:block}
+.defs{display:flex; flex-direction:column; gap:16px; margin:0}
+.defs div{display:grid; grid-template-columns:44px 1fr; gap:4px 14px; align-items:start}
+.defs dt{grid-row:span 2; width:44px; height:44px; border-radius:8px; background:#1C1B19; display:grid; place-items:center}
+.defs dt svg{width:30px; height:30px}
+.defs .t{font-weight:600}
+.defs dd{margin:0; font-size:15px; color:var(--muted)}
+.treat{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
+.tcard{background:var(--surface); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
+.tcard.rec{box-shadow:0 0 0 2px #74ACDF}
+.tcard .tile{border-radius:0; box-shadow:none; padding:18%}
+.tcard .tile.dawn{padding:18% 10% 0; align-items:end}
+.tcard .body{padding:14px 16px 16px; display:flex; flex-direction:column; gap:6px}
+.tcard h3{margin:0; font:700 19px var(--d); letter-spacing:-.02em; display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.tcard p{margin:0; font-size:14.5px}
+.tcard .tr{color:var(--muted)}
+.badge{font:700 11px var(--t); letter-spacing:.08em; text-transform:uppercase; background:#74ACDF; color:#1C1B19; padding:3px 8px; border-radius:99px}
+.place{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+.place .stack p{margin:0; font-size:14.5px}
+.legal{margin:0; font-size:14.5px; padding:14px 18px; border-left:3px solid #F6B40E; background:var(--surface); border-radius:0 8px 8px 0}
+
+/* open */
+.open{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px}
+.op{border-top:1px solid var(--line); padding-top:12px; display:flex; flex-direction:column; gap:4px}
+.op b{font-family:var(--d); font-size:19px; letter-spacing:-.02em}
+.op span{font-size:14.5px; color:var(--muted)}
+
+/* page footer (the brand footer, applied) */
+.pfoot{background:#1C1B19; color:#F2F1ED; border-radius:14px; padding:44px 24px 28px; display:flex; flex-direction:column; align-items:center; gap:18px; box-shadow:0 0 0 1px var(--line)}
+.pfoot .seal{width:148px}
+.pfoot p{margin:0; font-size:13px; color:#A8A39A; text-align:center}
+
+@media (max-width:860px){
+  .sec-head,.sun-build{grid-template-columns:1fr}
+  .sw-grid,.treat{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .status,.fams,.sw-mini,.rules,.place{grid-template-columns:1fr}
+  .tile{max-width:420px}
+}
+@media (max-width:480px){ .sw-grid,.treat{grid-template-columns:1fr} }
+
+/* ================= brand frames (fixed colors) ================= */
+.frame{position:relative; width:100%; max-width:100%; overflow:hidden; container-type:inline-size; border-radius:8px; box-shadow:0 0 0 1px var(--line)}
+.frame.hero{aspect-ratio:16/10}
+.frame.band{aspect-ratio:16/5}
+.art{position:absolute; inset:0; overflow:hidden; background:#F2F1ED; color:#1C1B19; font-family:var(--t); font-size:1.4cqw; line-height:1.4}
+.art.ink{background:#1C1B19; color:#F2F1ED}
+.art .abs{position:absolute; margin:0}
+.art svg.abs{inset:0; width:100%; height:100%}
+.art .h{font-family:var(--d); font-weight:700; line-height:.95; letter-spacing:-.04em; white-space:nowrap; margin:0}
+.art em{font-family:var(--s); font-style:italic; font-weight:400; letter-spacing:-.01em}
+.art .nav{position:absolute; left:5cqw; right:5cqw; top:3.6cqw; display:flex; align-items:center; gap:2.6cqw; font-size:1.25cqw; font-weight:500}
+.art .nav .lg{margin-right:auto}
+.art .lg{font-family:var(--d); font-weight:800; font-size:2.3cqw; letter-spacing:-.045em; line-height:1; white-space:nowrap}
+.c{display:inline-block; width:.2em; height:.2em; border-radius:50%; background:#74ACDF; margin:0 .04em; vertical-align:baseline}
+.art .who{font-family:var(--d); font-weight:800; letter-spacing:-.045em; font-size:1.5cqw; line-height:1}
+.art .pop{transform-box:fill-box; transform-origin:center}
+.art .card{transition:opacity 320ms cubic-bezier(.65,0,.15,1), transform 420ms cubic-bezier(.65,0,.15,1)}
+.art .card.pre{opacity:0; transform:translateY(1.4cqw)}
+.art mark{background:linear-gradient(#F6B40E,#F6B40E) no-repeat 0 0 / 100% 100% !important; transition:background-size 500ms cubic-bezier(.65,0,.15,1)}
+.art mark.pre{background-size:0% 100% !important}
+.art .pill{display:inline-flex; align-items:center; gap:.8cqw; background:#1C1B19; color:#F2F1ED; border-radius:99px; padding:.75cqw 1.6cqw; font-weight:600; white-space:nowrap}
+.art .pill.big{font-size:1.45cqw; padding:1.15cqw 2cqw 1.15cqw 2.3cqw}
+.art .ld{position:relative; width:1.6cqw; height:.16cqw; background:#74ACDF; margin-right:.5cqw}
+.art .ld::after{content:""; position:absolute; right:-.45cqw; top:50%; width:.75cqw; height:.75cqw; border-radius:50%; background:#74ACDF; transform:translateY(-50%)}
+.art .sub{font-size:1.55cqw; line-height:1.45; color:#625E57}
+.art .tag{background:#FAF9F6; border:1px solid #E1DED7; border-radius:99px; padding:.4cqw 1cqw; font-size:1.1cqw; font-weight:500; white-space:nowrap}
+.art .card{background:#FFFFFF; border-radius:1.2cqw; padding:1.5cqw 1.7cqw; display:flex; flex-direction:column; gap:.7cqw; font-size:1.2cqw; box-shadow:0 .8cqw 2.4cqw rgba(28,27,25,.16)}
+.art .card strong{font-size:1.5cqw; line-height:1.2; font-weight:600}
+.art .card mark{background:#F6B40E; color:#1C1B19; padding:0 .2em; border-radius:.2em}
+.art .kick{font-size:1.05cqw; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#625E57}
+.art .kick.dk{color:#A8A39A}
+.art .rw{display:flex; justify-content:space-between; border-top:1px solid #E1DED7; padding-top:.6cqw}
+.art .rw b{font-variant-numeric:tabular-nums; font-weight:600}
+.art .cols div{display:flex; flex-direction:column; gap:.6cqw}
+
+/* logo section */
+.row-cap{display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap}
+.replay{border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:999px; padding:6px 14px; font:600 13px var(--t); cursor:pointer}
+.replay:hover{border-color:var(--muted)}
+.wm{font-family:var(--d); font-weight:800; letter-spacing:-.045em; line-height:1; white-space:nowrap; display:inline-block; position:relative}
+.wm .mut{color:#625E57}
+.lboards{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
+.lb{border-radius:12px; min-height:180px; padding:28px 24px 18px; display:flex; flex-direction:column; justify-content:space-between; gap:18px; box-shadow:0 0 0 1px var(--line)}
+.lb.hero-lb{grid-column:1 / -1; min-height:300px; justify-content:center; align-items:center; position:relative}
+.lb .lbl{font:500 12px var(--t); opacity:.7}
+.lb.hero-lb .lbl{position:absolute; left:24px; bottom:16px}
+.lspec{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:20px; align-items:center}
+.cs{background:#F2F1ED; color:#1C1B19; border-radius:12px; padding:40px 24px; display:grid; place-items:center; box-shadow:0 0 0 1px var(--line)}
+.cs .box{outline:1.5px dashed #74ACDF; outline-offset:0; padding:.5em; font-size:64px; line-height:1}
+.cs .box .wm{display:block}
+.cs small{display:block; margin-top:14px; font:500 12px var(--t); color:#625E57; text-align:center}
+.spec-t{width:100%; min-width:0; font-size:14.5px}
+.spec-t td{padding:9px 10px; vertical-align:top}
+.spec-t td:first-child{font-weight:600; white-space:nowrap; width:1%}
+.nsg{background:#F2F1ED; color:#1C1B19; border-radius:12px; padding:26px 24px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px 24px; box-shadow:0 0 0 1px var(--line)}
+.nsg .wm{font-size:clamp(20px,2.4vw,28px)}
+.icons{background:#F2F1ED; color:#625E57; border-radius:12px; padding:24px; display:flex; flex-direction:column; gap:22px; box-shadow:0 0 0 1px var(--line)}
+.icons .rowi{display:flex; align-items:flex-end; gap:18px; flex-wrap:wrap}
+.icons figure{margin:0; display:flex; flex-direction:column; align-items:center; gap:6px; font:500 12px var(--t)}
+.icons svg{display:block}
+.ftab{display:flex; align-items:center; gap:8px; background:#FFFFFF; border:1px solid #E1DED7; border-radius:8px 8px 0 0; padding:8px 12px; font:500 13px var(--t); color:#1C1B19; width:max-content; max-width:100%}
+.anim-stage{background:#F2F1ED; color:#1C1B19; border-radius:12px; min-height:240px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; padding:40px 20px; box-shadow:0 0 0 1px var(--line)}
+.anim-stage .wm{font-size:clamp(48px,8vw,96px)}
+.anim-stage .wm.ns{font-size:clamp(32px,5vw,60px)}
+.anim .trail{position:absolute; left:-1.15em; bottom:.07em; height:.07em; background:#74ACDF; border-radius:1em; width:0; opacity:0}
+@media (prefers-reduced-motion: no-preference){
+  .anim.play .c{animation:land .56s cubic-bezier(.34,1.56,.64,1) .75s both}
+  .anim.play .co{animation:reveal .55s cubic-bezier(.65,0,.15,1) 1.2s both}
+  .anim.play .trail{animation:trail .8s cubic-bezier(.65,0,.15,1) .05s both}
+  .anim.play .pr{animation:fadein .4s cubic-bezier(.65,0,.15,1) both}
+}
+@keyframes land{from{transform:scale(0)} to{transform:scale(1)}}
+@keyframes reveal{from{clip-path:inset(0 100% 0 0)} to{clip-path:inset(0 -5% 0 0)}}
+@keyframes trail{0%{width:0; opacity:1} 70%{width:1.1em; opacity:1} 100%{width:1.1em; opacity:0}}
+@keyframes fadein{from{opacity:0} to{opacity:1}}
+@media (max-width:860px){
+  .lboards,.lspec{grid-template-columns:1fr}
+  .nsg{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="intro">
+    <span class="eyebrow">.argy · Identidad visual · v1</span>
+    <h1 class="page-h">Del enredo <em>al punto.</em></h1>
+    <p class="lead">La identidad visual de <code>.argy</code>, cerrada: territorio Trayecto con trazo híbrido, base Piedra, Argy Blue con el Sol como acento y la tipografía Carácter. El logo funciona como un sistema de nombres: <code>.argy</code> sola, y <code>stock.argy</code> o <code>data.argy</code> para cada producto.</p>
+    <div class="status">
+      <div class="st"><h2>Definido</h2><ul><li>Territorio Trayecto y trazo híbrido</li><li>Cinco comportamientos de la línea</li><li>Movimiento, animación del logo y del hero</li><li>Base Piedra y paleta</li><li>Tipografía y escala</li><li>Logo, símbolo e íconos de producto</li><li>El punto como destino</li></ul></div>
+      <div class="st enc"><h2>Encaminado</h2><ul><li>El sol como firma de origen</li><li>Campo celeste para momentos de marca</li><li>Códigos de producto (siguen a los nombres)</li></ul></div>
+      <div class="st abi"><h2>Abierto</h2><ul><li>Archivos finales del logo</li><li>Dibujo final del sol</li><li>Imágenes, íconos de interfaz y design system</li></ul></div>
+    </div>
+  </header>
+
+  <!-- APPLIED -->
+  <section class="sec">
+    <div class="sec-head">
+      <h2 class="page-h">Así se ve</h2>
+      <p>El enredo ahora tiene nombre: las herramientas sueltas de una pyme. La línea es <code>.argy</code> conectándolas y el punto es donde aparece la respuesta. El sol firma el cierre de la página.</p>
+    </div>
+    <div class="stack">
+      <div class="frame hero" id="hero"><div class="art">
+        <svg class="abs" viewBox="0 0 1600 1000" aria-hidden="true">
+          <path class="tg-a" d="M 760 760 C 800 660, 900 650, 880 720 S 770 830, 820 850 S 960 800, 930 730 S 840 680, 900 660 S 1010 700, 1000 700" fill="none" stroke="#A8A39A" stroke-width="3" stroke-linecap="round"/>
+          <path class="rt-a" d="M1000 700 L1160 700 Q1200 700 1200 660 L1200 500" fill="none" stroke="#74ACDF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle class="dt-a pop" cx="1200" cy="470" r="30" fill="#74ACDF"/>
+        </svg>
+        <div class="nav"><span class="lg"><i class="c"></i>argy</span><span>Servicios</span><span>Productos</span><span>Cómo trabajamos</span><span class="pill">Hablemos</span></div>
+        <h3 class="abs h" style="left:5cqw;top:14cqw;font-size:6.4cqw">Hagamos que<br>tu negocio<br>funcione <em>mejor.</em></h3>
+        <p class="abs sub" style="left:5cqw;top:37cqw;width:34cqw">Webs, e-commerce, sistemas internos y automatizaciones. Con ingenio para encontrar la solución y oficio para terminarla bien.</p>
+        <span class="abs pill big" style="left:5cqw;top:49cqw">Contanos qué problema tenés <i class="ld"></i></span>
+        <span class="abs tag" style="left:43cqw;top:37.5cqw">WhatsApp</span>
+        <span class="abs tag" style="left:40.5cqw;top:54.5cqw">Mercado Pago</span>
+        <span class="abs tag" style="left:55cqw;top:55.5cqw">Excel</span>
+        <span class="abs tag" style="left:63cqw;top:46.5cqw">PDFs</span>
+        <div class="abs card" style="left:78cqw;top:9cqw;width:19cqw">
+          <span class="who"><i class="c"></i>argy</span>
+          <strong>Reponé <mark>3 productos</mark> antes del viernes</strong>
+          <span class="rw"><span>Yerba 1 kg</span><b>40 u.</b></span>
+          <span class="rw"><span>Aceite 900 ml</span><b>24 u.</b></span>
+          <span class="rw"><span>Azúcar 1 kg</span><b>30 u.</b></span>
+        </div>
+      </div></div>
+      <div class="frame band"><div class="art ink">
+        <div class="abs" style="left:5cqw;top:5.5cqw;display:flex;flex-direction:column;gap:1.4cqw;width:30cqw">
+          <span class="lg" style="font-size:3cqw"><i class="c"></i>argy</span>
+          <span style="font-size:1.3cqw;color:#A8A39A;line-height:1.45">Desarrollo a medida, hoy.<br>Productos propios, en construcción.</span>
+        </div>
+        <div class="abs seal-slot" style="left:41.5cqw;top:6.8cqw;width:17cqw;height:17cqw"></div>
+        <div class="abs cols" style="right:5cqw;top:5.5cqw;display:flex;gap:4.5cqw;font-size:1.25cqw">
+          <div><span class="kick dk">Hoy</span><span>Desarrollo a medida</span><span>Automatizaciones</span><span>Integraciones</span></div>
+          <div><span class="kick dk">Construyendo</span><span>data.argy</span><span>stock.argy</span></div>
+        </div>
+        <span class="abs" style="left:5cqw;bottom:3cqw;font-size:1.1cqw;color:#A8A39A">© 2026 .argy</span>
+      </div></div>
+      <div class="row-cap"><p class="cap">Home y footer. Textos, productos y datos son ejemplos. El enredo no desaparece: <code>.argy</code> conecta lo que la empresa ya usa. El punto llega último y la respuesta sale de él.</p><button class="replay" id="replay-hero">↻ Reproducir</button></div>
+    </div>
+  </section>
+
+  <!-- PALETTE -->
+  <section class="sec" id="paleta">
+    <div class="sec-head">
+      <h2 class="page-h">Paleta</h2>
+      <p>Piedra de base, tinta cálida para el texto, Argy Blue como color de marca y el Sol como detalle. El celeste profundo existe por una razón práctica: Argy Blue no se puede usar como texto.</p>
+    </div>
+    <div class="sw-grid">
+      <div class="swc"><div class="chipc" style="background:#F2F1ED;color:#1C1B19">Aa<small>#F2F1ED</small></div><div class="meta"><span class="nm">Piedra</span><span class="role">Fondo base de todo el sistema</span><span class="ct">Tinta encima: 15,2:1</span></div></div>
+      <div class="swc"><div class="chipc" style="background:#FAF9F6;color:#1C1B19">Aa<small>#FAF9F6</small></div><div class="meta"><span class="nm">Superficie</span><span class="role">Tarjetas y paneles sobre Piedra</span><span class="ct">Tinta encima: 16,3:1</span></div></div>
+      <div class="swc"><div class="chipc" style="background:#1C1B19;color:#F2F1ED">Aa<small>#1C1B19</small></div><div class="meta"><span class="nm">Tinta</span><span class="role">Texto, botones, footer</span><span class="ct">Piedra encima: 15,2:1</span></div></div>
+      <div class="swc"><div class="chipc" style="background:#74ACDF;color:#1C1B19">Aa<small>#74ACDF</small></div><div class="meta"><span class="nm">Argy Blue</span><span class="role">Superficies, la línea, el punto</span><span class="ct">Tinta encima: 7,1:1 · como texto: no</span></div></div>
+      <div class="swc"><div class="chipc" style="background:#2A6599;color:#FFFFFF">Aa<small>#2A6599</small></div><div class="meta"><span class="nm">Celeste profundo</span><span class="role">Links, texto destacado, foco</span><span class="ct">Sobre Piedra: 5,4:1</span></div></div>
+      <div class="swc"><div class="chipc" style="background:#F6B40E;color:#1C1B19">Aa<small>#F6B40E</small></div><div class="meta"><span class="nm">Sol</span><span class="role">El sol y un resaltado por pieza</span><span class="ct">Tinta encima: 9,1:1 · sobre Piedra: solo decorativo</span></div></div>
+    </div>
+    <div class="sw-mini">
+      <div class="swm"><i style="background:#E1DED7"></i><span><b>Línea</b><code>#E1DED7</code></span><span style="color:var(--muted)">Bordes y divisores</span></div>
+      <div class="swm"><i style="background:#A8A39A"></i><span><b>Hilo</b><code>#A8A39A</code></span><span style="color:var(--muted)">El enredo</span></div>
+      <div class="swm"><i style="background:#625E57"></i><span><b>Texto secundario</b><code>#625E57</code></span><span style="color:var(--muted)">5,7:1 sobre Piedra</span></div>
+    </div>
+    <div class="prop">
+      <div class="bar" role="img" aria-label="Proporción: Piedra y superficies 72%, Tinta 14%, Argy Blue 11%, Sol 3%"><i style="flex:72;background:#F2F1ED"></i><i style="flex:14;background:#1C1B19"></i><i style="flex:11;background:#74ACDF"></i><i style="flex:3;background:#F6B40E"></i></div>
+      <div class="bar-l"><span style="flex:72">Piedra y superficies · 72%</span><span style="flex:14">Tinta · 14%</span><span style="flex:11">Argy Blue · 11%</span><span style="flex:3">Sol</span></div>
+    </div>
+    <div class="rules">
+      <div class="rcol si"><h3>Sí</h3><ul>
+        <li>Piedra como fondo; el celeste como superficie, línea y punto.</li>
+        <li>Texto en tinta; links en celeste profundo.</li>
+        <li>El amarillo como resaltado de una palabra o cifra por pieza, con tinta encima.</li>
+        <li>Campo celeste (el celeste de fondo) para portadas, redes y lanzamientos.</li>
+      </ul></div>
+      <div class="rcol no"><h3>No</h3><ul>
+        <li>Texto en Argy Blue o en amarillo sobre fondos claros.</li>
+        <li>Amarillo sobre celeste, o franjas celeste–blanco–celeste.</li>
+        <li>Fondos oscuros como base (solo un eventual modo oscuro de producto).</li>
+        <li>Acentos nuevos por fuera del design system.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <!-- TYPE -->
+  <section class="sec" id="tipografia">
+    <div class="sec-head">
+      <h2 class="page-h">Tipografía</h2>
+      <p>Bricolage Grotesque para titulares, Instrument Sans para todo lo demás y la itálica de Instrument Serif como acento de voz, una vez por pieza. Las tres son de Google Fonts, gratuitas para uso comercial.</p>
+    </div>
+    <div class="fams">
+      <div class="fam"><span class="big" style="font-family:var(--d);font-weight:700">Ingenio</span><span class="nm">Bricolage Grotesque</span><p>Display. Rarezas que se acentúan en tamaños grandes y se calman en chicos.</p></div>
+      <div class="fam"><span class="big" style="font-family:var(--t);font-weight:500">Pedidos</span><span class="nm">Instrument Sans</span><p>Texto e interfaz. Cifras tabulares en tablas y paneles.</p></div>
+      <div class="fam"><span class="big" style="font-family:var(--s);font-style:italic">mejor.</span><span class="nm">Instrument Serif itálica</span><p>Acento de voz. Una sola vez por pieza.</p></div>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th scope="col">Token</th><th scope="col">Muestra</th><th scope="col">Especificación</th></tr></thead>
+        <tbody>
+          <tr><td class="tk">Display XL</td><td><span style="font:700 72px/.95 var(--d);letter-spacing:-.04em">Ingenio</span></td><td class="sp">72/0.95 · −0.04em · móvil 44</td></tr>
+          <tr><td class="tk">Display L</td><td><span style="font:700 56px/1 var(--d);letter-spacing:-.035em">Del enredo al punto</span></td><td class="sp">56/1.0 · −0.035em · móvil 36</td></tr>
+          <tr><td class="tk">Título 1</td><td><span style="font:700 40px/1.05 var(--d);letter-spacing:-.03em">Hagamos que funcione</span></td><td class="sp">40/1.05 · −0.03em</td></tr>
+          <tr><td class="tk">Título 2</td><td><span style="font:600 28px/1.15 var(--d);letter-spacing:-.02em">Pedidos, stock y facturas</span></td><td class="sp">28/1.15 · −0.02em</td></tr>
+          <tr><td class="tk">Título 3</td><td><span style="font:600 20px/1.3 var(--t);letter-spacing:-.01em">Pedido #1042 entregado</span></td><td class="sp">Instrument Sans 600 · 20/1.3</td></tr>
+          <tr><td class="tk">Texto grande</td><td><span style="font:400 18px/1.55 var(--t)">Webs, e-commerce y sistemas hechos para que funcionen el lunes a la mañana.</span></td><td class="sp">18/1.55</td></tr>
+          <tr><td class="tk">Texto</td><td><span style="font:400 16px/1.55 var(--t)">Conectamos lo que ya usás: WhatsApp, Excel, Mercado Pago.</span></td><td class="sp">16/1.55</td></tr>
+          <tr><td class="tk">Chico</td><td><span style="font:400 14px/1.5 var(--t);font-variant-numeric:tabular-nums">#1042 · $ 38.500 · 24/09/2026</span></td><td class="sp">14/1.5 · cifras tabulares</td></tr>
+          <tr><td class="tk">Etiqueta</td><td><span style="font:600 12px/1.4 var(--t);letter-spacing:.1em;text-transform:uppercase">Esta semana</span></td><td class="sp">12/1.4 · +0.1em · mayúsculas</td></tr>
+          <tr><td class="tk">Acento de voz</td><td><span style="font:700 40px/1.05 var(--d);letter-spacing:-.03em">funcione <em style="font-family:var(--s);font-weight:400;letter-spacing:-.01em">mejor.</em></span></td><td class="sp">Serif itálica · contexto × 1.08</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <section class="sec" id="logo">
+    <div class="sec-head">
+      <h2 class="page-h">Logo</h2>
+      <p>Un logotipo tipográfico que también es un sistema de nombres. El punto redondo es el mismo punto de la línea de Trayecto: une cada producto con <code>.argy</code>.</p>
+    </div>
+    <div class="lboards">
+      <div class="lb hero-lb" style="background:#F2F1ED;color:#1C1B19"><span class="wm" style="font-size:clamp(72px,12vw,150px)"><i class="c"></i>argy</span><span class="lbl">Sobre Piedra</span></div>
+      <div class="lb" style="background:#1C1B19;color:#F2F1ED"><span class="wm" style="font-size:clamp(44px,5vw,64px)"><i class="c"></i>argy</span><span class="lbl">Sobre tinta</span></div>
+      <div class="lb" style="background:#74ACDF;color:#1C1B19"><span class="wm" style="font-size:clamp(44px,5vw,64px)"><i class="c" style="background:#FFFFFF"></i>argy</span><span class="lbl">Sobre Argy Blue: punto blanco</span></div>
+      <div class="lb" style="background:#FAF9F6;color:#1C1B19"><span class="wm" style="font-size:clamp(44px,5vw,64px)"><i class="c" style="background:#1C1B19"></i>argy</span><span class="lbl">Una tinta</span></div>
+    </div>
+    <div class="lspec">
+      <div class="cs"><div><div class="box"><span class="wm"><i class="c"></i>argy</span></div><small>Área de respeto: la altura de la "a" alrededor</small></div></div>
+      <div class="tbl"><table class="spec-t"><tbody>
+        <tr><td>Tipografía</td><td>Bricolage Grotesque 800, tamaño óptico máximo, minúsculas</td></tr>
+        <tr><td>Espaciado</td><td>−0.045em entre letras</td></tr>
+        <tr><td>Punto</td><td>Círculo de 0,20 del cuerpo, apoyado en la línea de base, con 0,04 de aire a cada lado</td></tr>
+        <tr><td>Color</td><td>Letras en tinta o Piedra. Punto siempre Argy Blue; blanco sobre Argy Blue; todo de un color en la versión de una tinta</td></tr>
+        <tr><td>Tamaño mínimo</td><td>72 px de ancho en pantalla, 18 mm impreso. Más chico: el símbolo</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="nsg" aria-label="Productos">
+      <span class="wm">data<i class="c"></i><span class="mut">argy</span></span><span class="wm">stock<i class="c"></i><span class="mut">argy</span></span><span class="wm">ventas<i class="c"></i><span class="mut">argy</span></span><span class="wm">presu<i class="c"></i><span class="mut">argy</span></span>
+      <span class="wm">caja<i class="c"></i><span class="mut">argy</span></span><span class="wm">cobros<i class="c"></i><span class="mut">argy</span></span><span class="wm">pedidos<i class="c"></i><span class="mut">argy</span></span><span class="wm">clientes<i class="c"></i><span class="mut">argy</span></span>
+    </div>
+    <p class="cap">Productos: el producto manda (tinta), el punto une (Argy Blue) y <code>argy</code> firma (gris cálido). Los nombres son provisorios.</p>
+    <div class="icons">
+      <div class="rowi" data-symbol></div>
+      <div class="ftab" data-ftab></div>
+      <div class="rowi" data-pcodes></div>
+    </div>
+    <p class="cap">Una sola regla: el punto y las primeras letras. El símbolo es un recorte del logotipo y cada producto usa su código, como una extensión de dominio.</p>
+    <div class="anim-stage">
+      <span class="wm anim"><i class="trail"></i><i class="c"></i><span class="co">argy</span></span>
+      <span class="wm ns anim"><span class="pr">stock</span><i class="c"></i><span class="co mut">argy</span></span>
+    </div>
+    <div class="row-cap"><p class="cap">Animación: una línea trae el punto, el punto aterriza y aparece <code>argy</code>. En productos, llegan solo el punto y <code>argy</code>.</p><button class="replay" id="replay-logo">↻ Reproducir</button></div>
+  </section>
+
+  <!-- SUN -->
+  <section class="sec" id="sol">
+    <div class="sec-head">
+      <h2 class="page-h">El sol</h2>
+      <p>Un sol propio, dibujado con las dos líneas del sistema. Firma el cierre de cada página: aparece una vez y nunca forma parte del logotipo. El dibujo final se hace en la etapa de símbolo.</p>
+    </div>
+    <div class="sun-build">
+      <div class="tile sun-big"></div>
+      <dl class="defs">
+        <div><dt class="g-core"></dt><dd class="t" style="color:var(--text)">Centro: el punto</dd><dd>El mismo punto al que llega cada trayecto.</dd></div>
+        <div><dt class="g-straight"></dt><dd class="t" style="color:var(--text)">Rayos rectos: la línea</dd><dd>Trazo grueso. La solución.</dd></div>
+        <div><dt class="g-wavy"></dt><dd class="t" style="color:var(--text)">Rayos ondulados: el hilo</dd><dd>Trazo fino. El problema como está hoy.</dd></div>
+        <div><dt class="g-sun"></dt><dd class="t" style="color:var(--text)">Sin cara, 16 rayos</dd><dd>Retoma la alternancia de rayos rectos y ondulados del Sol de Mayo sin copiar el dibujo oficial.</dd></div>
+      </dl>
+    </div>
+
+    <div class="treat">
+      <div class="tcard rec"><div class="tile t-seal"></div><div class="body"><h3>Sello <span class="badge">Recomendado</span></h3><p>El sol con "Hecho en Argentina" alrededor, como el sello de un fabricante.</p><p class="tr">Dice origen, no patria. Es el que mejor encaja con el oficio.</p></div></div>
+      <div class="tcard"><div class="tile t-sun"></div><div class="body"><h3>Sol solo</h3><p>El dibujo, sin texto.</p><p class="tr">Es el más limpio, pero sin el texto se lee más como símbolo patrio que como firma.</p></div></div>
+      <div class="tcard"><div class="tile dawn t-dawn"></div><div class="body"><h3>Amanecer</h3><p>Medio sol saliendo desde el borde.</p><p class="tr">Es el más enérgico y optimista, pero es un cliché y puede evocar la bandera del sol naciente de Japón.</p></div></div>
+    </div>
+
+    <div class="place">
+      <div class="stack"><div class="frame band"><div class="art ink"><div class="abs seal-slot" style="left:41.5cqw;top:6.8cqw;width:17cqw;height:17cqw"></div><span class="abs lg" style="left:5cqw;top:5.5cqw;font-size:3cqw"><i class="c"></i>argy</span></div></div>
+        <p><strong>Footer, centrado (recomendado).</strong> El sol firma al final, como la firma de un trabajo terminado. Sobre tinta, el amarillo tiene contraste de sobra.</p></div>
+      <div class="stack"><div class="frame band"><div class="art">
+          <div class="nav" style="right:16cqw"><span class="lg"><i class="c"></i>argy</span><span>Servicios</span><span>Productos</span><span>Cómo trabajamos</span><span class="pill">Hablemos</span></div>
+          <div class="abs sun-light" style="right:-4.5cqw;top:-7cqw;width:17cqw;height:17cqw"></div>
+          <h3 class="abs h" style="left:5cqw;top:13cqw;font-size:6.4cqw">Hagamos que<br>tu negocio</h3>
+        </div></div>
+        <p><strong>Header, en un costado.</strong> Es lo primero que se ve, así que la referencia deja de ser sutil. Compite con el logo y, sobre Piedra, el amarillo pierde fuerza (1,7:1): necesita los rayos en tinta.</p></div>
+    </div>
+
+    <p class="legal"><strong>Nota legal.</strong> El Sol de Mayo es un símbolo nacional y, hasta donde sé, la Ley de Marcas (22.362) no permite registrar como marca los símbolos que usa la Nación. Por eso el sol de <code>.argy</code> es un dibujo propio y queda fuera del logotipo. Antes de registrar la marca, conviene confirmarlo con un agente de la propiedad industrial.</p>
+  </section>
+
+  <!-- OPEN -->
+  <section class="sec">
+    <div class="sec-head">
+      <h2 class="page-h">Qué sigue abierto</h2>
+      <p>Lo que falta depende del replanteo estratégico. El logo tiene que nacer como un sistema de nombres, no como una pieza suelta.</p>
+    </div>
+    <div class="open">
+      <div class="op"><b>Archivos finales del logo</b><span>Letras convertidas a trazos: SVG, PNG, favicon e íconos de app para <code>.argy</code> y cada producto.</span></div>
+      <div class="op"><b>Nombres de producto</b><span>Los códigos de los íconos siguen a los nombres, que todavía son provisorios.</span></div>
+      <div class="op"><b>Dibujo final del sol</b><span>Proporciones, versiones y tamaños mínimos, en la etapa de símbolo.</span></div>
+      <div class="op"><b>Imágenes, íconos, design system</b><span>Después del logo. Imágenes generadas con IA sin simular fotos documentales.</span></div>
+    </div>
+  </section>
+
+  <footer class="pfoot">
+    <div class="seal"></div>
+    <p>Identidad visual v1 · Documento de marca v0.6 · 2026</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var SOL = '#F6B40E', TINTA = '#1C1B19', PIEDRA = '#F2F1ED';
+  function rays(color, sw, ww){
+    var s = '';
+    for (var i = 0; i < 16; i++){
+      var a = i * 22.5;
+      if (i % 2 === 0) s += '<path d="M0 -25 L0 -50" transform="rotate(' + a + ')" stroke="' + color + '" stroke-width="' + sw + '" stroke-linecap="round" fill="none"/>';
+      else s += '<path d="M0 -25 c3.6 -3.2 3.6 -6.3 0 -9.5 s-3.6 -6.3 0 -9.5" transform="rotate(' + a + ')" stroke="' + color + '" stroke-width="' + ww + '" stroke-linecap="round" fill="none"/>';
+    }
+    return s;
+  }
+  function sunG(o){ return '<g>' + rays(o.ray, 5.5, 3) + '<circle r="16" fill="' + o.core + '"' + (o.ring ? ' stroke="' + o.ring + '" stroke-width="2.4"' : '') + '/></g>'; }
+  function sunSVG(o, label){ return '<svg viewBox="-56 -56 112 112" role="img" aria-label="' + (label || 'Sol de .argy') + '">' + sunG(o) + '</svg>'; }
+  var sid = 0;
+  function sealSVG(c){
+    var id = 'seal-path-' + (++sid);
+    return '<svg viewBox="-100 -100 200 200" role="img" aria-label="Sello Hecho en Argentina">' +
+      '<circle r="96" fill="none" stroke="' + c + '" stroke-width="1.4"/>' +
+      '<circle r="64" fill="none" stroke="' + c + '" stroke-width="1.2" opacity=".45"/>' +
+      '<path id="' + id + '" d="M0 -80 A80 80 0 1 1 0 80 A80 80 0 1 1 0 -80" fill="none"/>' +
+      '<text font-family="Instrument Sans, system-ui, sans-serif" font-weight="600" font-size="13" letter-spacing="2" fill="' + c + '"><textPath href="#' + id + '" textLength="492" lengthAdjust="spacing">HECHO EN ARGENTINA · HECHO EN ARGENTINA ·</textPath></text>' +
+      '<g transform="scale(1.04)">' + sunG({ray:c, core:c}) + '</g></svg>';
+  }
+  function dawnSVG(){
+    return '<svg viewBox="-70 -60 140 64" role="img" aria-label="Sol naciente"><g transform="translate(0,4)">' + sunG({ray:SOL, core:SOL}) + '</g><line x1="-70" y1="3.3" x2="70" y2="3.3" stroke="' + SOL + '" stroke-width="1.4" opacity=".5"/></svg>';
+  }
+  function fill(sel, html){ document.querySelectorAll(sel).forEach(function(el){ el.innerHTML = html(); }); }
+
+  fill('.seal-slot', function(){ return sealSVG(SOL); });
+  fill('.pfoot .seal', function(){ return sealSVG(SOL); });
+  fill('.t-seal', function(){ return sealSVG(SOL); });
+  fill('.t-sun', function(){ return sunSVG({ray:SOL, core:SOL}); });
+  fill('.t-dawn', dawnSVG);
+  fill('.sun-big', function(){ return sunSVG({ray:SOL, core:SOL}); });
+  fill('.sun-light', function(){ return sunSVG({ray:TINTA, core:SOL, ring:TINTA}, 'Sol en el header'); });
+  fill('.g-core', function(){ return '<svg viewBox="-20 -20 40 40" aria-hidden="true"><circle r="11" fill="' + SOL + '"/></svg>'; });
+  fill('.g-straight', function(){ return '<svg viewBox="-20 -20 40 40" aria-hidden="true"><path d="M-12 0 L12 0" stroke="' + SOL + '" stroke-width="5" stroke-linecap="round"/></svg>'; });
+  fill('.g-wavy', function(){ return '<svg viewBox="-20 -20 40 40" aria-hidden="true"><path d="M-12 0 c3.2 -3.6 6.3 -3.6 9.5 0 s6.3 3.6 9.5 0" stroke="' + SOL + '" stroke-width="3" fill="none" stroke-linecap="round"/></svg>'; });
+  fill('.g-sun', function(){ return '<svg viewBox="-56 -56 112 112" aria-hidden="true">' + sunG({ray:SOL, core:SOL}) + '</svg>'; });
+})();
+</script>
+<script>
+(function(){
+  var CEL = '#74ACDF', TINTA = '#1C1B19', PIEDRA = '#F2F1ED';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Symbol and product icons
+  function frameSVG(size, inner, label){ return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 100 100" role="img" aria-label="' + label + '"><rect width="100" height="100" rx="22" fill="' + TINTA + '"/>' + inner + '</svg>'; }
+  function glyph(txt){
+    var two = txt.length > 1;
+    return '<circle cx="' + (two ? 21 : 28) + '" cy="' + (two ? 61 : 60) + '" r="' + (two ? 7 : 8) + '" fill="' + CEL + '"/><text x="' + (two ? 58 : 60) + '" y="' + (two ? 68 : 68) + '" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="' + (two ? 46 : 66) + '" letter-spacing="-2" fill="' + PIEDRA + '">' + txt + '</text>';
+  }
+  var sym = document.querySelector('[data-symbol]');
+  if (sym) sym.innerHTML = [128, 64, 32, 16].map(function(s){ return '<figure>' + frameSVG(s, glyph('a'), 'Símbolo de .argy') + '<figcaption>' + s + ' px</figcaption></figure>'; }).join('');
+  var ft = document.querySelector('[data-ftab]');
+  if (ft) ft.innerHTML = frameSVG(16, glyph('a'), 'Favicon') + '<span>argy.ar · Software para empresas</span>';
+  var pc = document.querySelector('[data-pcodes]');
+  var P = [['data','da'],['stock','st'],['ventas','ve'],['presu','pr'],['caja','ca'],['cobros','co'],['pedidos','pe'],['clientes','cl']];
+  if (pc) pc.innerHTML = P.map(function(p){ return '<figure>' + frameSVG(60, glyph(p[1]), p[0] + '.argy') + '<figcaption>' + p[0] + '</figcaption></figure>'; }).join('');
+
+  // Logo animation
+  var anims = document.querySelectorAll('.anim');
+  function playLogo(){ anims.forEach(function(a){ a.classList.remove('play'); void a.offsetWidth; a.classList.add('play'); }); }
+  var rl = document.getElementById('replay-logo'); if (rl) rl.addEventListener('click', playLogo);
+
+  // Hero animation: tangle draws, tools appear, route leaves, dot lands, answer appears
+  var hero = document.getElementById('hero');
+  var tg = hero.querySelector('.tg-a'), rt = hero.querySelector('.rt-a'), dt = hero.querySelector('.dt-a');
+  var card = hero.querySelector('.card'), tags = hero.querySelectorAll('.tag'), mark = hero.querySelector('mark');
+  var EASE = 'cubic-bezier(.65,0,.15,1)', ARR = 'cubic-bezier(.34,1.56,.64,1)';
+  var running = false;
+  function reset(){
+    [tg, rt, dt].concat([].slice.call(tags)).forEach(function(el){ el.getAnimations().forEach(function(a){ a.cancel(); }); });
+    [tg, rt].forEach(function(p){ p.setAttribute('pathLength', '1'); p.style.strokeDasharray = '1 1'; p.style.strokeDashoffset = '1'; });
+    tags.forEach(function(t){ t.style.opacity = '0'; });
+    dt.style.transform = 'scale(0)';
+    card.classList.add('pre'); mark.classList.add('pre');
+  }
+  function draw(el, ms, delay){
+    return el.animate([{strokeDashoffset:1}, {strokeDashoffset:0}], {duration:ms, delay:delay || 0, easing:EASE, fill:'forwards'}).finished.then(function(){ el.style.strokeDashoffset = '0'; });
+  }
+  function playHero(){
+    if (reduce || running) return;
+    running = true;
+    reset();
+    var t = draw(tg, 900);
+    tags.forEach(function(el, i){
+      el.animate([{opacity:0, transform:'translateY(.8cqw)'}, {opacity:1, transform:'none'}], {duration:320, delay:450 + i * 150, easing:EASE, fill:'forwards'})
+        .finished.then(function(){ el.style.opacity = ''; });
+    });
+    t.then(function(){ return draw(rt, 700, 150); })
+     .then(function(){
+       return dt.animate([{transform:'scale(0)'}, {transform:'scale(1)'}], {duration:560, easing:ARR, fill:'forwards'}).finished;
+     })
+     .then(function(){
+       dt.style.transform = '';
+       card.classList.remove('pre');
+       setTimeout(function(){ mark.classList.remove('pre'); }, 420);
+       setTimeout(function(){
+         [tg, rt].forEach(function(p){ p.style.strokeDasharray = ''; p.style.strokeDashoffset = ''; p.removeAttribute('pathLength'); });
+         running = false;
+       }, 900);
+     });
+  }
+  document.getElementById('replay-hero').addEventListener('click', playHero);
+
+  if (!reduce && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        if (e.target === hero) playHero(); else playLogo();
+      });
+    }, {threshold:.5});
+    io.observe(hero);
+    io.observe(document.querySelector('.anim-stage'));
+  }
+})();
+</script>
