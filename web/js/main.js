@@ -7,7 +7,7 @@
     whatsapp: '', // Formato internacional, solo números. Ejemplo: 5491122334455. Vacío = sin botón.
     // Mientras falten las imágenes de brand/imagenes/guia-de-imagenes.md, muestra espacios reservados.
     // Pasar a false antes de publicar: las imágenes que falten se ocultan.
-    IMAGENES_MAQUETA: true
+    IMAGENES_MAQUETA: false
   };
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
