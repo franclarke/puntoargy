@@ -1,6 +1,6 @@
 # .argy — Brand Definition
 
-**Versión:** v1.1 · 2026-09-24
+**Versión:** v1.2 · 2026-09-25
 **Cambios:** ver [Registro de cambios](#31-registro-de-cambios) al final.
 
 ---
@@ -552,7 +552,7 @@ Combinación **Carácter**, elegida entre cuatro (Carácter, Precisión, Voz edi
 - **Texto e interfaz:** Instrument Sans.
 - **Acento de voz:** Instrument Serif itálica, una vez por pieza.
 - **Números:** cifras tabulares en interfaz y tablas.
-- **Monoespaciada:** no forma parte de la voz de marca; solo en documentación técnica.
+- **Monoespaciada:** DM Mono (v1.2), solo para lo que en el mundo real está impreso o es un dato: tickets, etiquetas, estados, registros y rótulos. No forma parte de la voz de marca: nunca en titulares ni párrafos.
 - Todas son de Google Fonts, gratuitas para uso comercial. Más adelante puede evaluarse una familia paga o un lettering propio para el logotipo.
 
 **Escala (web, base 16px):**
@@ -825,7 +825,23 @@ Regla: el llamado dice qué pasa y empieza por el problema del cliente. Evitar "
 
 **Estado: ENCAMINADO (v1.0)**
 
-### Web v2: dirección "El hilo" (ENCAMINADO, v1.1)
+### Web v3: dirección "La mesa" (ENCAMINADO, v1.2)
+
+Rediseño integral para que `.argy` se lea como una compañía de productos en construcción y no como una agencia. Referencia de ambición (no de estética): The Mobile First Company, por cómo arma una tesis de compañía, usa objetos físicos y alterna relato y producto.
+
+- **Tesis:** "Los negocios de acá crecieron más rápido que su software." La web la cuenta en capítulos: visión → el enredo → del enredo al punto → productos → cómo nace un producto → hoy → hablemos.
+- **Titular del hero:** "Estamos construyendo el software que les faltaba a las empresas de acá." El descriptor "Software para empresas argentinas." sigue vigente; en metadatos y pie se amplía a "de Argentina y Latinoamérica" (Argentina es el lugar desde donde se construye, no el límite).
+- **Universo visual: la mesa.** La vista cenital del film "La punta" llevada a la web. Los objetos de la pyme (celular con chat, ticket térmico, factura B, planilla `stock_FINAL_v3`, QR de cobro, etiqueta de envío, libreta, post-it, calculadora) se construyen en HTML y CSS, con luz arriba a la izquierda. Sin fotos, sin logos de terceros, sin mockups flotando.
+- **El punto como sistema:** todo titular afirmativo termina en el punto de `.argy` (0,20 del cuerpo, en la línea de base) y el punto llega último con el rebote de marca. En el hero, la ruta sale del enredo y sube hasta el punto del titular.
+- **Tipografía:** se suma **DM Mono** solo para lo que en el mundo real está impreso o es un dato: tickets, etiquetas, estados, registros, contadores y rótulos de capítulo. No se usa en titulares ni en párrafos.
+- **Estados de producto:** "En construcción" (punto celeste lleno), "Explorando" (anillo celeste) y "Lo que viene" (anillo gris). Hoy: data.argy y pedidos.argy en construcción; stock.argy y sellos.argy explorando; cobros.argy y presu.argy, lo que viene.
+- **sellos.argy** (nombre provisorio): fidelización con sellos digitales para comercios de barrio. Explorando.
+- **data.argy:** "Preguntale a tu negocio." Se muestra con una demo que responde preguntas con datos de ejemplo, marcada como tal. Llamado: buscamos las primeras empresas para probarlo.
+- **Imagen para redes:** `web/assets/og.png`, generada desde el hero.
+
+La v2 ("El hilo") queda en el historial de git. Sus imágenes editoriales siguen en `web/assets/img/`, fuera del recorrido.
+
+### Web v2: dirección "El hilo" (superada por v3)
 
 A partir del análisis de ganadores recientes de Awwwards (paletas de 1 o 2 colores usadas a lo grande, un momento propio en el hero, relato con scroll, detalles cuidados), el fundador eligió la dirección **El hilo**:
 
@@ -1012,6 +1028,11 @@ Ese es el problema de diseño central de `.argy` en la próxima etapa.
 ---
 
 ## 31. Registro de cambios
+
+### v1.2 — 2026-09-25
+- **25** Web v3 con la dirección "La mesa" (ENCAMINADO): tesis "Los negocios de acá crecieron más rápido que su software.", titular del hero, universo de objetos de la pyme en HTML y CSS, el punto como cierre de cada titular, capítulos de producto con estados reales.
+- **18** Se suma DM Mono para datos impresos y estados (tickets, registros, contadores). No reemplaza a Instrument Sans.
+- **26** Estados de producto definidos para comunicación pública: en construcción, explorando, lo que viene. Nombre provisorio `sellos.argy` para fidelización.
 
 ### v1.1 — 2026-09-24
 - **14.0** Regla anti-agencia 3 reformulada: "el espectáculo es la idea, no el estudio".
