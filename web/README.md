@@ -40,13 +40,12 @@ En `js/main.js`, al principio:
 
 ```js
 var CONFIG = {
-  email: 'hola@puntoargy.com',
-  whatsapp: '', // por ejemplo '5491122334455'; vacío oculta el botón
+  whatsapp: '5492915068196', // Formato internacional, solo números
   IMAGENES_MAQUETA: false
 };
 ```
 
-El formulario no envía datos a ningún servidor: arma un email (o un mensaje de WhatsApp, si está configurado) con lo que escribió la persona. También permite copiar el mensaje para enviarlo desde otro programa. Los links de email de la página toman la dirección de esta configuración.
+El formulario no envía datos a ningún servidor: abre WhatsApp con un mensaje armado con lo que escribió la persona. También permite copiar ese mensaje para enviarlo desde otro programa.
 
 ## Publicar
 
@@ -55,9 +54,8 @@ Cualquier hosting estático sirve: Cloudflare Pages, Netlify, Vercel o GitHub Pa
 ## Antes de publicar
 
 - [ ] Comprar `puntoargy.com` (y `puntoargy.ar`, `puntoargy.com.ar` para redirigir).
-- [ ] Crear la casilla `hola@puntoargy.com`.
+- [ ] Confirmar que el número de WhatsApp publicado sea correcto.
 - [ ] Revisar el texto final de servicios, preguntas y contacto antes de publicar.
-- [ ] Cargar el número de WhatsApp en `js/main.js`, si se quiere usar.
 
 ## Reglas de marca
 

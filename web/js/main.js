@@ -3,8 +3,7 @@
   'use strict';
 
   var CONFIG = {
-    email: 'hola@puntoargy.com',
-    whatsapp: '', // Formato internacional, solo números. Ejemplo: 5491122334455. Vacío = sin botón.
+    whatsapp: '5492915068196', // Formato internacional, solo números.
     // Mientras falten las imágenes de brand/imagenes/guia-de-imagenes.md, muestra espacios reservados.
     // Pasar a false antes de publicar: las imágenes que falten se ocultan.
     IMAGENES_MAQUETA: false
@@ -89,10 +88,8 @@
   }
 
   /* ---------- Básicos ---------- */
-  document.querySelectorAll('[data-email]').forEach(function (a) {
-    var asunto = a.getAttribute('data-asunto');
-    a.href = 'mailto:' + CONFIG.email + (asunto ? '?subject=' + encodeURIComponent(asunto) : '');
-    if (a.getAttribute('data-email') === 'texto') a.textContent = CONFIG.email;
+  document.querySelectorAll('[data-whatsapp]').forEach(function (a) {
+    a.href = 'https://wa.me/' + CONFIG.whatsapp;
   });
   var anio = document.getElementById('anio');
   if (anio) anio.textContent = String(new Date().getFullYear());
@@ -672,9 +669,7 @@
     var form = document.getElementById('form-contacto');
     if (!form) return;
     var estado = document.getElementById('form-estado');
-    var botonWhatsapp = document.getElementById('btn-whatsapp');
     var botonCopiar = document.getElementById('btn-copiar');
-    if (CONFIG.whatsapp) botonWhatsapp.hidden = false;
     function leer() {
       var f = new FormData(form);
       var v = function (k) { return String(f.get(k) || '').trim(); };
@@ -704,31 +699,24 @@
     botonCopiar.addEventListener('click', function () {
       var d = leer();
       if (!validar(d)) return;
-      var asunto = 'Consulta desde puntoargy.com' + (d.empresa ? ' · ' + d.empresa : '');
-      var texto = 'Para: ' + CONFIG.email + '\nAsunto: ' + asunto + '\n\n' + mensaje(d);
+      var texto = mensaje(d);
       if (!navigator.clipboard || !navigator.clipboard.writeText) {
-        estado.textContent = 'No pudimos copiar el mensaje. Usá el botón Enviar por email o escribinos a ' + CONFIG.email + '.';
+        estado.textContent = 'No pudimos copiar el mensaje. Podés enviarlo directamente por WhatsApp.';
         return;
       }
       navigator.clipboard.writeText(texto).then(function () {
         estado.classList.remove('error');
-        estado.textContent = 'Mensaje copiado. Pegalo en tu email para enviarlo a ' + CONFIG.email + '.';
+        estado.textContent = 'Mensaje copiado. Pegalo en WhatsApp para enviarlo.';
       }).catch(function () {
-        estado.textContent = 'No pudimos copiar el mensaje. Usá el botón Enviar por email o escribinos a ' + CONFIG.email + '.';
+        estado.textContent = 'No pudimos copiar el mensaje. Podés enviarlo directamente por WhatsApp.';
       });
     });
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
       var d = leer();
       if (!validar(d)) return;
-      var asunto = 'Consulta desde puntoargy.com' + (d.empresa ? ' · ' + d.empresa : '');
-      window.location.href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(mensaje(d));
-      estado.textContent = 'Intentamos abrir tu programa de email con el mensaje listo. Si no se abrió, escribinos a ' + CONFIG.email + '.';
-    });
-    botonWhatsapp.addEventListener('click', function () {
-      var d = leer();
-      if (!validar(d)) return;
       window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(mensaje(d)), '_blank', 'noopener');
+      estado.textContent = 'Abrimos WhatsApp con tu mensaje listo para enviar.';
     });
   })();
 })();
