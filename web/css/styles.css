@@ -287,7 +287,8 @@ a:hover .flecha, button:hover .flecha { width: 1.65em; }
 .chat-input { display: flex; align-items: center; gap: .45em; margin-top: .35em; }
 .chat-input span { flex: 1; background: var(--blanco); border-radius: 1.5em; padding: .6em .95em; color: #A19C93; font-size: .88em; box-shadow: 0 1px 0 rgba(28, 27, 25, .06); }
 .chat-input i { width: 2.5em; height: 2.5em; border-radius: 50%; background: #34332F; flex: none; position: relative; }
-.chat-input i::after { content: ''; position: absolute; left: 50%; top: 50%; width: .5em; height: .85em; margin: -.55em 0 0 -.25em; border-radius: .3em; border: .12em solid var(--piedra); }
+.chat-input i::before { content: ''; position: absolute; left: 50%; top: 50%; width: .42em; height: .78em; margin: -.58em 0 0 -.21em; border-radius: .25em; background: var(--piedra); }
+.chat-input i::after { content: ''; position: absolute; left: 50%; top: 50%; width: .72em; height: .4em; margin: -.05em 0 0 -.36em; border: .1em solid var(--piedra); border-top: 0; border-radius: 0 0 .4em .4em; }
 .burbuja.audio { display: flex; align-items: center; gap: .6em; min-width: 12.5em; padding-right: .7em; }
 .audio-play { width: 0; height: 0; border-style: solid; border-width: .45em 0 .45em .72em; border-color: transparent transparent transparent var(--texto-2); flex: none; margin-left: .15em; }
 .audio-onda { position: relative; flex: 1; height: 1.7em; color: rgba(28, 27, 25, .38); }
@@ -517,7 +518,7 @@ a:hover .flecha, button:hover .flecha { width: 1.65em; }
 .remate-a { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.5rem, 1rem + 1.6vw, 2.5rem); letter-spacing: -.03em; line-height: 1.12; max-width: 19em; text-wrap: balance; }
 
 /* ═════════════ 02 · Qué construimos ═════════════ */
-.cap-casos { padding-bottom: clamp(80px, 9vw, 140px); }
+.cap-casos { padding-bottom: clamp(80px, 9vw, 140px); overflow-x: clip; }
 .casos-cabeza .gigante { max-width: 7.5em; }
 .casos-intro { display: grid; grid-template-columns: minmax(0, 34em) auto; justify-content: space-between; align-items: end; gap: 24px 48px; margin-top: clamp(24px, 3vw, 40px); }
 .nota-ejemplo { display: inline-flex; align-items: center; gap: .6em; font-family: var(--f-mono); font-size: var(--t-mono); color: var(--texto-2); }

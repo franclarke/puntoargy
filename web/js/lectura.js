@@ -27,12 +27,11 @@ export function crearLectura(capa, { modo = 'margen' } = {}) {
   capa.appendChild(svg);
   const items = new Map(); // span → { etq, path, lado }
 
-  // El punto va al final del resaltado: ahí termina lo que se leyó.
+  // Dónde termina lo leído: la última línea del resaltado.
   function punto(span, base) {
     const rs = span.getClientRects();
     const r = rs[rs.length - 1] || span.getBoundingClientRect();
-    // Arriba a la derecha de la última línea: marca sin tapar la letra siguiente.
-    return { x: r.right - base.left + 1.5, y: r.top - base.top + 1.5 };
+    return { x: r.right - base.left, y: r.top - base.top + r.height / 2, top: r.top - base.top, bottom: r.bottom - base.top, cx: r.left - base.left + r.width / 2 };
   }
 
   function ubicar(span, it) {
@@ -42,6 +41,8 @@ export function crearLectura(capa, { modo = 'margen' } = {}) {
     const p = punto(span, base);
     const obj = span.closest('.obj, .papel, .ui') || span;
     const o = rel(obj.getBoundingClientRect(), base);
+    // El punto se apoya en el borde de lo que contiene el texto (la burbuja, la celda, el papel): no tapa letras.
+    const cont = rel((span.closest('.burbuja, td, th, .obj, .papel, .ui, p') || obj).getBoundingClientRect(), base);
     const w = it.etq.offsetWidth;
     const h = it.etq.offsetHeight;
     let x;
@@ -49,8 +50,8 @@ export function crearLectura(capa, { modo = 'margen' } = {}) {
     let lado = span.dataset.lado || obj.dataset.lado || 'der';
     if (modo === 'cerca') {
       // Al lado del punto si entra; si no, arriba.
-      if (p.x + 18 + w <= W - 4) { lado = 'cerca'; x = p.x + 18; y = p.y - h / 2; }
-      else { lado = 'arr'; x = Math.max(0, Math.min(W - w, p.x + 16)); y = p.y - h - 22; }
+      if (p.x + 22 + w <= W - 4) { lado = 'cerca'; x = p.x + 22; y = p.y - h / 2; }
+      else { lado = 'arr'; x = Math.max(0, Math.min(W - w, p.cx - w / 2)); y = p.top - h - 20; }
     } else {
       const entraDer = o.r + GAP + w <= W - 4;
       const entraIzq = o.x - GAP - w >= 4;
@@ -59,7 +60,7 @@ export function crearLectura(capa, { modo = 'margen' } = {}) {
       if (lado === 'aba' && o.b + GAP + h > H - 2) lado = 'arr';
       if (lado === 'der') x = o.r + GAP;
       else if (lado === 'izq') x = o.x - GAP - w;
-      else x = Math.max(4, Math.min(W - w - 4, p.x - w / 2));
+      else x = Math.max(4, Math.min(W - w - 4, p.cx - w / 2));
       if (lado === 'arr') y = o.y - h - GAP;
       else if (lado === 'aba') y = o.b + GAP;
       else y = p.y - h / 2;
@@ -78,22 +79,36 @@ export function crearLectura(capa, { modo = 'margen' } = {}) {
     it.caja = caja;
     it.etq.style.left = `${caja.x.toFixed(1)}px`;
     it.etq.style.top = `${caja.y.toFixed(1)}px`;
-    // Línea: del punto a la etiqueta.
-    it.marca.setAttribute('cx', p.x.toFixed(1));
-    it.marca.setAttribute('cy', p.y.toFixed(1));
-    // La línea sale del borde del objeto (no cruza el texto) y llega a la etiqueta.
+    // El punto y la línea: del borde del contenedor a la etiqueta, con tramos rectos.
     const cy = caja.y + h / 2;
+    let m;
     let pts;
-    if (lado === 'cerca') pts = [[p.x + 6, p.y], [caja.x - 8, p.y], [caja.x - 8, cy], [caja.x, cy]];
-    else if (lado === 'der') pts = [[Math.max(p.x + 6, o.r + 4), p.y], [caja.x - 12, p.y], [caja.x - 12, cy], [caja.x, cy]];
-    else if (lado === 'izq') pts = [[Math.min(p.x - 6, o.x - 4), p.y], [caja.x + w + 12, p.y], [caja.x + w + 12, cy], [caja.x + w, cy]];
-    else if (lado === 'aba') {
-      const ax = caja.x + Math.min(w - 12, Math.max(12, p.x - caja.x));
-      pts = [[p.x, p.y + 6], [p.x, caja.y - 10], [ax, caja.y - 10], [ax, caja.y]];
+    if (lado === 'cerca') {
+      m = [p.x + 5, p.y];
+      pts = [m, [caja.x - 8, m[1]], [caja.x - 8, cy], [caja.x, cy]];
+    } else if (lado === 'der') {
+      m = [cont.r + 4, p.y];
+      pts = [m, [caja.x - 12, m[1]], [caja.x - 12, cy], [caja.x, cy]];
+    } else if (lado === 'izq') {
+      m = [cont.x - 4, p.y];
+      pts = [m, [caja.x + w + 12, m[1]], [caja.x + w + 12, cy], [caja.x + w, cy]];
     } else {
-      const ax = caja.x + Math.min(w - 12, Math.max(12, p.x - caja.x));
-      pts = [[p.x, p.y - 6], [p.x, caja.y + h + 10], [ax, caja.y + h + 10], [ax, caja.y + h]];
+      const ax = caja.x + Math.min(w - 12, Math.max(12, p.cx - caja.x));
+      if (lado === 'aba') {
+        m = [p.cx, p.bottom + 4];
+        pts = [m, [p.cx, caja.y - 10], [ax, caja.y - 10], [ax, caja.y]];
+      } else {
+        m = [p.cx, p.top - 4];
+        pts = [m, [p.cx, caja.y + h + 10], [ax, caja.y + h + 10], [ax, caja.y + h]];
+      }
     }
+    // Dos lecturas en la misma línea: los puntos no se pisan.
+    const usados = [...items.values()].filter((o2) => o2 !== it && o2.m).map((o2) => o2.m);
+    for (let n = 0; n < 4 && usados.some((u) => Math.hypot(u[0] - m[0], u[1] - m[1]) < 9); n++) m[1] += 9;
+    pts[0] = m;
+    it.m = m;
+    it.marca.setAttribute('cx', m[0].toFixed(1));
+    it.marca.setAttribute('cy', m[1].toFixed(1));
     // Quita tramos de largo cero para que las esquinas no se deformen.
     pts = pts.filter((q, i) => i === 0 || Math.hypot(q[0] - pts[i - 1][0], q[1] - pts[i - 1][1]) > .5);
     it.path.setAttribute('d', pts.length > 1 ? ruta(pts, 8) : '');
@@ -112,7 +127,7 @@ export function crearLectura(capa, { modo = 'margen' } = {}) {
     const path = document.createElementNS(NS, 'path');
     svg.appendChild(path);
     const marca = document.createElementNS(NS, 'circle');
-    marca.setAttribute('r', '4.5');
+    marca.setAttribute('r', '3.8');
     marca.setAttribute('class', 'marca');
     svg.appendChild(marca);
     const it = { etq, path, marca };
@@ -166,7 +181,7 @@ export function crearLectura(capa, { modo = 'margen' } = {}) {
   }
 
   function recalcular() {
-    items.forEach((it, span) => { if (!it.llevada) { it.caja = null; } });
+    items.forEach((it) => { if (!it.llevada) { it.caja = null; it.m = null; } });
     items.forEach((it, span) => { if (!it.llevada) ubicar(span, it); });
   }
 
