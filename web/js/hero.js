@@ -3,7 +3,7 @@
 // Después, el hilo responde al cursor: se corre y vuelve a su lugar.
 
 import { reduce, puedeHover, azar, tween, espera, alVer, alRedimensionar } from './util.js';
-import { enredo, suave, ruta, muestrear, medir, polilinea, posicion, preparar } from './hilo.js';
+import { enredo, suave, ruta, muestrearCurva, polilinea, posicion, preparar } from './hilo.js';
 import { partirPalabras, llegaPunto } from './revelar.js';
 
 // Orden en que el hilo recorre las herramientas (por clase de objeto).
@@ -78,7 +78,7 @@ export function iniciarHero() {
     const { pts } = enredo(anclas, rand, { inicio, fin, vueltas: [1, 1.9], rulos: 2, rulo: W > 900 ? 30 : 18 });
     const d = suave(pts);
     // Un punto cada ~5 px: con menos, los rulos chicos se ven como polígonos.
-    base = muestrear(d, Math.min(2400, Math.max(300, Math.round(medir(d) / 5))));
+    base = muestrearCurva(pts, 5);
     off = base.map(() => [0, 0]);
     vel = base.map(() => [0, 0]);
 
