@@ -1,6 +1,6 @@
 # .argy — Brand Definition
 
-**Versión:** v1.2 · 2026-09-25
+**Versión:** v1.3 · 2026-09-25
 **Cambios:** ver [Registro de cambios](#31-registro-de-cambios) al final.
 
 ---
@@ -15,7 +15,10 @@ No pretende cerrar prematuramente todas las decisiones de negocio, posicionamien
 - distinguirlas de las hipótesis y direcciones todavía en exploración;
 - evitar que conceptos surgidos en exploraciones visuales anteriores se conviertan accidentalmente en reglas de marca;
 - servir como contexto base para diseñadores, desarrolladores y agentes de IA que trabajen sobre `.argy`;
-- mantener visible todo aquello que todavía requiere investigación, experimentación o decisión.
+- mantener visible todo aquello que todavía requiere investigación, experimentación o decisión;
+- separar lo que `.argy` es hoy (presente), cómo trabaja (método) y hacia dónde quiere ir (visión) (v1.3, ver 3).
+
+**Regla de honestidad (v1.3):** este documento no presenta hipótesis como productos existentes ni describe los proyectos de clientes como algo transitorio que se hace mientras se esperan los productos.
 
 Se utilizarán tres estados:
 
@@ -41,115 +44,282 @@ El nombre combina una estética propia del mundo digital con una referencia inme
 
 **Escritura y pronunciación (DEFINIDO, v1.0):**
 - Se escribe `.argy`: siempre en minúscula y siempre con el punto, también al comienzo de una oración.
-- Se dice **"punto argy"**. Los productos se dicen "stock punto argy".
+- Se dice **"punto argy"**. Los nombres con namespace se dicen "pedidos punto argy".
 - No se usa "Argy" suelto ni "Punto Argy" con mayúsculas en comunicación pública.
 - Dominio: `puntoargy.com` (ver 26). Handles sugeridos: `@puntoargy` (falta verificar disponibilidad).
 
-**Pendiente:** nombres definitivos de productos (ver 26).
+**Pendiente:** nombres de productos, cuando existan (ver 26).
 
 ---
 
-## 3. Naturaleza de la empresa
+## 3. Naturaleza de la empresa: presente, método y visión
 
-**Estado: ENCAMINADO**
+**Estado: DEFINIDO (v1.3)** · reemplaza el replanteo de v0.6 ("compañía de productos que empieza con servicios").
 
-`.argy` es una empresa de desarrollo de software orientada a crear tecnología útil para empresas argentinas.
+`.argy` se explica con tres cosas distintas que no deben mezclarse. El resto del documento se ordena a partir de esta separación.
 
-Su actividad puede incluir, entre otras cosas: desarrollo de sitios web; e-commerce; aplicaciones internas; software a medida; automatización de procesos; integraciones; herramientas digitales específicas; productos de software reutilizables; eventualmente soluciones que incorporen inteligencia artificial.
+### 3.1 Presente
 
-La empresa no debe quedar definida exclusivamente como: agencia web; software factory; consultora de IA; empresa de automatización; SaaS; product studio.
+> `.argy` desarrolla software a medida para empresas.
 
-El modelo debe conservar suficiente flexibilidad para evolucionar. `.argy` podrá construir soluciones específicas para clientes y, al mismo tiempo, desarrollar productos propios que luego puedan comercializarse bajo la misma marca.
+- Trabajamos directamente con empresas, emprendedores y pymes, resolviendo problemas concretos con software: aplicaciones; sistemas internos; herramientas operativas; ecommerce; sitios web; integraciones; automatizaciones; dashboards; herramientas con inteligencia artificial; soluciones para procesos específicos; mejoras sobre sistemas existentes.
+- Al principio, los proyectos probablemente sean chicos. No se oculta.
+- Hoy `.argy` es una sola persona, el fundador, construyendo la compañía (ver 14.0, Honestidad de escala).
+- No es una product company, no tiene productos consolidados ni una suite, y no finge una plataforma.
+- Desarrollar software para empresas **es** el negocio de `.argy`. No es una etapa que se tolera hasta tener productos, y puede seguir siendo una parte importante aunque algún día existan.
 
-**Contexto actual (hecho, v0.2):**
-- Hoy `.argy` es una sola persona (fundador y desarrollador).
-- Una razón central de la marca es presentar el trabajo detrás de una marca profesional en lugar de como desarrollador independiente.
-- Puede incorporar más personas en el futuro; la marca debe funcionar con una persona y escalar sin rebranding.
+### 3.2 Método
 
-**Replanteo del fundador (v0.6) — ENCAMINADO:**
+> Problema primero. Construimos, aprendemos, acumulamos capacidad y solo generalizamos cuando aparece evidencia.
 
-`.argy` no es solamente una empresa de desarrollo a medida. La visión es construir una **compañía de productos tecnológicos para empresas argentinas**: empieza resolviendo sus problemas directamente y transforma progresivamente esas soluciones en una familia de herramientas simples, conectadas e inteligentes.
+Lo que distingue a `.argy` de una agencia no está necesariamente en lo que factura hoy, sino en cómo trabaja y hacia dónde acumula. Una agencia puede hacer diez proyectos y empezar casi de cero con el cliente número once. En `.argy`, cada proyecto resuelve el problema del cliente y, además, puede dejar capacidad: componentes, conectores, integraciones, agentes, workflows, patrones de UX, modelos de datos, conocimiento de un proceso o de una industria, problemas recurrentes e ideas de producto. Así, el proyecto siguiente empieza desde un lugar mejor.
 
-- **Hoy:** desarrollo de soluciones para empresas: aplicaciones internas, automatizaciones, sistemas de gestión, integraciones, herramientas de IA y agentes, dashboards.
-- **El desarrollo a medida es también un mecanismo de descubrimiento de producto:** se observan los problemas que se repiten entre empresas y se generalizan las soluciones que lo permiten (ver 4).
-- **Largo plazo:** una familia de productos propios (SaaS) bajo `.argy`, que comparten infraestructura y datos, con una capa central de IA (ver 13 y 26).
+El ciclo funciona como un embudo con filtros (detalle en 4.2):
 
-La lista "no debe quedar definida exclusivamente como" sigue vigente: hoy `.argy` no es solo SaaS ni solo servicios; es la transición entre ambos.
+> Problema → Proyecto → Componente → Patrón → Producto
 
-**Punto de partida real (hecho, v0.7):** todavía no hay clientes bajo la marca. Como freelance, el fundador desarrolló para una pyme una tienda online con un sistema aparte para ver pedidos en kanban y manejar stock. Es el primer candidato a caso y a componentes reutilizables (pedidos, stock). `data.argy` es el candidato más fuerte a primer producto, sin decidir.
+La mayoría de los proyectos nunca llega a producto, y está perfecto: si resolvieron bien el problema del cliente, cumplieron su función.
 
-**Pendiente de definir:** categoría exacta con la que `.argy` se presenta públicamente (el fundador duda de que "agencia" sea la palabra correcta); descriptor de categoría; peso relativo entre servicios y productos; rol futuro de productos propios; rol de IA dentro de la oferta; si `.argy` se presenta como empresa, estudio, product studio u otra categoría; arquitectura futura entre marca corporativa y productos.
+### 3.3 Visión
+
+> Con el tiempo, convertir algunos de esos patrones en productos propios inteligentes y, eventualmente, construir una familia de software para las empresas de acá.
+
+Es destino, no presente (ver 6). Orienta decisiones desde el primer día, pero no se comunica como algo que ya existe.
+
+### 3.4 La tensión correcta
+
+- **Hoy:** construimos software a medida.
+- **Mientras lo hacemos:** acumulamos tecnología y conocimiento.
+- **Cuando encontramos patrones:** convertimos en productos los que tienen suficiente valor.
+- **Con el tiempo:** los productos pueden ser una parte cada vez mayor de `.argy`.
+
+Hay dos errores simétricos que evitar:
+
+- **Adelantarse:** presentarse como una startup con inversión, una product company consolidada o una suite que no existe; usar lenguaje como "cambiar el futuro del trabajo"; armar narrativas alrededor de productos conceptuales.
+- **Achicarse:** quedar reducida a "agencia de desarrollo web, apps y automatizaciones", sin dirección.
+
+**Ambición ≠ fingir escala.** Se puede ser una persona trabajando con su primer cliente y tener una visión grande.
+
+### 3.5 Modelo mental
+
+**Estado: ENCAMINADO (v1.3)**
+
+> Un software studio con dirección de producto.
+
+Construimos software a medida con mentalidad de producto: buscamos patrones, reutilizamos, estandarizamos, construimos propiedad intelectual, investigamos tecnologías nuevas, intentamos crear experiencias mejores, pensamos en escala y queremos tener productos propios.
+
+Es un modelo mental interno, no necesariamente una frase de marketing. La categoría pública sigue abierta (ver 12). El descriptor vigente es "Software para empresas argentinas." (ver 24).
+
+**Explicación honesta (del fundador, v1.3):**
+
+> `.argy` desarrolla software para empresas. Empezamos resolviendo problemas particulares y construyendo herramientas a medida. Pero nuestra idea es que cada proyecto nos permita aprender, reutilizar tecnología y descubrir problemas que podamos convertir progresivamente en productos propios.
+
+No se esconde la parte de servicios: se explica por qué nuestra manera de hacerlos tiene una dirección distinta.
+
+**No debe quedar definida exclusivamente como** (vigente desde v0.1): agencia web; software factory; consultora de IA; empresa de automatización; SaaS; product studio.
+
+### 3.6 Punto de partida real
+
+- *(v0.7)* Antes de la marca, como freelance, el fundador desarrolló para una pyme una tienda online con un sistema aparte para ver pedidos en kanban y manejar stock.
+- *(v1.3)* Por ahora **no se muestra como caso**. La comunicación no depende de tener casos, y no se inventan casos, resultados, testimonios ni métricas para reemplazarlos. La sección de casos aparecerá cuando haya proyectos de `.argy` que valga la pena mostrar.
+- *(v1.3)* No hay productos comprometidos ni un primer producto elegido. `data.argy` deja de figurar como "candidato fuerte a primer producto" (v0.7) y pasa a ser un territorio de exploración más (ver 6.2).
+
+**Contexto previo:**
+
+- *(v0.1)* Empresa de desarrollo de software orientada a crear tecnología útil para empresas argentinas, con un modelo flexible entre soluciones a medida y productos propios.
+- *(v0.2)* La marca existe para presentar el trabajo detrás de una marca profesional y no como desarrollador independiente, y tiene que poder sumar personas sin rebranding. Sigue vigente.
+- *(v0.6, superado en v1.3)* "`.argy` no es solamente una empresa de desarrollo a medida. La visión es construir una compañía de productos tecnológicos para empresas argentinas…". Ese replanteo llevó a presentar como presente lo que era visión: la web v3 comunicó productos "en construcción" y una familia de productos que no existía (ver 25).
 
 ---
 
 ## 4. Modelo de negocio
 
-**Estado: ENCAMINADO (v0.6)**
+**Estado: DEFINIDO (v1.3)** en lo conceptual. Pricing, contratos y formatos comerciales siguen pendientes.
 
-**Ciclo del modelo:**
+### 4.1 Etapas de evolución
 
-> Problema real de una empresa → solución a medida → aprendizaje → patrón repetible → producto `.argy` → SaaS.
+Son aproximadas y no tienen fechas. Describen una dirección, no un plan comprometido.
 
-- Los servicios permiten descubrir y financiar los productos.
-- Los productos permiten escalar más allá de los servicios.
-- Evolución esperada: al principio, la mayor parte de los ingresos viene del desarrollo a medida; después conviven servicios y SaaS; eventualmente, los productos propios pueden ser el principal activo y fuente de ingresos.
-- Cada producto surge de problemas reales detectados trabajando con empresas. No se construye una plataforma monolítica desde el comienzo ni todos los productos a la vez: el portfolio crece a medida que aparecen patrones claros.
+| Etapa | Qué es | Qué pasa |
+|---|---|---|
+| 1 | Desarrollo a medida | Trabajamos con empresas, conseguimos clientes, generamos ingresos, aprendemos, construimos reputación y entendemos problemas reales. **Es la etapa actual.** |
+| 2 | A medida con capacidad propia | Reutilizamos partes de proyectos anteriores: integraciones, conectores, componentes, agentes, herramientas internas y conocimiento. Construimos más rápido y mejor. |
+| 3 | Productización | Algunos problemas aparecen una y otra vez y dejan de resolverse cliente por cliente. Algunas soluciones empiezan como herramientas internas, pasan a módulos y después a productos. |
+| 4 | A medida + productos propios | Conviven proyectos particulares, productos SaaS, productos agénticos y herramientas especializadas. Los proyectos siguen aportando aprendizaje y problemas nuevos. |
+| 5 | Compañía con un ecosistema de productos | Una parte creciente de los ingresos y del valor viene de productos propios, que pueden compartir infraestructura y datos (ver 6.3). |
 
-**Datos y componentes (DEFINIDO, v0.7):**
-- Los datos de clientes de servicios **nunca** se usan para construir ni entrenar productos.
-- Lo que se reutiliza son **componentes** desarrollados por `.argy`, despersonalizados: sin la personalización ni los datos de la empresa para la que se hicieron. Ejemplo: de una tienda online con sistema de pedidos se puede extraer el sistema genérico para ofrecerlo a otros clientes o convertirlo en producto.
-- Este principio puede comunicarse públicamente: es un argumento de confianza.
+**Observación (no es decisión):** entre las etapas 2 y 3 puede aparecer un ingreso recurrente intermedio: módulos propios que `.argy` mantiene y que usan varios clientes, además del mantenimiento y la evolución de lo entregado.
 
-**Pendiente (v0.7):** cláusula contractual que reserve a `.argy` los derechos sobre componentes genéricos (sin ella, el código entregado puede pertenecer por completo al cliente; revisar con un abogado, también para el proyecto freelance ya entregado); pricing de servicios y de productos; programa de empresas piloto.
+### 4.2 El ciclo: un embudo con filtros
 
-**Abierto a propósito (v0.7):** el criterio para convertir un patrón en producto. El fundador lo considera parte de la visión y no necesita definirse todavía.
+> Problema → Proyecto → Componente → Patrón → Producto
 
-**Contexto previo (v0.1):** No existía todavía un modelo de negocio definitivo. Durante la etapa inicial pueden coexistir diferentes fuentes de ingresos: clientes directos; agencias que tercericen desarrollo; proyectos web; e-commerce; software interno; aplicaciones a medida; mantenimiento y evolución de sistemas; automatización; productos propios; herramientas destinadas a problemas recurrentes de PyMEs.
+No es una cinta que convierte cada proyecto en producto. Cada paso es un filtro:
 
-No debe construirse la identidad de `.argy` alrededor de un modelo demasiado específico que pueda limitar esta exploración.
+| Paso | Filtro |
+|---|---|
+| Problema → Proyecto | Una empresa trae un problema y lo resolvemos para ella, sin agenda de producto. |
+| Proyecto → Componente | Después, y por nuestra cuenta, extraemos lo genérico (sin datos, marca ni lógica diferencial del cliente) cuando ya se ve que se va a volver a usar. No antes. |
+| Componente → Patrón | El mismo problema aparece en otras empresas. Evidencia, no intuición. |
+| Patrón → Producto | El patrón es suficientemente fuerte y además hay una razón para que el producto exista (ver 4.7). |
 
-**Temas a trabajar:** servicios prioritarios; productos propios; pricing; proyectos cerrados vs. retainers; mantenimiento; suscripciones; licenciamiento; white-label para agencias; relación servicios/productos; posibilidad de convertir soluciones repetidas en productos.
+### 4.3 Por qué los proyectos a medida son estratégicos
+
+- Tienen valor por sí mismos: resolver bien el problema de una empresa real ya es el objetivo.
+- Permiten ver los problemas desde adentro. Una startup puede pasar meses imaginando qué necesitan las pymes; `.argy` puede estar dentro de esas empresas construyendo soluciones.
+- Cada cliente es también una ventana a una industria: qué se hace a mano, dónde se pierde tiempo o plata, qué herramientas odian, qué información no tienen, qué decisiones se toman mal y qué procesos se repiten.
+- Que alguien pague por resolver un problema es la mejor evidencia de que el problema vale.
+
+### 4.4 El cliente primero
+
+**Estado: DEFINIDO (v1.3)**
+
+- **Nunca se dice** "hacemos proyectos a medida para financiar nuestros productos", ni adentro ni afuera. Esa idea genera una relación incorrecta con el cliente.
+- La solución de un cliente nunca está condicionada por "¿cómo puedo reutilizar esto después?". Primero se resuelve bien su problema: cada cliente merece una solución pensada para él.
+- Qué es generalizable se decide después y por cuenta de `.argy`.
+- Si un cliente usa algo que `.argy` ya tenía, lo recibe antes y más probado.
+
+### 4.5 Qué es de quién
+
+**Estado: DEFINIDO como filosofía (v1.3).** Falta llevarlo a contratos con revisión profesional.
+
+| Es del cliente | Puede formar parte de las herramientas de `.argy` |
+|---|---|
+| Sus datos | Infraestructura y capacidades genéricas |
+| Su información | Conectores e integraciones genéricas |
+| Su marca | Componentes despersonalizados |
+| Su lógica realmente diferencial | Conocimiento y patrones aprendidos |
+
+- Lo de la columna derecha, solo cuando contractual y legalmente corresponda.
+- Los datos de clientes **nunca** se usan para construir ni entrenar productos (DEFINIDO desde v0.7). Se puede comunicar en público: es un argumento de confianza.
+- **Pendiente:** una cláusula contractual sobre componentes genéricos, revisada por un abogado. Sin ella, el código entregado puede pertenecer por completo al cliente (revisar también el proyecto freelance ya entregado). Falta además una postura para el caso de un producto que nazca del proceso de un cliente y pueda servirle a un competidor suyo.
+
+### 4.6 Capacidad acumulable
+
+**Estado: ENCAMINADO (v1.3)** · sin sobreformalizar todavía.
+
+**Ser dueños de lo local y difícil. Comprar o integrar lo genérico.**
+
+- **Donde vale acumular (ahí puede haber propiedad intelectual interesante):** ARCA; Mercado Pago; Mercado Libre; Tiendanube; WhatsApp; bancos; Google Sheets y ERPs; operaciones comerciales locales; documentos; listas de precios; pagos; cuentas corrientes; agentes capaces de trabajar sobre esos sistemas; componentes de ecommerce, pedidos, dashboards, administración y workflows.
+- **Lo que no se construye para decir que es propio:** autenticación, billing, almacenamiento e infraestructura commodity. Las primitives que se repiten en todos los proyectos (usuarios, organizaciones, permisos, jobs, eventos, approvals, notificaciones, analytics, audit logs) se resuelven sobre servicios existentes. Lo que se acumula es la forma probada de armarlas, no una versión propia.
+
+**Golden path técnico (defaults fuertes):**
+
+- TypeScript.
+- React / Next.js.
+- Node.
+- Python cuando IA, agentes o datos lo justifiquen.
+- PostgreSQL.
+- Servicios cloud y managed services cuando convenga.
+
+Regla: **defaults fuertes; se elige otra tecnología según el problema solo cuando hay una razón real para salirse de ellos.** No es una arquitectura dogmática. Sin continuidad técnica no hay acumulación: diez proyectos en diez stacks distintos no construyen capacidad.
+
+**Sin sobrearquitectura:**
+
+- No se empieza construyendo un "sistema operativo de negocios de `.argy`", ni se dedican meses a infraestructura abstracta sin clientes.
+- El orden es: cliente → problema → solución. Después, segundo cliente → nuevo problema → nueva solución. Solo cuando aparece evidencia se abstrae (como referencia, a la segunda o tercera repetición).
+- La plataforma se construye desde abajo, no desde un diagrama.
+
+### 4.7 Criterio de productización
+
+**Estado: ENCAMINADO (v1.3)** · antes "abierto a propósito" (v0.7).
+
+Para que `.argy` construya un producto propio no alcanza con que un problema se repita: tiene que haber una razón interesante para que ese producto exista. Idealmente:
+
+- una primitive tecnológica nueva;
+- una experiencia significativamente mejor;
+- agentes o automatización avanzada;
+- inteligencia sobre el negocio;
+- una adaptación local muy buena;
+- un problema que todavía esté mal resuelto.
+
+**No se construyen productos obvios por inercia:** ERP; CRM; facturación; presupuestos; catálogo; agenda; inventario tradicional; administración básica. No porque sean malos productos, sino porque ya existen muchísimos.
+
+Este filtro aplica a los productos, no a los proyectos: si un cliente necesita algo obvio, está bien construírselo. Y si un patrón se repite pero no tiene un ángulo nuevo, puede quedar como componente reutilizable para proyectos, que también vale.
+
+### 4.8 Qué trabajos se aceptan
+
+- Se aceptan los proyectos que tengan sentido comercial, incluidos sitios web o ecommerce simples sobre plataformas de terceros. No se rechaza trabajo por una teoría abstracta sobre lo que debería ser `.argy`.
+- Pero esos trabajos no definen el portfolio ni la comunicación si no representan el tipo de trabajo hacia el que queremos llevar la empresa (ver 11).
+- Otras fuentes de ingresos posibles (vigentes desde v0.1): mantenimiento y evolución de sistemas; agencias que tercericen desarrollo (white-label).
+
+**Pendiente:** pricing de servicios; proyectos cerrados vs. retainers; mantenimiento; programa de empresas piloto; pricing de productos cuando existan.
+
+**Contexto previo (v0.6, superado en v1.3):** "Los servicios permiten descubrir y financiar los productos.", con el ciclo "… → producto `.argy` → SaaS". Se reemplazó porque presentaba a los clientes como un medio para otra cosa.
 
 ---
 
 ## 5. Misión
 
-**Estado: ENCAMINADO**
+**Estado: ENCAMINADO (v1.3)** · formulación conceptual del fundador. No es necesariamente la frase pública.
 
-La misión de `.argy` gira alrededor de utilizar software y tecnología para ayudar a empresas argentinas a trabajar mejor.
+> Construir software útil alrededor de problemas reales de las empresas de acá, y hacerlo de una manera que nos permita acumular conocimiento y tecnología para construir cada vez cosas mejores.
 
-Formulación conceptual provisional:
+La primera mitad es para el cliente; la segunda, para `.argy`. Hacen falta las dos.
 
-> Crear tecnología útil que ayude a empresas argentinas a mejorar cómo trabajan, venden, operan y crecen.
+La misión prioriza (vigente desde v0.1): utilidad real; impacto sobre empresas; tecnología aplicada; implementación; mejora concreta de operaciones; creación de valor. Evita una narrativa centrada en la innovación tecnológica.
 
-La redacción definitiva todavía no está cerrada.
+**De la misión a la visión (DEFINIDO, v1.3):**
 
-La misión debe priorizar: utilidad real; impacto sobre empresas; tecnología aplicada; implementación; mejora concreta de operaciones; creación de valor. Debe evitar una narrativa centrada exclusivamente en la innovación tecnológica.
+| Paso | Qué es |
+|---|---|
+| **Misión presente** | Resolver problemas reales construyendo buen software para empresas. |
+| **Mecanismo** | Aprender, reutilizar componentes, encontrar patrones. |
+| **Evolución** | Productizar los patrones que tengan suficiente valor. |
+| **Visión** | Construir un ecosistema de productos inteligentes para empresas de nuestra región. |
 
-**Pendiente:** desarrollar y seleccionar una formulación definitiva de misión.
+**Contexto previo (v0.1):** "Crear tecnología útil que ayude a empresas argentinas a mejorar cómo trabajan, venden, operan y crecen."
 
 ---
 
 ## 6. Visión
 
-**Estado: ENCAMINADO (v0.6)**
+**Estado: ENCAMINADO (v1.3)** · es destino, no presente.
 
-Formulación del fundador (la redacción final se trabaja en la etapa verbal):
+### 6.1 Hacia dónde vamos
 
-> Construir una compañía de productos tecnológicos para empresas argentinas, que empieza resolviendo sus problemas directamente y transforma progresivamente esas soluciones en una familia de herramientas simples, conectadas e inteligentes, para que las empresas operen mejor, entiendan mejor su negocio y crezcan.
+> Construir una nueva generación de software para cómo realmente trabajan las empresas de Argentina y Latinoamérica.
 
-Respuestas a las preguntas originales: sí a construir una empresa de productos; el camino es una combinación de productos y desarrollo; el foco son pymes, emprendedores y empresas argentinas; la operación internacional sigue sin descartarse (ver 8).
+Formulaciones del fundador, de menor a mayor alcance:
 
-**Contexto previo (v0.1):** la visión no estaba definida y no debía inventarse una artificial. Esta formulación viene del fundador, no de un agente.
+- "Con el tiempo, convertir algunos de esos patrones en productos propios inteligentes y, eventualmente, construir una familia de software para las empresas de acá."
+- "Convertir lo que aprendemos construyendo con empresas reales en una nueva generación de productos para Argentina y Latinoamérica."
+- "Construir el software más inteligente para cómo realmente trabajan las empresas de nuestra región."
 
-**Preguntas originales:**
-- ¿Qué debería representar `.argy` dentro de diez años?
-- ¿Queremos construir una empresa de productos?
-- ¿Una compañía de software relevante para el mercado argentino?
-- ¿Un ecosistema de tecnología para PyMEs?
-- ¿Una empresa capaz de operar internacionalmente?
-- ¿Una compañía especializada en determinados sectores?
-- ¿Una combinación de productos y desarrollo?
+**Reglas:**
+
+- La visión orienta decisiones desde el principio, pero nunca se comunica como presente.
+- Las formulaciones con superlativos o con alcance regional son un norte interno. En comunicación pública alcanza con "acá": la ambición puede crecer con la compañía.
+
+### 6.2 Territorios de exploración
+
+**Estado: ENCAMINADO (v1.3)** · hipótesis, no productos.
+
+No hay un roadmap cerrado. Hay ideas, hipótesis y experimentos, no productos comprometidos. Ninguno define hoy a la compañía. Sirven para saber qué mirar en cada proyecto, para decidir qué vale la pena generalizar y para abrir conversaciones. Los nombres son provisorios y de uso interno.
+
+| Territorio | Qué explora |
+|---|---|
+| `data.argy` | Inteligencia sobre la empresa: conectar fuentes para detectar anomalías, oportunidades, cambios y riesgos. Evolución posible: dato → insight → recomendación → acción. Idea verbal: "Preguntale a tu negocio." |
+| `pedidos.argy` | Convertir conversaciones, mensajes, audios, emails o documentos en operaciones estructuradas. Especialmente para distribuidores, mayoristas y B2B. |
+| `caja.argy` | Cobranzas, conciliación y operaciones de caja, de forma inteligente. |
+| `compras.argy` | Un agente que ayude a decidir qué comprar, cuándo y a quién, según demanda, stock, precios, proveedores y caja. |
+| `vuelve.argy` | ¿Cómo hacemos que más clientes vuelvan? El software decide si usa puntos, sellos, promociones, mensajes, descuentos o experiencias. Reemplaza la idea de `sellos.argy` (v1.2). |
+| `radar.argy` | Experimental: analizar cómo funciona una empresa para encontrar procesos que podrían mejorarse o automatizarse. También podría servir para descubrir productos nuevos. |
+| `commerce.argy` | Muy experimental: agentic commerce y cómo preparar a los comercios de la región para un futuro donde agentes descubren productos y compran. |
+
+**Observación (no es decisión):** casi todos los territorios caen en la operación comercial (ver 11) y casi todos son software que actúa (ver 13).
+
+**Cómo aparecen en público:** ver 24 (Cómo hablamos de… las exploraciones) y 25.
+
+### 6.3 Productos conectados
+
+**Estado: ENCAMINADO (v1.3)** · visión arquitectónica de largo plazo.
+
+Si `.argy` llega a tener varios productos, no deberían ser islas. Podría existir una infraestructura común donde distintos productos entiendan las mismas entidades: clientes, productos, ventas, pagos, pedidos, proveedores, inventario y conversaciones. Quien usa varios obtiene más valor. Por ejemplo: `pedidos.argy` aprende qué compra un cliente, `caja.argy` cómo paga, `vuelve.argy` cuándo deja de comprar, y `data.argy` usa toda esa información.
+
+No se construye antes de tener clientes: primero se resuelven problemas y después se generaliza (ver 4.6).
+
+**Contexto previo (v0.6):** "Construir una compañía de productos tecnológicos para empresas argentinas, que empieza resolviendo sus problemas directamente y transforma progresivamente esas soluciones en una familia de herramientas simples, conectadas e inteligentes…". Sigue siendo la dirección, pero se había leído como una descripción del presente.
 
 ---
 
@@ -179,21 +349,36 @@ Esto no implica una limitación permanente. `.argy` debe poder trabajar con clie
 
 **Principio:** Local por origen, no limitado geográficamente.
 
+*(v1.3)* La región aparece en la visión (6). La comunicación pública no afirma presencia regional: alcanza con "acá".
+
 ---
 
 ## 9. Público objetivo inicial
 
 **Estado: ENCAMINADO**
 
-El público inicial más probable son pequeñas y medianas empresas argentinas y emprendedores (v0.6).
+El público inicial son empresas, emprendedores y pymes argentinas (v0.6).
 
-**Contexto real de ese público (v0.6):** `.argy` debe entender cómo trabajan realmente las pymes del país: WhatsApp, Excel, sistemas contables, Mercado Pago, bancos, e-commerce, PDFs, procesos manuales y herramientas desconectadas. La oportunidad está en conectar y simplificar ese ecosistema con software moderno. También existe un segundo canal relevante: agencias o empresas de servicios que necesiten delegar o tercerizar desarrollo de software.
+**A quién le habla `.argy` hoy (DEFINIDO, v1.3):** a alguien que tiene un problema ahora, no solo a futuros compradores de SaaS. Alguien que dice:
 
-Los primeros proyectos pueden incluir: páginas web; e-commerce; herramientas internas; aplicaciones específicas; integraciones; automatizaciones; soluciones digitales personalizadas.
+- "Necesito mejorar cómo recibimos pedidos."
+- "Necesito una aplicación."
+- "Necesito integrar estos sistemas."
+- "Necesito automatizar esta tarea."
+- "Necesito renovar nuestro ecommerce."
+- "Necesito algo para lo que hoy usamos cinco Excel."
 
-No se pretende definir todavía un ICP extremadamente específico.
+Esa persona tiene que pensar: "Puedo hablar con `.argy` sobre esto." Eso no debe perderse por intentar parecer demasiado futuristas.
 
-**Pendiente de investigar:** tamaño ideal de empresa; ticket viable; responsables de compra; sectores con mayor necesidad; problemas recurrentes; necesidades tecnológicas de PyMEs; agencias como canal comercial; oportunidades de white-label development; problemas potencialmente convertibles en productos.
+**Contexto real de ese público (v0.6, ampliado en v1.3):** muchas empresas crecieron combinando WhatsApp, Excel, Mercado Pago, Tiendanube, Mercado Libre, ARCA, Gmail, PDFs, sistemas de gestión, software antiguo, herramientas independientes, procesos manuales y conocimiento que solo tienen algunas personas. El software llegó por capas: una herramienta para una cosa, una planilla para otra, WhatsApp para otra, y una persona conectando todo mentalmente. Eso deja muchísimas oportunidades para construir software mejor.
+
+**Público secundario (v1.3):** personas interesadas en tecnología, diseño o en hacia dónde va `.argy` (desarrolladores, founders, posibles socios o gente que quiera sumarse). Tienen que encontrar algo interesante, pero la comunicación no se diseña para impresionarlas a costa de que una pyme no entienda qué puede contratar.
+
+**Canal (v0.6):** agencias o empresas de servicios que necesiten delegar o tercerizar desarrollo de software.
+
+No se pretende definir todavía un ICP extremadamente específico. Sí existe un foco que se observa (ver 11).
+
+**Pendiente de investigar:** tamaño ideal de empresa; ticket viable; responsables de compra; sectores con mayor necesidad; problemas recurrentes; necesidades tecnológicas de pymes; agencias como canal comercial; oportunidades de white-label development; problemas potencialmente convertibles en productos.
 
 ---
 
@@ -209,9 +394,15 @@ La marca debe conservar suficiente amplitud para permitir cualquiera de estas ev
 
 ## 11. Verticalización
 
-**Estado: ABIERTO**
+**Estado: ABIERTO** · con un foco progresivo en observación (v1.3).
 
-No existe todavía una industria prioritaria. No debe presentarse `.argy` como una empresa exclusivamente industrial, agropecuaria, comercial o tecnológica. Las referencias a industria o producción pueden utilizarse únicamente cuando tengan sentido dentro de una aplicación concreta.
+No existe todavía una industria prioritaria. No debe presentarse `.argy` como una empresa exclusivamente industrial, agropecuaria, comercial o tecnológica. Las referencias a industria o producción pueden usarse solo cuando tengan sentido dentro de una aplicación concreta.
+
+**Foco progresivo: la operación comercial (ENCAMINADO, v1.3).** Sin definir un nicho rígido, aparece una gravedad: pedidos; ventas; cobros; clientes; stock; datos; distribución; integraciones; WhatsApp; Mercado Pago; ecommerce; los procesos internos alrededor de vender y operar. Gran parte de las ideas que interesan cae ahí (ver 6.2). Es un foco de proceso, no una industria.
+
+- Se observa; no es una restricción. `.argy` necesita exposición a oportunidades.
+- La acumulación necesita cierta continuidad de problemas: hacer cualquier clase de proyecto para cualquier industria no construye capacidad.
+- Si con el tiempo ahí aparecen los mejores proyectos y patrones, `.argy` puede especializarse progresivamente.
 
 **Trabajo futuro:** investigar qué verticales presentan problemas repetibles; mayor willingness to pay; baja digitalización; alto costo operativo; oportunidades de automatización; productos replicables.
 
@@ -219,52 +410,84 @@ No existe todavía una industria prioritaria. No debe presentarse `.argy` como u
 
 ## 12. Posicionamiento
 
-**Estado: ENCAMINADO**
+**Estado: ENCAMINADO (v1.3)**
 
-Dirección general: `.argy` construye tecnología destinada a resolver problemas empresariales reales.
+`.argy` construye software para empresas y tiene una forma moderna de pensar los problemas. No es una product company consolidada ni una agencia convencional.
 
-**Dos horizontes (v0.6, ENCAMINADO):**
+**Qué tiene que entender quien conoce a `.argy`, en este orden (DEFINIDO, v1.3):**
 
-| Horizonte | Qué comunica | Regla |
+1. Puedo contratar a `.argy` para desarrollar software. Es el negocio de hoy: nunca queda escondido.
+2. Parecen tener una forma bastante moderna de pensar los problemas.
+3. Además, están desarrollando ideas propias.
+4. Quiero ver hacia dónde llevan esto.
+
+**Presente, método y visión en la comunicación** (reemplaza los "dos horizontes" de v0.6):
+
+| Capa | Qué comunica | Regla |
 |---|---|---|
-| **Hoy** | `.argy` desarrolla software, automatizaciones y soluciones inteligentes para empresas argentinas. | Es lo que se puede contratar hoy. Permite vender proyectos sin tener una suite. |
-| **Visión** | `.argy` está construyendo herramientas propias para simplificar la operación y mejorar las decisiones de las empresas. | Visible, pero sin fingir que la suite ya existe. Cada producto aparece con su estado real. |
+| **Presente** | Desarrollamos software a medida para empresas. | Es lo principal y se entiende primero. Nunca se presenta como "lo que hacemos mientras construimos productos". |
+| **Método** | El problema primero; construimos, aprendemos y acumulamos capacidad. | Se cuenta desde lo que gana el cliente. "Cada proyecto nos deja algo" es un buen modelo interno y puede ser parte del relato, pero no la promesa principal: pone el énfasis en lo que obtiene `.argy`. |
+| **Visión** | Estamos explorando ideas propias. | Se insinúa con curiosidad y dirección: pocas ideas, planteadas como preguntas. Sin productos, estados, fechas ni roadmap (ver 24). |
 
-- `.argy` no se presenta con el lenguaje típico de una software agency ("contanos tu idea y desarrollamos tu app"), sino como una empresa tecnológica que trabaja con empresas para resolver problemas y usa ese conocimiento para crear mejores productos.
-- Oportunidad central: conectar y simplificar el ecosistema real de la pyme argentina (ver 9).
+**La promesa principal se centra en el cliente (ENCAMINADO, v1.3).** Dirección conceptual para explorar: "Construimos software alrededor de problemas reales." / "Construimos software alrededor de cómo trabaja tu empresa." / "Construimos software para cómo se trabaja acá." Después puede venir el método: "Cada proyecto también nos deja una integración, un componente, un aprendizaje o una idea que hace mejor al siguiente."
 
-**Estrategia de producto: conectar primero (DEFINIDO, v0.7).** La familia de productos empieza como una capa que conecta y entiende lo que la empresa ya usa (sistemas de gestión, Mercado Pago, Excel, WhatsApp, e-commerce). Cuando `.argy` esté mejor parada, podrá reemplazar las piezas que falten para completar el stack y sumar fuentes de datos.
+**La tesis, como observación (ENCAMINADO, v1.3):** "Los negocios de acá crecieron más rápido que su software." Se conserva, pero como observación concreta: vemos una y otra vez empresas que crecieron con herramientas que no fueron diseñadas para trabajar juntas, y eso genera oportunidades para construir. No es una misión generacional de reemplazar el software empresarial de la región.
 
-**Pendiente:** posicionamiento frente a ERPs y software de gestión locales.
+**Enfoque (DEFINIDO, v1.3):** pragmático. No llegamos a una empresa diciendo "necesitás una transformación digital completa". Miramos cómo funciona, encontramos un problema, lo entendemos y construimos algo que lo mejore. Puede ser algo chico, una automatización, una aplicación, una integración o un sistema entero. Puede usar IA o no.
 
-La marca debe distanciarse de la innovación vacía, las demos tecnológicas sin implementación y el discurso excesivamente centrado en herramientas.
+**Conectar antes que reemplazar (DEFINIDO en v0.7, reformulado en v1.3):** "Si ya existe una buena herramienta, la conectamos. Si no existe, la construimos." Aplica a los proyectos de hoy. Que los productos futuros empiecen como una capa que conecta lo que la empresa ya usa pasa a ser una hipótesis de la visión (6).
 
-No se vende tecnología por tecnología. Se construyen cosas que deben funcionar.
+La marca se distancia de la innovación vacía, las demos tecnológicas sin implementación y el discurso centrado en herramientas. No se vende tecnología por tecnología: se construyen cosas que deben funcionar.
 
 **Conceptos compatibles:** utilidad; implementación; resultados; software; producto; resolución de problemas; simplicidad; mejora de operaciones; experiencia de usuario; tecnología aplicada.
 
-**Todavía abierto:** propuesta de valor definitiva; diferenciación; promesa principal; categoría; mensaje comercial; argumentos frente a competidores; posicionamiento respecto de agencias, software factories, freelancers y SaaS existentes.
+**Todavía abierto:** categoría pública; propuesta de valor y promesa definitivas; argumentos frente a competidores; posicionamiento frente a agencias, software factories, freelancers, SaaS existentes y ERPs o software de gestión locales.
+
+**Contexto previo (v0.6):** dos horizontes, "Hoy" (lo que se puede contratar) y "Visión" (herramientas propias "visibles, pero sin fingir que la suite ya existe"). La regla era correcta, pero en la práctica la visión terminó ocupando el lugar del presente.
 
 ---
 
-## 13. Inteligencia artificial
+## 13. Inteligencia artificial y tecnología
 
-**Estado: ENCAMINADO**
+**Estado: ENCAMINADO (v1.3)**
 
-La inteligencia artificial puede formar parte de las soluciones de `.argy`, pero no debe convertirse automáticamente en el centro de la marca. La tecnología elegida debe depender del problema.
+**La IA es una capacidad, no la identidad.** `.argy` no es una agencia de IA. El objetivo siempre es mejorar el negocio. La identidad tiene que resistir aunque el mercado deje de usar la IA como narrativa principal.
 
-`.argy` puede utilizar: IA; automatización; software tradicional; integraciones; datos; sistemas web; infraestructura.
+**Principio:** El problema primero. La tecnología viene después.
 
-La identidad debe resistir incluso si el mercado deja de utilizar "AI" como principal narrativa tecnológica.
+Al mismo tiempo, `.argy` quiere estar muy cerca de la frontera tecnológica. Los modelos actuales permiten construir herramientas que entienden lenguaje, interpretan documentos, escuchan audio, ven imágenes, usan software, toman decisiones, trabajan con información no estructurada, ejecutan workflows, mantienen contexto y operan como agentes. Se usan cuando permiten soluciones que antes no eran posibles o que requerían muchísimo trabajo humano.
 
-**Principio:** El problema primero. La tecnología después.
+**Cómo se comunica (DEFINIDO, v1.3):** por resultados, con verbos. "Lee el audio. Entiende qué productos pidió. Revisa stock. Prepara el pedido." La tecnología se explica después. Nunca titulares como "Inteligencia artificial para transformar tu empresa".
 
-**Capa de IA a largo plazo (v0.6, ENCAMINADO):** sobre los productos puede existir un asistente o agente `.argy` capaz de interactuar con todo el negocio: responder preguntas ("¿Cómo vienen las ventas este mes?", "¿Qué clientes dejaron de comprar?", "¿Quién me debe dinero?") y ejecutar acciones ("Generame un presupuesto para este cliente con los precios actuales"), usando los distintos productos y fuentes de datos.
+### De software que registra a software que actúa
 
-- La IA y los agentes son una parte importante de la propuesta tecnológica, pero siguen siendo un medio: `.argy` no es una "agencia de IA".
-- La comunicación habla de las preguntas del dueño, no de la tecnología que las responde.
+**Estado: ENCAMINADO (v1.3)** · territorio de interés, no obligación.
 
-**Pendiente:** definir cuánto protagonismo tendrá IA en homepage, descriptor, oferta, comunicación, marketing y productos.
+| Tipo de software | Qué hace | Ejemplo |
+|---|---|---|
+| De registro | Registra ventas, clientes, facturas y stock | Anota que un cliente no pagó |
+| De inteligencia | Interpreta: muestra métricas y encuentra patrones | Te dice que estos clientes dejaron de comprar |
+| De acción | Ayuda a hacer | Ayuda a cobrar, pide cotizaciones cuando queda poco stock, prepara estrategias para recuperar clientes |
+
+No se fuerza sobre cada proyecto, pero es un territorio tecnológico extremadamente interesante y orienta las exploraciones (6.2). En público se dice sin la jerga en inglés (system of record, intelligence, action).
+
+**Si `.argy` construye software que actúa (principio de producto, v1.3):** aprobación, trazabilidad y confianza son principios de producto. La persona mantiene el control de lo que el software hace en nombre de su empresa.
+
+### Qué significa innovación
+
+- No es poner IA en todo, ni construir cosas raras para parecer modernos.
+- Es encontrar una manera significativamente mejor de resolver un problema real. Puede venir de agentes, de una interfaz, de la automatización, de conectar sistemas o simplemente de entender mucho mejor el proceso.
+
+### Curiosidad como cultura
+
+Mirar qué se construye en Estados Unidos, Silicon Valley, Europa y otros ecosistemas tecnológicos avanzados, y preguntarse:
+
+- ¿Hay algo nuevo que todavía no llegó bien a Argentina?
+- ¿Cómo funcionaría acá?
+- ¿Qué habría que adaptar?
+- ¿Qué problemas locales podría resolver esta tecnología?
+
+**Contexto previo (v0.6):** la "capa de IA a largo plazo", un asistente o agente `.argy` que responde preguntas y ejecuta acciones sobre todos los productos, sigue siendo una hipótesis de la visión (6), no algo en desarrollo.
 
 ---
 
@@ -305,6 +528,8 @@ La marca tiene una dosis alta de diseño y expresividad, pero debe leerse siempr
 | **Optimista** | Cree que las cosas se pueden hacer mejor, y lo demuestra. | Patriótica, ingenua, "vamos que se puede". |
 | **Honesta** | Dice qué se puede y qué no. No promete magia, tampoco con IA. | Humo, jerga, "transformación digital". |
 
+**Cómo debería sentirse (v1.3, del fundador):** joven; inteligente; curiosa; constructora; optimista; tecnológica; pragmática; cercana; con buen gusto; argentina de manera contemporánea; ambiciosa sin grandilocuencia. Complementa los cinco rasgos y hace explícitas la curiosidad (ver 13) y el pragmatismo (ver 12).
+
 #### Balance según contexto
 
 **Estado: DEFINIDO (v0.3)**
@@ -322,14 +547,25 @@ Una agencia vende creatividad; `.argy` vende cosas que funcionan. El diseño es 
 
 1. El protagonista es siempre lo construido: interfaces, sistemas, resultados. Nunca el diseño como fin en sí mismo.
 2. La energía está en la estructura (ritmo, escala, color, movimiento), no en la decoración.
-3. **El espectáculo es la idea de `.argy`, no el lucimiento del estudio** (reformulada en v1.1 al elegir la dirección "El hilo" para la web). Sí: hero interactivo, relato con scroll e interfaces vivas, siempre que cuenten el enredo, la conexión o el producto. No: cursores personalizados, scroll que le quita el control al usuario, efectos que no cuentan nada, autodefiniciones como "colectivo creativo".
-4. Cada pieza expresiva lleva al menos una prueba concreta: un número real, una pantalla, un antes/después.
+3. **El espectáculo es la idea de `.argy`, no el lucimiento del estudio** (reformulada en v1.1 al elegir la dirección "El hilo" para la web; ajustada en v1.3). Sí: hero interactivo, relato con scroll e interfaces vivas, siempre que cuenten algo real de cómo trabaja `.argy` o de lo que construye. No: cursores personalizados, scroll que le quita el control al usuario, efectos que no cuentan nada, autodefiniciones como "colectivo creativo".
+4. Cada pieza expresiva lleva algo concreto: una situación real del mundo de la empresa, un antes y después, cómo se resolvería. Si es un ejemplo, se marca como ejemplo. *(v1.3)* Nunca casos, métricas, testimonios ni pantallas de productos inventados.
+5. *(v1.3)* La sofisticación visual transmite "hacen las cosas bien", nunca "probablemente sean inaccesibles para mí".
 
 #### Honestidad de escala
 
-**Estado: ENCAMINADO (v0.3)**
+**Estado: DEFINIDO (v1.3)** · antes ENCAMINADO (v0.3).
 
 La marca profesionaliza la presentación; no aparenta una estructura que no existe.
+
+**Hoy `.argy` es una sola persona (v1.3).** La comunicación vive cómodamente en un punto intermedio:
+
+- No es una marca personal ni un "freelance con logo": se está construyendo una compañía.
+- Tampoco simula una estructura que no existe.
+- Ser una persona no es protagonista de la comunicación, pero no se esconde con lenguaje que implique un equipo grande.
+- La marca tiene que poder sumar personas naturalmente a medida que crezca.
+- **Ambición ≠ fingir escala** (ver 3.4).
+
+Vigente desde v0.3:
 
 - "Nosotros" como voz de marca es válido.
 - No afirmar tamaño, equipo, oficinas ni volumen de proyectos que no existan.
@@ -364,6 +600,8 @@ Debe sentirse: ágil; moderna; curiosa; flexible; emprendedora; capaz de constru
 Sin embargo, debe conservar suficiente credibilidad para vender proyectos relevantes a empresas.
 
 **Objetivo:** Startup energy + confianza profesional.
+
+*(v1.3)* Energía de startup no significa narrativa de startup con inversión ni de product company consolidada: nada de "cambiar el futuro del trabajo" ni escala fingida. La sensación buscada es "estamos empezando algo".
 
 ### 14.3 Argentina explícita vs. Argentina sutil
 
@@ -508,7 +746,7 @@ Logotipo tipográfico con **punto redondo**, que funciona como sistema de nombre
 
 **Alternativas evaluadas:** punto tipográfico (poco propio), punto destino (deja de leerse como punto), versión sobria en Instrument Sans (pierde personalidad), jerarquía igual y jerarquía por peso. Descartada antes de dibujar: una línea que subraya el nombre (choca con la *g* y la *y*).
 
-**Archivos (v0.9):** `brand/logo/`, con letras convertidas a trazos: logotipo en cinco versiones, los ocho productos, íconos de producto, símbolo, favicon y PNG para íconos de app. Ver `brand/logo/README.md`. En los íconos, el punto sube a 0,24 del cuerpo como compensación óptica para tamaños chicos.
+**Archivos (v0.9):** `brand/logo/`, con letras convertidas a trazos: logotipo en cinco versiones, los ocho nombres de prueba del sistema (no son productos, ver 26), sus íconos, símbolo, favicon y PNG para íconos de app. Ver `brand/logo/README.md`. En los íconos, el punto sube a 0,24 del cuerpo como compensación óptica para tamaños chicos.
 
 **Contexto previo:** no existía un logotipo aprobado y el tratamiento `.argy` de exploraciones anteriores no era definitivo.
 
@@ -539,6 +777,8 @@ El punto inicial de `.argy` constituye una oportunidad conceptual importante, pe
 El símbolo debería ser: simple; memorable; reconocible; reproducible; funcional como favicon; funcional como app icon; visualmente propietario.
 
 **Hipótesis (v0.6, no es decisión):** con el namespace, el punto tiene una función concreta: es la unión entre cada producto y `.argy`. Con la capa de IA, el punto puede ser también el lugar donde aparece la respuesta. Ambas lecturas pueden resolver el "punto grande como destino" (19.1), que hoy se siente forzado.
+
+**El punto (v1.3):** se conserva como elemento visual propio de `.argy`: simple, memorable, escalable, capaz de sobrevivir aunque la compañía cambie mucho. No hace falta cargarlo de significados; su valor real dentro de la identidad se explora en la revisión de la dirección visual (ver 30).
 
 ---
 
@@ -580,7 +820,9 @@ Exploración: `brand/exploraciones/etapa-3-paleta-tipografia.html`.
 
 ### 19.1 Territorio creativo: Trayecto
 
-**Estado: DEFINIDO (v0.6)** · referencia visual: `brand/identidad-visual.html`
+**Estado: DEFINIDO (v0.6)** · referencia visual: `brand/identidad-visual.html` · alcance revisado en v1.3.
+
+**Revisión (v1.3):** "Del enredo al punto" deja de ser la síntesis de toda la compañía. Se conserva como una expresión del universo de `.argy` para un tipo de transformación: sistemas desconectados, procesos manuales, integraciones e información fragmentada. No todos los proyectos, productos ni piezas tienen que entrar en la metáfora del enredo. El punto se conserva como elemento visual propio (ver 17). Siguen vigentes, para las piezas que usan la línea, el trazo híbrido, los comportamientos de la línea y su regla madre. El rol del enredo y del punto en la próxima web se decide en la revisión de la dirección visual (ver 30).
 
 La etapa 2 exploró cuatro territorios para expresar la idea de Ingenio: La vuelta, Taller, Encastre y Trayecto. El fundador eligió **Trayecto**, incorporando la limpieza de **La vuelta**.
 
@@ -658,9 +900,9 @@ No existe todavía una dirección fotográfica. Debido a la orientación humana 
 
 **Recursos disponibles (hecho, v0.2):** no hay producción fotográfica propia por el momento. El fundador tiene fuerte habilidad en generación de imágenes con IA, que será el principal recurso de imagery en la etapa inicial.
 
-**Dirección de arte: bodegones del hilo (ENCAMINADO, v1.1).** Imágenes generadas con IA, en 3D mate tipo arcilla: objetos cotidianos de una pyme (celular, planilla impresa, cuaderno, cajas, calculadora) sobre fondo Piedra, con un **hilo celeste físico** como único color saturado. En las imágenes del problema, el hilo enreda los objetos; en las de la solución, los une en una ruta de tramos rectos y esquinas redondeadas que termina en una esfera celeste (el punto). Sin personas, sin texto, sin logos. Así las imágenes continúan la trama de la web en lugar de decorarla. Guía completa, prompts y lugares en la web: `brand/imagenes/guia-de-imagenes.md`.
+**Dirección de arte: bodegones del hilo (ENCAMINADO, v1.1).** Imágenes generadas con IA, en 3D mate tipo arcilla: objetos cotidianos de una pyme (celular, planilla impresa, cuaderno, cajas, calculadora) sobre fondo Piedra, con un **hilo celeste físico** como único color saturado. En las imágenes del problema, el hilo enreda los objetos; en las de la solución, los une en una ruta de tramos rectos y esquinas redondeadas que termina en una esfera celeste (el punto). Sin personas, sin texto, sin logos. Así las imágenes continúan la trama de la web en lugar de decorarla. Guía completa, prompts y lugares en la web: `brand/imagenes/guia-de-imagenes.md`. *(v1.3)* En revisión junto con la dirección visual: el hilo deja de ser el hilo conductor obligatorio de todas las imágenes.
 
-**Principio de imagery generada (ENCAMINADO, v0.3):** la imagen generada con IA no debe simular fotografía documental de personas o negocios reales que no existen (contradice el premium honesto y conduce a estética de "startup de IA genérica"). Debe tender a un estilo propio y reconocible donde se note la decisión de dirección de arte (objetos, escenas construidas, collage, 3D, ilustración u otros). A resolver en la etapa de imagery.
+**Principio de imagery generada (ENCAMINADO, v0.3):** la imagen generada con IA no debe simular fotografía documental de personas o negocios reales que no existen (contradice el premium honesto y conduce a estética de "startup de IA genérica"). Debe tender a un estilo propio y reconocible donde se note la decisión de dirección de arte (objetos, escenas construidas, collage, 3D, ilustración u otros). A resolver en la etapa de imagery. *(v1.3)* Tampoco se generan imágenes que simulen casos, clientes o productos que no existen.
 
 **Territorios a explorar:** personas trabajando; dueños de PyMEs; equipos; comercios; producción; operaciones; oficinas; talleres; industria; negocios reales argentinos; detalles cotidianos; fotografía documental; fotografía editorial.
 
@@ -690,7 +932,7 @@ No existe sistema aprobado. Debe decidirse: outline vs. solid; geometría; groso
 
 **Estado: DEFINIDO (v0.6)** · principios y tokens. Los temas listados como "todavía abierto" siguen abiertos.
 
-El desenredo es la animación de marca: el enredo se dibuja, se ordena en una ruta y el punto llega al final.
+El desenredo es la animación de marca: el enredo se dibuja, se ordena en una ruta y el punto llega al final. *(v1.3)* Es la animación de la expresión "Del enredo al punto", no la de toda la marca. Lo constante es que el punto llega último.
 
 **Principios:**
 1. **De lo complejo a lo simple.** Todo movimiento resuelve algo; nunca agrega ruido.
@@ -713,7 +955,7 @@ El desenredo es la animación de marca: el enredo se dibuja, se ordena en una ru
 
 **Animación del logo (DEFINIDO, v0.8):** una línea corta trae el punto (0–800 ms, curva decidida), el punto aterriza con el rebote de llegada (desde 750 ms, 560 ms) y `argy` aparece de izquierda a derecha (desde 1200 ms, 550 ms). En productos, el nombre del producto ya está visible: solo llegan el punto y `argy`. Con `prefers-reduced-motion`, el logo aparece quieto.
 
-**Animación del hero (DEFINIDO, v0.8):** se dibuja el enredo, aparecen las herramientas, sale la ruta, llega el punto y aparece la respuesta con el resaltado. El enredo no desaparece: `.argy` conecta lo que la empresa ya usa, no lo reemplaza.
+**Animación del hero (DEFINIDO, v0.8):** se dibuja el enredo, aparecen las herramientas, sale la ruta, llega el punto y aparece la respuesta con el resaltado. El enredo no desaparece: `.argy` conecta lo que la empresa ya usa, no lo reemplaza. *(v1.3)* Aplicada en las webs v1 a v3; se revisa con la próxima web.
 
 **Todavía abierto:** loaders definitivos, motion aplicado a producto en detalle, respeto de `prefers-reduced-motion` como regla formal.
 
@@ -723,25 +965,35 @@ El desenredo es la animación de marca: el enredo se dibuja, se ordena en una ru
 
 ## 24. Identidad verbal
 
-**Estado: DEFINIDO (v1.0)** · definida por delegación del fundador; revisar después de los primeros meses de uso. Aplicada en `web/index.html`.
+**Estado:** descriptor, tono, reglas de escritura y vocabulario **DEFINIDO** (v1.0, ampliados en v1.3). Tagline **ABIERTO** (v1.3). Mensajes clave, pitch, narrativa y llamados a la acción **ENCAMINADO** (v1.3).
 
 ### Descriptor
 
 > **Software para empresas argentinas.**
 
-Dice qué es `.argy` hoy y sigue siendo cierto cuando existan los productos. No menciona IA ni se encierra en "agencia", "estudio" o "SaaS".
+Dice qué es `.argy` hoy y sigue siendo cierto cuando existan productos. No menciona IA ni se encierra en "agencia", "estudio" o "SaaS". Sigue vigente en v1.3.
 
 Alternativas evaluadas: "Software a medida y productos propios para pymes" (preciso pero largo), "Tecnología para pymes" (vago), "Estudio de software" (suena a agencia).
 
 ### Tagline
 
-> **Del enredo al punto.**
+**Estado: ABIERTO (v1.3)**
 
-Es la síntesis visual de Trayecto convertida en frase. Nombra lo que hace `.argy` (ordenar lo enredado) y termina en el punto, que es la marca. En la web y en piezas de marca, "al punto." puede llevar la itálica de acento.
+"Del enredo al punto." deja de ser el tagline principal (decisión del fundador, v1.3). Nombra bien un tipo de trabajo, ordenar lo enredado, pero no puede definir a toda la compañía ni obligar a los productos futuros a entrar en la metáfora del enredo.
 
-**Expresión de cierre:** "¿Vamos al punto?". Se usa para invitar a contactar. Suma el sentido de "sin vueltas", que es el tono de la marca.
+Dirección para el próximo tagline o promesa principal: centrado en el cliente, no en lo que obtiene `.argy` (ver 12). Candidatas conceptuales, no aprobadas:
 
-Alternativas evaluadas: "Vamos al punto." (quedó como expresión de cierre), "Hagamos que funcione." (genérica), "Tu negocio, conectado." (genérica), "Ingenio bien terminado." (autorreferencial: sirve adentro, no afuera).
+- "Construimos software alrededor de problemas reales."
+- "Construimos software alrededor de cómo trabaja tu empresa."
+- "Construimos software para cómo se trabaja acá."
+
+**Expresiones de marca que se conservan:**
+
+- **"Del enredo al punto."** Para sistemas desconectados, procesos manuales, integraciones e información fragmentada, en campañas, storytelling, partes de la web y casos específicos. Puede llevar la itálica de acento en "al punto.".
+- **"¿Vamos al punto?"** Expresión de cierre para invitar a contactar. Suma el sentido de "sin vueltas", que es el tono de la marca.
+- **"El problema primero."** Filosofía de trabajo (ver 13).
+
+Alternativas evaluadas en v1.0: "Vamos al punto." (quedó como expresión de cierre), "Hagamos que funcione." (genérica), "Tu negocio, conectado." (genérica), "Ingenio bien terminado." (autorreferencial: sirve adentro, no afuera).
 
 ### Tono de voz
 
@@ -750,8 +1002,9 @@ Alternativas evaluadas: "Vamos al punto." (quedó como expresión de cierre), "H
 | **Directa** | "Conectamos lo que tu empresa ya usa." | "Brindamos soluciones tecnológicas integrales." |
 | **Concreta** | "Los pedidos entran por WhatsApp y alguien los pasa a una planilla." | "Optimizamos tus procesos de negocio." |
 | **Cálida, con humor seco** | "Un analista de negocio que no se toma vacaciones." | Chistes forzados, tono canchero, exclamaciones. |
-| **Honesta** | "Todavía no están listos, y preferimos decirlo." | "La plataforma que revoluciona tu pyme." |
+| **Honesta** | "Es una idea que estamos explorando. Todavía no existe." | "La plataforma que revoluciona tu pyme." |
 | **Optimista de obra** | "Nada de eso está mal. Solo que se puede conectar." | "Tu negocio está perdiendo plata cada día." |
+| **Ambiciosa sin grandilocuencia** *(v1.3)* | "Estamos empezando. Tenemos una dirección." | "Estamos cambiando el futuro del trabajo en Latinoamérica." |
 
 ### Reglas de escritura
 
@@ -761,8 +1014,8 @@ Alternativas evaluadas: "Vamos al punto." (quedó como expresión de cierre), "H
 - Frases cortas. Primero el problema, después la solución.
 - **Números:** solo reales. Si un número es un ejemplo, se marca como ejemplo.
 - **Tecnicismos:** evitarlos en comunicación pública (API, stack, SaaS, cloud, LLM). Se habla de lo que pasa: "se conecta", "se actualiza solo", "te avisa".
-- "pyme" y "pymes" en minúscula. Los productos se escriben `stock.argy`.
-- "Nosotros" es la voz de la marca. Nunca "nuestro equipo de expertos" ni afirmaciones de tamaño (ver 14.0).
+- "pyme" y "pymes" en minúscula. Los nombres con namespace se escriben `pedidos.argy`.
+- "Nosotros" es la voz de la compañía. Nunca "nuestro equipo de expertos" ni afirmaciones de tamaño (ver 14.0). *(v1.3)* Hoy `.argy` es una persona: "nosotros" habla por la compañía, no afirma un equipo.
 
 ### Vocabulario
 
@@ -771,46 +1024,78 @@ Alternativas evaluadas: "Vamos al punto." (quedó como expresión de cierre), "H
 | conectar, ordenar, resolver, funcionar, construir, simple, a medida, avisar, responder | potenciar, disruptivo, innovador, soluciones integrales, transformación digital, sinergia, revolucionar |
 | tu empresa, tu negocio, tu equipo, pedidos, stock, cobros, planilla, presu | "llevar tu negocio al siguiente nivel", "partner estratégico", "IA de última generación" |
 | todo conectado, funcionando junto | ecosistema (solo uso interno), plataforma omnicanal |
+| *(v1.3)* explorar, probar, aprender, empezar | "transformamos digitalmente tu negocio", "soluciones de vanguardia potenciadas por IA", "revolucionamos empresas", "ecosistemas inteligentes", "innovación 360", "el futuro del trabajo" |
+
+**Frases que representan a `.argy` (referencia de tono, v1.3; no son copy aprobado):**
+
+- "¿Hay algo en tu empresa que alguien hace todos los días a mano?"
+- "Mostranos cómo trabajan. Vemos si podemos construir una forma mejor."
+- "Si ya existe una buena herramienta, la conectamos. Si no existe, la construimos."
+- "El problema primero. La tecnología viene después."
 
 ### Cómo hablamos de…
 
+- **Lo que hacemos (v1.3):** software a medida para empresas, dicho primero y sin vueltas. Nunca como "lo que hacemos mientras construimos productos" ni como forma de financiar otra cosa.
 - **Software:** por lo que pasa en la empresa ("el pedido entra solo", "el stock se actualiza"), no por cómo está hecho.
-- **Inteligencia artificial:** por lo que hace ("lee PDFs", "responde consultas", "te avisa qué reponer"). Se nombra sin adornos y se aclara que se usa cuando conviene. Nunca "potenciado por IA".
+- **Inteligencia artificial:** por resultados, con verbos ("Lee el audio. Entiende qué productos pidió. Revisa stock. Prepara el pedido."). Se nombra sin adornos y se aclara que se usa cuando conviene. Nunca "potenciado por IA" ni la IA como titular (ver 13).
 - **Argentina:** a través del contexto real (WhatsApp, Mercado Pago, ARCA, el contador, pesos), nunca con consignas patrióticas. "Hecho en Argentina" vive solo en el sello del sol.
-- **Los productos:** siempre con su estado real ("en exploración", "en desarrollo", "disponible"). Nunca se muestran capturas de algo que no existe.
+- **El tamaño (v1.3):** "nosotros", sin afirmar un equipo. Ni marca personal ni estructura simulada (ver 14.0).
+- **La reutilización (v1.3):** desde lo que gana el cliente: arrancar desde algo probado. Siempre junto con qué es del cliente (ver 4.5).
+- **Las exploraciones (v1.3, reemplaza "Los productos"):** dos o tres como máximo, presentadas como "Algunas cosas que estamos explorando", en forma de preguntas o posibilidades. Por ejemplo:
+  - "¿Y si tu empresa pudiera avisarte sola cuando algo importante cambia?"
+  - "¿Y si un pedido que llega por WhatsApp pudiera convertirse directamente en una operación lista para preparar?"
+  - "¿Y si pudiéramos detectar qué partes de una empresa todavía funcionan a mano y cuáles tendría sentido mejorar?"
+
+  Nunca: fechas; roadmap; estados de desarrollo ("en construcción", "beta", "lo que viene"); dashboards o demos que parezcan estar funcionando; promesas de lanzamiento; una suite imaginaria. Nunca se muestran capturas de algo que no existe. Los nombres de los territorios (6.2) son internos: si se usan en público, es con moderación y como idea, nunca como producto.
+- **Casos y resultados (v1.3):** solo reales. Hasta que existan, no hay sección de casos. Nunca se inventan casos, resultados, testimonios ni métricas.
 - **Los datos:** "Nunca usamos los datos de un cliente para construir nuestros productos." Se dice en público: es un argumento de confianza.
 
 ### Mensajes clave
 
-1. **Conectamos lo que ya usás.** No hace falta tirar lo que funciona.
-2. **Construimos lo que falta.** A medida y bien terminado.
-3. **Hablamos claro.** Qué conviene, cuánto cuesta y cuánto tarda, antes de empezar.
-4. **Tus datos son tuyos.**
-5. **Estamos construyendo productos propios**, a partir de problemas reales.
+**Estado: ENCAMINADO (v1.3)**
+
+1. **Construimos software alrededor de cómo trabaja tu empresa.** Aplicaciones, herramientas y sistemas hechos alrededor de problemas reales.
+2. **El problema primero.** La tecnología viene después: a veces IA, a veces una integración, a veces algo simple.
+3. **Si ya existe una buena herramienta, la conectamos. Si no existe, la construimos.**
+4. **Hablamos claro.** Qué conviene, cuánto cuesta y cuánto tarda, antes de empezar. Se puede empezar por algo chico.
+5. **Lo tuyo es tuyo.** Tus datos, tu información, tu marca y lo que te diferencia.
+6. **Cada proyecto nos deja algo.** Una integración, un componente, un aprendizaje o una idea que hace mejor al siguiente.
+7. **Estamos explorando ideas propias.** Pocas, planteadas como preguntas.
+
+El orden importa: los mensajes 1 a 5 hablan del cliente; el 6 y el 7, del método y la visión (ver 12).
 
 ### Pitch
 
-**En una frase:** `.argy` hace software para empresas argentinas: conectamos lo que tu empresa ya usa y construimos lo que falta para que todo funcione junto.
+**Estado: ENCAMINADO (v1.3)**
 
-**En 30 segundos (ENCAMINADO):** "`.argy` hace software para empresas argentinas. Hoy desarrollamos soluciones a medida: conectamos las herramientas que una pyme ya usa (WhatsApp, Excel, Mercado Pago, su sistema de gestión) y construimos lo que falta para que todo funcione junto. Con lo que aprendemos en cada proyecto estamos armando productos propios, simples y conectados, para que muchas empresas resuelvan lo mismo sin empezar de cero. Del enredo al punto."
+**En una frase:** "`.argy` desarrolla software a medida para empresas, alrededor de los problemas reales de cómo trabajan."
 
-### Narrativa (ENCAMINADO)
+**En 30 segundos:** "`.argy` desarrolla software para empresas. Miramos cómo trabaja una empresa, encontramos un problema y construimos algo que lo mejore: una automatización, una integración, una aplicación o un sistema entero. Si ya existe una buena herramienta, la conectamos; si no existe, la construimos. Cada proyecto nos deja algo que hace mejor al siguiente, y cuando un problema se repite en muchas empresas, puede convertirse en un producto propio."
 
-> Las pymes argentinas funcionan con lo que tienen a mano: WhatsApp, Excel, Mercado Pago, un sistema de gestión, PDFs y mucha memoria. Funciona, pero cuesta.
-> `.argy` existe para conectar eso. Hoy lo hacemos a medida, empresa por empresa. Y con lo que aprendemos armamos herramientas propias, para que muchas empresas resuelvan lo mismo sin empezar de cero.
-> Del enredo al punto.
+**Explicación honesta del fundador:** ver 3.5.
+
+### Narrativa
+
+**Estado: ENCAMINADO (v1.3)**
+
+> Los negocios de acá crecieron más rápido que su software. WhatsApp para una cosa, una planilla para otra, un sistema para otra, y alguien conectando todo de memoria. Funciona, pero deja muchísimas oportunidades para construir algo mejor.
+> Construimos software para cómo se trabaja acá: aplicaciones, herramientas y sistemas hechos alrededor de problemas reales.
+> Cada proyecto nos deja algo: un componente, una integración, un aprendizaje, una idea. Y cuando un problema se repite, empezamos a convertirlo en producto.
+
+**Contexto previo (v1.0, superado):** "Las pymes argentinas funcionan con lo que tienen a mano… `.argy` existe para conectar eso… Del enredo al punto." Definía a `.argy` solo por la conexión y cerraba con el tagline anterior.
 
 ### Llamados a la acción
 
 | Uso | Texto |
 |---|---|
 | Principal | "Contanos qué problema tenés" |
+| Alternativo | "Traenos un problema" |
 | Secundario | "Cómo trabajamos" |
 | Navegación | "Hablemos" |
-| Productos | "Quiero enterarme" |
+| Exploraciones *(v1.3)* | "¿Te pasa algo parecido? Contanos." Reemplaza "Quiero enterarme": no hay nada para probar ni anotarse. Cada exploración invita a traer un problema |
 | Cierre | "¿Vamos al punto?" |
 
-Regla: el llamado dice qué pasa y empieza por el problema del cliente. Evitar "Contanos tu idea", "Solicitá una demo", "Empezá ahora".
+Regla: el llamado dice qué pasa y empieza por el problema del cliente. Evitar "Contanos tu idea", "Solicitá una demo", "Empezá ahora", "Sumate a la lista de espera".
 
 **Contexto previo (v0.1):** las frases generadas antes de v0.1 eran exploraciones y no canon. Entre ellas:
 
@@ -823,21 +1108,48 @@ Regla: el llamado dice qué pasa y empieza por el problema del cliente. Evitar "
 
 ## 25. Experiencia digital
 
-**Estado: ENCAMINADO (v1.0)**
+**Estado: ENCAMINADO (v1.0)** · la web publicada (v3) se rediseña desde el canon v1.3.
 
-### Web v3: dirección "La mesa" (ENCAMINADO, v1.2)
+### Criterios para la próxima web (ENCAMINADO, v1.3)
 
-Rediseño integral para que `.argy` se lea como una compañía de productos en construcción y no como una agencia. Referencia de ambición (no de estética): The Mobile First Company, por cómo arma una tesis de compañía, usa objetos físicos y alterna relato y producto.
+No son un diseño: son lo que la próxima versión tiene que cumplir. Todavía no se decidieron narrativa, arquitectura, copy ni dirección visual (ver 30).
+
+- **Estado actual:** `web/` todavía publica la v3, que adelantó la narrativa de product company (ver la revisión de la v3, más abajo).
+- **Público prioritario:** quien puede convertirse en cliente y llega pensando "tengo este problema, ¿me podrían ayudar?" (ver 9). El público secundario encuentra profundidad, no una barrera.
+- **Qué tiene que comunicar:** qué hacemos; cómo pensamos; cómo se empieza a trabajar con una empresa; qué tipo de problemas queremos resolver; hacia dónde queremos llevar progresivamente la compañía. En el orden de percepción de 12.
+- **Servicios primero.** No aparecen después de los productos ni como algo que se hace "mientras tanto".
+- **Sin sección de casos** hasta que haya proyectos de `.argy` que valga la pena mostrar. La web no depende del ecommerce anterior (3.6).
+- **Exploraciones:** dos o tres, como preguntas (ver 24). Sin estados, fechas, roadmap ni demos que parezcan funcionar.
+- **Vidriera:** las webs y ecommerce simples no son lo que se exhibe (4.8). Se muestran los problemas hacia los que queremos llevar la empresa, con la operación comercial como gravedad (11), sin cerrarles la puerta a otros.
+- **Sofisticación visual:** tiene que transmitir "hacen las cosas bien", nunca "probablemente sean inaccesibles para mí". Diseñada deliberadamente también para celular.
+- **La IA** se muestra por resultados (13).
+- **Piso técnico** que se mantiene de la v3: rendimiento, accesibilidad, HTML semántico, `prefers-reduced-motion` y contenido visible aunque el JavaScript falle.
+- **A revisar en el rediseño:** narrativa; arquitectura; copy; dirección visual; relación entre presente y futuro; rol de los objetos; rol del punto; rol del enredo; cómo se siente una empresa chica de software que construye capacidad para volverse algo más grande.
+
+### Web v3: dirección "La mesa" (v1.2, superada en su posicionamiento en v1.3)
+
+Rediseño integral pensado para que `.argy` se leyera como una compañía de productos en construcción y no como una agencia. Referencia de ambición (no de estética): The Mobile First Company, por cómo arma una tesis de compañía, usa objetos físicos y alterna relato y producto.
 
 - **Tesis:** "Los negocios de acá crecieron más rápido que su software." La web la cuenta en capítulos: visión → el enredo → del enredo al punto → productos → cómo nace un producto → hoy → hablemos.
-- **Titular del hero:** "Estamos construyendo el software que les faltaba a las empresas de acá." El descriptor "Software para empresas argentinas." sigue vigente; en metadatos y pie se amplía a "de Argentina y Latinoamérica" (Argentina es el lugar desde donde se construye, no el límite).
+- **Titular del hero:** "Estamos construyendo el software que les faltaba a las empresas de acá." En metadatos y pie, el descriptor se amplía a "de Argentina y Latinoamérica".
 - **Universo visual: la mesa.** La vista cenital del film "La punta" llevada a la web. Los objetos de la pyme (celular con chat, ticket térmico, factura B, planilla `stock_FINAL_v3`, QR de cobro, etiqueta de envío, libreta, post-it, calculadora) se construyen en HTML y CSS, con luz arriba a la izquierda. Sin fotos, sin logos de terceros, sin mockups flotando.
 - **El punto como sistema:** todo titular afirmativo termina en el punto de `.argy` (0,20 del cuerpo, en la línea de base) y el punto llega último con el rebote de marca. En el hero, la ruta sale del enredo y sube hasta el punto del titular.
-- **Tipografía:** se suma **DM Mono** solo para lo que en el mundo real está impreso o es un dato: tickets, etiquetas, estados, registros, contadores y rótulos de capítulo. No se usa en titulares ni en párrafos.
-- **Estados de producto:** "En construcción" (punto celeste lleno), "Explorando" (anillo celeste) y "Lo que viene" (anillo gris). Hoy: data.argy y pedidos.argy en construcción; stock.argy y sellos.argy explorando; cobros.argy y presu.argy, lo que viene.
-- **sellos.argy** (nombre provisorio): fidelización con sellos digitales para comercios de barrio. Explorando.
-- **data.argy:** "Preguntale a tu negocio." Se muestra con una demo que responde preguntas con datos de ejemplo, marcada como tal. Llamado: buscamos las primeras empresas para probarlo.
+- **Tipografía:** se suma **DM Mono** solo para lo que en el mundo real está impreso o es un dato (ver 18).
+- *(Retirado en v1.3)* **Estados de producto:** "En construcción", "Explorando" y "Lo que viene", con `data.argy` y `pedidos.argy` en construcción, `stock.argy` y `sellos.argy` explorando, y `cobros.argy` y `presu.argy` como lo que viene.
+- *(Reemplazado en v1.3 por el territorio `vuelve.argy`)* **sellos.argy:** fidelización con sellos digitales para comercios de barrio.
+- *(Retirado en v1.3)* **data.argy:** "Preguntale a tu negocio.", con una demo que responde preguntas con datos de ejemplo.
 - **Imagen para redes:** `web/assets/og.png`, generada desde el hero.
+
+**Revisión (v1.3): qué adelantó la v3.**
+
+- El titular del hero es una declaración demasiado grande para la etapa, y el botón principal ("Ver qué estamos construyendo") llevaba a productos en vez de a lo que `.argy` puede hacer por quien llega.
+- "Lo que resolvemos una vez, lo convertimos en producto." presentaba como costumbre algo que todavía no pasó.
+- Productos que son hipótesis aparecían "En construcción" (también en las preguntas frecuentes), y un índice de siete productos cerraba con "Primero en Argentina; después, en toda la región.". Dos de esos nombres, `stock.argy` y `presu.argy`, son justo categorías obvias (ver 4.7).
+- La demo de `data.argy` parecía un producto funcionando ("Todo al día · hace 2 min"), contra la regla de no mostrar capturas de algo que no existe.
+- Los servicios aparecían recién en el capítulo 05, después de las escenas y los productos, con "Mientras construimos productos, trabajamos con empresas…".
+- "Todo llega a un solo lugar" dibujaba una plataforma integrada, no un proyecto.
+
+**Lo que sigue sirviendo como insumo:** la tesis como observación; los objetos reales de la operación; "Nunca tus datos"; "Traenos un problema"; "Cómo arrancamos"; las preguntas frecuentes; el formulario que arma el mensaje para WhatsApp; el piso técnico.
 
 La v2 ("El hilo") queda en el historial de git. Sus imágenes editoriales siguen en `web/assets/img/`, fuera del recorrido.
 
@@ -870,7 +1182,7 @@ Sitio estático de una página en `web/` (HTML, CSS y JS, sin paso de compilaci�
 | Cuatro cosas que no negociamos | — | Principios: el problema primero, conectar antes que reemplazar, tus datos son tuyos, hablar claro |
 | Contacto y footer | — | "¿Vamos al punto?", formulario que arma un email, sello del sol |
 
-**Pendiente:** comprar el dominio y crear el email `hola@puntoargy.com`; confirmar con el fundador el texto del proyecto real; analítica; política de privacidad si el sitio empieza a guardar datos.
+**Pendiente:** comprar el dominio y crear el email `hola@puntoargy.com`; ~~confirmar con el fundador el texto del proyecto real~~ *(v1.3: el proyecto anterior no se muestra por ahora, ver 3.6)*; analítica; política de privacidad si el sitio empieza a guardar datos.
 
 Al tratarse de una empresa tecnológica, la experiencia digital será una expresión central de la marca. Debe definirse un sistema que funcione para: website; landing pages; aplicaciones; productos; dashboards; documentación; propuestas; portales internos.
 
@@ -880,48 +1192,40 @@ Al tratarse de una empresa tecnológica, la experiencia digital será una expres
 
 ## 26. Arquitectura de marca
 
-**Estado: ENCAMINADO (v0.6)**
+**Estado: ENCAMINADO (v0.6, revisado en v1.3)**
 
-**Modelo: branded house con namespace.** `.argy` funciona como un namespace para la familia de productos: `[producto].argy`. El punto inicial del nombre ya estaba construido como un sufijo, y ahora esa construcción se vuelve la arquitectura.
+**Hoy no existen productos (v1.3).** El namespace es el sistema de nombres para cuando existan. No se usa para sugerir una suite. Los nombres que aparecen en este documento son pruebas del sistema gráfico o nombres internos de territorios de exploración (6.2), no productos ni roadmap.
 
-Nombres de ejemplo (provisorios, no aprobados):
-
-| Nombre | Área |
-|---|---|
-| `data.argy` | Inteligencia y análisis del negocio |
-| `stock.argy` | Inventario y reposición |
-| `ventas.argy` | Seguimiento comercial y CRM |
-| `presu.argy` | Presupuestos y cotizaciones |
-| `caja.argy` | Flujo de fondos y situación financiera |
-| `cobros.argy` | Seguimiento de cobranzas |
-| `pedidos.argy` | Gestión de pedidos |
-| `clientes.argy` | Conocimiento y seguimiento de clientes |
+**Modelo: branded house con namespace.** `.argy` funciona como un namespace para una futura familia de productos: `[producto].argy`. El punto inicial del nombre ya estaba construido como un sufijo, y esa construcción es la arquitectura.
 
 - Debe existir un elemento común inmediatamente reconocible que haga evidente la pertenencia a la familia. Ese elemento es el sufijo `.argy` con su punto (16) y, en íconos, el punto con el código del producto (17).
+- Si hay varios productos, comparten infraestructura y entidades (ver 6.3). Quien use varios no debería sentir que usa aplicaciones separadas.
+- Sobre ellos podría existir un asistente o agente `.argy` (hipótesis, ver 13).
 
-**Códigos de íconos (ENCAMINADO, v0.8; siguen a los nombres provisorios):** `.da` data · `.st` stock · `.ve` ventas · `.pr` presu · `.ca` caja · `.co` cobros · `.pe` pedidos · `.cl` clientes.
-- A largo plazo, los productos pueden compartir infraestructura y datos: quien usa varios no debería sentir que usa aplicaciones separadas, sino módulos de un mismo ecosistema.
-- Sobre ellos puede existir un asistente o agente `.argy` (ver 13).
+**Nombres de prueba del sistema (v0.6–v0.9, provisorios):** `data`, `stock`, `ventas`, `presu`, `caja`, `cobros`, `pedidos` y `clientes`. Tienen logos e íconos en `brand/logo/productos/`, que siguen sirviendo para probar el sistema. Varios nombran categorías obvias que el criterio de 4.7 descarta como productos (`stock`, `ventas`, `presu`, `clientes`).
 
-**Dominio (DEFINIDO, v1.0):** `puntoargy.com` es el dominio principal (también para el email: `hola@puntoargy.com`). `puntoargy.ar` y `puntoargy.com.ar` se registran para redirigir. Los productos no tienen subdominio propio: sus páginas viven en `puntoargy.com/[producto]` y, cuando existan, la aplicación será una sola (por ejemplo `app.puntoargy.com`) con los productos como módulos.
+**Códigos de íconos (ENCAMINADO, v0.8; siguen a los nombres de prueba):** `.da` data · `.st` stock · `.ve` ventas · `.pr` presu · `.ca` caja · `.co` cobros · `.pe` pedidos · `.cl` clientes.
 
-**Contexto de la decisión (v0.9):** `argy.ar`, `argy.com`, `argy.app`, `argy.com.ar` y `argy.dev` están ocupados. Según consultas RDAP del 24/09/2026, no figuran registrados `puntoargy.com`, `puntoargy.ar`, `puntoargy.com.ar`, `argy.tech`, `argy.lat`, `argy.co` y `argy.io` (a confirmar al comprar).
+**Territorios internos actuales:** ver 6.2.
+
+**Dominio (DEFINIDO, v1.0):** `puntoargy.com` es el dominio principal (también para el email: `hola@puntoargy.com`). `puntoargy.ar` y `puntoargy.com.ar` se registran para redirigir. Los productos no tienen subdominio propio: cuando existan, sus páginas vivirán en `puntoargy.com/[producto]` y la aplicación será una sola (por ejemplo `app.puntoargy.com`), con los productos como módulos.
+
+**Contexto de la decisión (v0.9):** `argy.ar`, `argy.com`, `argy.app`, `argy.com.ar` y `argy.dev` están ocupados. Según consultas RDAP del 24/09/2026, no figuraban registrados `puntoargy.com`, `puntoargy.ar`, `puntoargy.com.ar`, `argy.tech`, `argy.lat`, `argy.co` y `argy.io` (a confirmar al comprar).
 
 - `puntoargy` escribe el nombre tal como se dice, así que resuelve cómo se tipea `.argy` por teléfono o WhatsApp. `argy.tech` se descartó porque `.tech` contradice "más humana que técnica".
-- **Principio:** `[producto].argy` es un nombre de marca, no una URL. Los productos no necesitan subdominio propio: páginas en `puntoargy.com/stock` y una sola aplicación (por ejemplo `app.puntoargy.com`) con los productos como módulos, coherente con el ecosistema de 26.
+- **Principio:** `[producto].argy` es un nombre de marca, no una URL.
 
 *(v0.7, superado)* Se había propuesto `argy.ar` con subdominios por producto (`stock.argy.ar`); `argy.ar` resultó ocupado.
 
 **Nombres (ENCAMINADO, v0.7):** se admiten palabras coloquiales del habla de la pyme argentina (`presu`). La regla completa de nombres sigue pendiente.
 
-**Pendiente:** regla completa de nombres (anglicismos como "data"); nombre o forma del agente; handles; pronunciación ("stock punto argy"); protección marcaria (las palabras genéricas no se registran solas: la protección está en `.argy`).
+**Pendiente:** regla completa de nombres (anglicismos como "data"); nombre o forma del agente; handles; protección marcaria (las palabras genéricas no se registran solas: la protección está en `.argy`). Se resuelve cuando exista el primer producto con entidad suficiente.
 
 **Modelos evaluados en v0.1 (contexto previo):**
+
 - **Branded house:** `.argy` como marca visible detrás de todos los productos.
 - **Endorsed brands:** productos con nombres propios acompañados por `.argy`.
 - **Independent products:** productos independientes creados por `.argy`.
-
-Este tema deberá resolverse cuando exista el primer producto con entidad suficiente.
 
 ---
 
@@ -932,7 +1236,7 @@ Este tema deberá resolverse cuando exista el primer producto con entidad sufici
 3. La referencia argentina debe ser sutil.
 4. El celeste es el principal territorio cromático.
 5. `.argy` construye software para resolver problemas reales de empresas.
-6. Las PyMEs argentinas constituyen el mercado inicial más probable.
+6. Las pymes argentinas constituyen el mercado inicial más probable.
 7. Las agencias pueden funcionar como un canal relevante de clientes.
 8. El modelo de negocio debe permanecer flexible.
 9. Servicios y productos propios pueden coexistir.
@@ -946,19 +1250,29 @@ Este tema deberá resolverse cuando exista el primer producto con entidad sufici
 17. La expresividad no debe hacer que parezca una agencia de diseño.
 18. La identidad inicial será local, pero debe ser capaz de operar internacionalmente.
 19. Una base visual clara debe explorarse seriamente. *(Resuelto en v0.6: base Piedra.)*
-20. El logotipo y el símbolo continúan abiertos. *(El sistema gráfico se definió en v0.6.)*
+20. El logotipo y el símbolo continúan abiertos. *(El sistema gráfico se definió en v0.6; logo y símbolo, en v0.8.)*
 21. *(v0.2)* El carácter combina optimismo constructor (energía, juventud, ambición) como rasgo dominante con oficio (premium honesto), unidos por la cultura del hacer y del ingenio.
 22. *(v0.3)* La idea central de la marca es **Ingenio**: ingenio bien terminado.
 23. *(v0.3)* Rasgos: enérgica, ingeniosa, hacedora, optimista, honesta.
 24. *(v0.3)* Más energía hacia afuera, más oficio hacia adentro.
 25. *(v0.3)* La marca profesionaliza, no aparenta: nunca afirma una escala que no existe.
-26. *(v0.6)* `.argy` es una compañía de productos tecnológicos en construcción: hoy desarrolla soluciones a medida, y los servicios descubren y financian los productos.
-27. *(v0.6)* La comunicación distingue lo que se puede contratar hoy de lo que se está construyendo, sin fingir que la suite existe.
-28. *(v0.6)* Los productos forman un ecosistema reconocible bajo `.argy`, con la forma `[producto].argy`.
-29. *(v0.6)* Identidad visual: territorio Trayecto con trazo híbrido, base Piedra, Argy Blue con el Sol como acento, tipografía Bricolage Grotesque + Instrument Sans.
+26. *(v0.6, superado en v1.3 por 33 a 35)* ~~`.argy` es una compañía de productos tecnológicos en construcción: hoy desarrolla soluciones a medida, y los servicios descubren y financian los productos.~~
+27. *(v0.6, reformulado en v1.3)* La comunicación separa presente, método y visión, y nunca finge que existen productos.
+28. *(v0.6, revisado en v1.3)* Si existen productos, forman una familia reconocible bajo `.argy`, con la forma `[producto].argy`. Hoy no existen.
+29. *(v0.6)* Identidad visual: territorio Trayecto con trazo híbrido, base Piedra, Argy Blue con el Sol como acento, tipografía Bricolage Grotesque + Instrument Sans. *(v1.3: el rol del enredo y del punto se revisa con la dirección visual; ver 19.1.)*
 30. *(v0.6)* El sol firma, no presenta: una vez por página, nunca en el logotipo.
 31. *(v0.8)* Una sola regla de marca para todo: el punto y las primeras letras. `.argy` y su símbolo ".a"; cada producto, `[producto].argy` y su ícono ".st", ".da"…
 32. *(v0.8)* El punto llega último: en el logo, en el hero y en cada respuesta.
+33. *(v1.3)* **Presente:** `.argy` desarrolla software a medida para empresas. Es el negocio, no una etapa transitoria.
+34. *(v1.3)* **Método:** el problema primero. Construimos, aprendemos, acumulamos capacidad y solo generalizamos cuando aparece evidencia.
+35. *(v1.3)* **Visión:** con el tiempo, convertir algunos patrones en productos propios inteligentes y una familia de software para las empresas de acá. Es destino, no presente.
+36. *(v1.3)* Problema → Proyecto → Componente → Patrón → Producto es un embudo con filtros. La mayoría de los proyectos no llega a producto, y está bien.
+37. *(v1.3)* El cliente primero: su solución nunca está condicionada por lo que `.argy` pueda reutilizar. Nunca "hacemos proyectos para financiar productos".
+38. *(v1.3)* Lo del cliente es del cliente (datos, información, marca, lógica diferencial). Lo genérico puede ser parte de las herramientas de `.argy` cuando contractual y legalmente corresponda.
+39. *(v1.3)* Dueños de lo local y difícil; comprar o integrar lo genérico. Defaults técnicos fuertes, sin dogma y sin sobrearquitectura.
+40. *(v1.3)* Ambición ≠ fingir escala. Ni marca personal ni estructura simulada.
+41. *(v1.3)* La IA es una capacidad, no la identidad. Se muestra por resultados.
+42. *(v1.3)* "Del enredo al punto" es una expresión del universo de `.argy`, no su tagline. El punto sigue siendo el elemento visual propio.
 
 ---
 
@@ -966,10 +1280,10 @@ Este tema deberá resolverse cuando exista el primer producto con entidad sufici
 
 Los siguientes temas constituyen trabajo pendiente y no deben ser asumidos por ningún agente sin exploración previa.
 
-- **Estrategia:** visión; categoría; modelo de negocio; propuesta de valor; diferenciación; promesa; ICP; verticales; arquitectura de productos; rol definitivo de IA.
-- **Verbal:** misión definitiva; propósito definitivo; descriptor; tagline; elevator pitch; homepage messaging; tono de voz; vocabulario; CTAs; narrativa comercial.
-- **Identidad visual:** logo; símbolo; wordmark (como sistema de namespace); dibujo final del sol; resolución del punto como destino; dirección de arte de imágenes; ilustración; patrones; iconografía. *(Tipografía, base, paleta, sistema gráfico y motion se definieron en v0.6.)*
-- **Producto digital:** website; design system; componentes UI; design tokens; data visualization; responsive system; accesibilidad; motion UI.
+- **Estrategia:** categoría pública; propuesta de valor; promesa principal; diferenciación frente a alternativas; ICP; evolución del foco en operación comercial (11); pricing; contratos y propiedad intelectual (4.5); programa de empresas piloto; arquitectura de productos (cuando exista el primero). *(Presente, método, visión y modelo de negocio se definieron en v1.3.)*
+- **Verbal:** tagline (abierto en v1.3); promesa principal centrada en el cliente; misión y propósito definitivos; homepage messaging; narrativa comercial.
+- **Identidad visual:** rol del punto y del enredo en la nueva dirección (v1.3); dibujo final del sol; dirección de arte de imágenes; ilustración; patrones; iconografía. *(Tipografía, base, paleta, sistema gráfico y motion se definieron en v0.6; logo y símbolo, en v0.8.)*
+- **Producto digital:** website (rediseño desde el canon v1.3, ver 25); design system; componentes UI; design tokens; data visualization; responsive system; accesibilidad; motion UI.
 - **Marca aplicada:** social; propuestas comerciales; presentación corporativa; documentación; avatar; favicon; app icon; email; GitHub; OpenGraph; tarjetas; firmas; templates.
 
 ---
@@ -978,17 +1292,34 @@ Los siguientes temas constituyen trabajo pendiente y no deben ser asumidos por n
 
 Cuando un agente trabaje sobre `.argy`, debe distinguir entre:
 
-- **Canon** — Decisiones marcadas como DEFINIDO. No deben modificarse salvo instrucción explícita.
-- **Dirección** — Decisiones marcadas como ENCAMINADO. Pueden utilizarse como punto de partida, pero deben cuestionarse y refinarse.
-- **Espacio de diseño** — Decisiones marcadas como ABIERTO. No deben inventarse como si fueran reglas existentes.
+- **Canon:** decisiones marcadas como DEFINIDO. No deben modificarse salvo instrucción explícita.
+- **Dirección:** decisiones marcadas como ENCAMINADO. Pueden usarse como punto de partida, pero deben cuestionarse y refinarse.
+- **Espacio de diseño:** decisiones marcadas como ABIERTO. No deben inventarse como si fueran reglas existentes.
 
 El trabajo del agente deberá explorar alternativas, comparar trade-offs y proponer decisiones antes de incorporarlas al sistema de marca.
 
 Las **observaciones** y **notas técnicas** marcadas como "no es decisión" son información de contexto, no reglas.
 
+**Honestidad de etapa (v1.3):**
+
+- Separar siempre presente, método y visión (3). Lo que no existe no se presenta como existente: ni productos, ni estados de desarrollo, ni casos, ni métricas, ni equipo.
+- No convertir a `.argy` en una startup con inversión que no existe, ni reducirla a "agencia de desarrollo web, apps y automatizaciones".
+- No describir los proyectos de clientes como algo transitorio o como financiamiento de productos.
+- No proponer infraestructura ni plataforma antes de que haya evidencia de clientes que la necesiten.
+- Los territorios de 6.2 son hipótesis internas. No se convierten en productos, nombres públicos ni roadmap sin decisión del fundador.
+
 ---
 
 ## 30. Próximo objetivo
+
+### Desde v1.3
+
+El canon estratégico está corregido: presente, método y visión quedan separados. Primero se definió qué compañía se está diseñando; después se decide cómo debería verse. Lo siguiente:
+
+1. **Revisar la web desde este canon:** narrativa; arquitectura; copy; dirección visual; relación entre presente y futuro; rol de los objetos; rol del punto; rol del enredo; y cómo se siente una empresa chica de software que construye capacidad para volverse algo más grande. Criterios en 25.
+2. **Promesa principal y tagline:** centrados en el cliente (12 y 24).
+3. **Legal:** cláusula sobre componentes genéricos y propiedad intelectual (4.5); confirmar que el sol propio no traiga problemas al registrar la marca.
+4. **Operación:** documentar el golden path técnico a medida que se use (4.6), sin adelantarse.
 
 ### Desde v1.0
 
@@ -996,12 +1327,12 @@ La marca tiene identidad visual, logo, identidad verbal y una web v1. Lo siguien
 
 1. **Salir:** comprar `puntoargy.com` (y las versiones `.ar`), crear `hola@puntoargy.com`, publicar la web y reservar `@puntoargy` en redes.
 2. **Legal:** cláusula de componentes reutilizables en los contratos; confirmar que el sol propio no traiga problemas al registrar la marca.
-3. **Estrategia de producto:** elegir el primer producto (candidato: `data.argy`) y cerrar la regla de nombres.
+3. ~~**Estrategia de producto:** elegir el primer producto (candidato: `data.argy`) y cerrar la regla de nombres.~~ *(Superado en v1.3: no se elige un primer producto; los productos surgen de la evidencia.)*
 4. **Marca aplicada:** dirección de arte de imágenes con IA, plantilla de propuesta comercial, perfiles en redes, íconos de interfaz y design system.
 
 ### Desde v0.6
 
-La identidad visual está definida, salvo el logo y el símbolo. El replanteo del fundador cambia la base estratégica: `.argy` pasa de "empresa de desarrollo" a "compañía de productos que empieza con servicios". El orden de trabajo es:
+La identidad visual está definida, salvo el logo y el símbolo. El replanteo del fundador cambia la base estratégica: `.argy` pasa de "empresa de desarrollo" a "compañía de productos que empieza con servicios" *(corregido en v1.3: ver 3)*. El orden de trabajo es:
 
 | Etapa | Qué define | Por qué va en este orden |
 |---|---|---|
@@ -1028,6 +1359,22 @@ Ese es el problema de diseño central de `.argy` en la próxima etapa.
 ---
 
 ## 31. Registro de cambios
+
+### v1.3 — 2026-09-25
+
+Corrección estratégica del fundador: `.argy` deja de describirse como una compañía de productos que empieza con servicios. El documento separa **presente** (desarrollamos software a medida para empresas), **método** (problema primero; construimos, aprendemos, acumulamos capacidad y generalizamos con evidencia) y **visión** (con el tiempo, productos propios inteligentes y una familia de software para las empresas de acá).
+- **3** Reescrita: presente, método, visión, la tensión correcta, modelo mental ("software studio con dirección de producto", interno) y punto de partida real. Hoy `.argy` es una persona. El ecommerce anterior no se muestra como caso. `data.argy` deja de ser candidato a primer producto.
+- **4** Reescrita → DEFINIDO en lo conceptual: etapas 1 a 5, el ciclo como embudo con filtros, por qué los proyectos son estratégicos, el cliente primero (nunca "proyectos para financiar productos"), qué es de quién, capacidad acumulable con golden path técnico, criterio de productización (sin productos obvios) y trabajos que se aceptan.
+- **5** y **6** Misión presente y visión como destino. Territorios de exploración (data, pedidos, caja, compras, vuelve, radar, commerce) como hipótesis internas. Productos conectados como visión de largo plazo.
+- **9** A quién le habla `.argy` hoy: quien tiene un problema ahora. Público secundario. **11** Foco progresivo en la operación comercial (observado, no impuesto).
+- **12** Posicionamiento: orden de percepción; presente, método y visión reemplazan los dos horizontes; promesa centrada en el cliente; la tesis como observación; "Si ya existe una buena herramienta, la conectamos. Si no existe, la construimos.".
+- **13** IA como capacidad y no identidad, comunicada por resultados; de software que registra a software que actúa; innovación y curiosidad como cultura.
+- **14** "Cómo debería sentirse", reglas anti-agencia 3 a 5, honestidad de escala → DEFINIDO.
+- **17**, **19.1**, **20** y **23** "Del enredo al punto" pasa a ser una expresión del universo, no la síntesis de toda la compañía; el punto se conserva como elemento visual propio.
+- **24** Tagline → ABIERTO: "Del enredo al punto." deja de ser el tagline principal. Nuevos mensajes clave, pitch, narrativa, vocabulario, "Cómo hablamos de…" (lo que hacemos, el tamaño, la reutilización, las exploraciones, casos) y llamado para exploraciones.
+- **25** Criterios para la próxima web. La v3 queda superada en su posicionamiento, con la lista de lo que adelantó y lo que sigue sirviendo. Se retiran los estados de producto y la demo de `data.argy`.
+- **26** Hoy no existen productos: el namespace queda como sistema de nombres; los ocho nombres pasan a ser pruebas del sistema.
+- **27** Principios 26 a 29 revisados; nuevos 33 a 42. **28**, **29** y **30** actualizados (honestidad de etapa para agentes; próximo paso: revisar la web desde este canon).
 
 ### v1.2 — 2026-09-25
 - **25** Web v3 con la dirección "La mesa" (ENCAMINADO): tesis "Los negocios de acá crecieron más rápido que su software.", titular del hero, universo de objetos de la pyme en HTML y CSS, el punto como cierre de cada titular, capítulos de producto con estados reales.
