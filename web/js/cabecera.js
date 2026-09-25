@@ -1,5 +1,5 @@
-// Cabecera: fondo al hacer scroll, se esconde al bajar, cambia de tema sobre
-// los capítulos oscuros y muestra el capítulo en curso.
+// Cabecera: fondo al hacer scroll, se esconde al bajar, cambia de tema según el capítulo
+// (claro, oscuro o celeste) y muestra el capítulo en curso.
 
 export function iniciarCabecera() {
   const cab = document.getElementById('cabecera');
@@ -31,9 +31,10 @@ export function iniciarCabecera() {
   const temas = new Map();
   const ioTema = new IntersectionObserver((es) => {
     es.forEach((e) => temas.set(e.target, e.isIntersecting));
-    let oscuro = false;
-    temas.forEach((v, el) => { if (v && el.dataset.tema === 'oscuro') oscuro = true; });
-    cab.classList.toggle('tema-oscuro', oscuro);
+    let tema = 'claro';
+    temas.forEach((v, el) => { if (v) tema = el.dataset.tema; });
+    cab.classList.toggle('tema-oscuro', tema === 'oscuro');
+    cab.classList.toggle('tema-celeste', tema === 'celeste');
   }, { rootMargin: '-3% 0px -96% 0px' }); // una franja fina a la altura de la cabecera; en % sigue valiendo al redimensionar
   document.querySelectorAll('[data-tema]').forEach((s) => ioTema.observe(s));
   // El pie también es oscuro.
@@ -55,6 +56,25 @@ export function iniciarCabecera() {
     });
   }, { rootMargin: '-48% 0px -51% 0px' });
   document.querySelectorAll('[data-capitulo]').forEach((s) => ioCap.observe(s));
+
+  // Llamado flotante (pantallas chicas): aparece después del hero y se va cerca del contacto.
+  const flotante = document.getElementById('cta-flotante');
+  const hero = document.getElementById('inicio');
+  if (flotante && hero) {
+    let pasoHero = false;
+    let cerca = false;
+    const actualizar = () => flotante.classList.toggle('ve', pasoHero && !cerca);
+    new IntersectionObserver(([e]) => { pasoHero = !e.isIntersecting && e.boundingClientRect.top < 0; actualizar(); }).observe(hero);
+    const cierre = new Map();
+    const ioCierre = new IntersectionObserver((es) => {
+      es.forEach((e) => cierre.set(e.target, e.isIntersecting));
+      cerca = [...cierre.values()].some(Boolean);
+      actualizar();
+    });
+    ['obra', 'empezar', 'contacto'].forEach((id) => { const el = document.getElementById(id); if (el) ioCierre.observe(el); });
+    const pie = document.querySelector('.pie');
+    if (pie) ioCierre.observe(pie);
+  }
 
   // Menú en pantallas chicas.
   const cerrar = () => {

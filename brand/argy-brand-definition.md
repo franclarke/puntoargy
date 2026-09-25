@@ -1,6 +1,6 @@
 # .argy — Brand Definition
 
-**Versión:** v1.3 · 2026-09-25
+**Versión:** v1.4 · 2026-09-25
 **Cambios:** ver [Registro de cambios](#31-registro-de-cambios) al final.
 
 ---
@@ -792,7 +792,8 @@ Combinación **Carácter**, elegida entre cuatro (Carácter, Precisión, Voz edi
 - **Texto e interfaz:** Instrument Sans.
 - **Acento de voz:** Instrument Serif itálica, una vez por pieza.
 - **Números:** cifras tabulares en interfaz y tablas.
-- **Monoespaciada:** DM Mono (v1.2), solo para lo que en el mundo real está impreso o es un dato: tickets, etiquetas, estados, registros y rótulos. No forma parte de la voz de marca: nunca en titulares ni párrafos.
+- **Monoespaciada:** DM Mono (v1.2), solo para lo que en el mundo real está impreso o es un dato: tickets, etiquetas, estados, registros y rótulos. No forma parte de la voz de marca: nunca en titulares ni párrafos. *(v1.4)* También es la voz de las etiquetas de la capa de lectura (19.3).
+- **Escrita a mano (ENCAMINADO, v1.4):** Nanum Pen Script (Google Fonts, SIL OFL), solo para lo que en el mundo real está escrito a mano dentro de los objetos: libretas, post-its, notas en un papel. Con color de birome (`#25408F`). Nunca en titulares, texto ni interfaz.
 - Todas son de Google Fonts, gratuitas para uso comercial. Más adelante puede evaluarse una familia paga o un lettering propio para el logotipo.
 
 **Escala (web, base 16px):**
@@ -882,6 +883,27 @@ Tipografía display grande y segura; mucho aire; un solo gesto por pieza. La ser
 
 Territorios no adoptados como principales: Taller (candidato al registro "hacia adentro"), Encastre (recomendado por su escalabilidad a UI, no elegido), La vuelta (sus elementos se integran a Trayecto).
 
+### 19.3 La lectura (web v4)
+
+**Estado: ENCAMINADO (v1.4)** · aplicada en `web/` (ver 25).
+
+La gramática visual que salió de rediseñar la web desde el canon v1.3. No reemplaza a Trayecto: le da al punto y a la línea una función nueva y deja el enredo para una sola escena.
+
+- **Idea:** del mundo real al software. Primero entendemos cómo trabaja la empresa; después construimos alrededor. Visualmente: objeto físico → lectura → estructura → interfaz → acción.
+- **Cuatro registros, siempre distinguibles:**
+
+| Registro | Cómo se ve | Qué dice |
+|---|---|---|
+| Mundo real | Objetos de la operación con su material (papel, ticket térmico, cartón, celular), datos concretos de acá, escritura a mano, luz arriba a la izquierda. En la tesis, recortados por el marco como láminas fotografiadas ("Fig. 01") | Cómo se trabaja hoy |
+| Lectura | Resaltado celeste sobre el dato, **el punto** al final del resaltado, etiqueta negra en DM Mono y una línea de tramos rectos que sale del borde del objeto (no cruza el texto) | Lo que entendemos |
+| Software | Interfaz blanca con datos concretos del ejemplo y la etiqueta `ejemplo` | Lo que construimos |
+| Boceto | Líneas blancas punteadas sobre campo celeste con grilla, anotaciones en mono, punto blanco | Lo que nos preguntamos: no existe |
+
+- **El punto como primitiva:** cierra cada titular afirmativo y llega último; en la lectura marca lo que se entendió; en los pasos indica el estado (celeste: ahora; tinta: hecho; anillo: falta); en la flecha termina la línea. Sin significados agregados.
+- **La etiqueta viaja:** en los casos, las etiquetas de la lectura se mueven hasta la interfaz y se vuelven sus renglones. Es la información convirtiéndose en estructura.
+- **Del enredo al punto:** una sola escena, la de integraciones ("De cinco pantallas a una respuesta"). Fuera de ahí no hay hilo.
+- **Continuidad:** un ejemplo atraviesa la página (el pedido #1048 de Marta, un almacén). Es un ejemplo, no un cliente.
+
 ### 19.2 Contexto previo
 
 Actualmente no existe una dirección visual suficientemente diferenciada para considerarse propia de `.argy`. La combinación dark + minimal + tech + blue debe considerarse demasiado genérica como para ser la identidad final.
@@ -900,7 +922,7 @@ No existe todavía una dirección fotográfica. Debido a la orientación humana 
 
 **Recursos disponibles (hecho, v0.2):** no hay producción fotográfica propia por el momento. El fundador tiene fuerte habilidad en generación de imágenes con IA, que será el principal recurso de imagery en la etapa inicial.
 
-**Dirección de arte: bodegones del hilo (ENCAMINADO, v1.1).** Imágenes generadas con IA, en 3D mate tipo arcilla: objetos cotidianos de una pyme (celular, planilla impresa, cuaderno, cajas, calculadora) sobre fondo Piedra, con un **hilo celeste físico** como único color saturado. En las imágenes del problema, el hilo enreda los objetos; en las de la solución, los une en una ruta de tramos rectos y esquinas redondeadas que termina en una esfera celeste (el punto). Sin personas, sin texto, sin logos. Así las imágenes continúan la trama de la web en lugar de decorarla. Guía completa, prompts y lugares en la web: `brand/imagenes/guia-de-imagenes.md`. *(v1.3)* En revisión junto con la dirección visual: el hilo deja de ser el hilo conductor obligatorio de todas las imágenes.
+**Dirección de arte: bodegones del hilo (ENCAMINADO, v1.1).** Imágenes generadas con IA, en 3D mate tipo arcilla: objetos cotidianos de una pyme (celular, planilla impresa, cuaderno, cajas, calculadora) sobre fondo Piedra, con un **hilo celeste físico** como único color saturado. En las imágenes del problema, el hilo enreda los objetos; en las de la solución, los une en una ruta de tramos rectos y esquinas redondeadas que termina en una esfera celeste (el punto). Sin personas, sin texto, sin logos. Así las imágenes continúan la trama de la web en lugar de decorarla. Guía completa, prompts y lugares en la web: `brand/imagenes/guia-de-imagenes.md`. *(v1.3)* En revisión junto con la dirección visual: el hilo deja de ser el hilo conductor obligatorio de todas las imágenes. *(v1.4)* La web v4 no usa imágenes generadas: los objetos son HTML y CSS, tratados como láminas fotografiadas (recorte, superficie, sombra). Si se retoman las imágenes, tienen que continuar esa dirección de arte, no la de los bodegones del hilo.
 
 **Principio de imagery generada (ENCAMINADO, v0.3):** la imagen generada con IA no debe simular fotografía documental de personas o negocios reales que no existen (contradice el premium honesto y conduce a estética de "startup de IA genérica"). Debe tender a un estilo propio y reconocible donde se note la decisión de dirección de arte (objetos, escenas construidas, collage, 3D, ilustración u otros). A resolver en la etapa de imagery. *(v1.3)* Tampoco se generan imágenes que simulen casos, clientes o productos que no existen.
 
@@ -957,7 +979,11 @@ El desenredo es la animación de marca: el enredo se dibuja, se ordena en una ru
 
 **Animación del hero (DEFINIDO, v0.8):** se dibuja el enredo, aparecen las herramientas, sale la ruta, llega el punto y aparece la respuesta con el resaltado. El enredo no desaparece: `.argy` conecta lo que la empresa ya usa, no lo reemplaza. *(v1.3)* Aplicada en las webs v1 a v3; se revisa con la próxima web.
 
-**Todavía abierto:** loaders definitivos, motion aplicado a producto en detalle, respeto de `prefers-reduced-motion` como regla formal.
+**Movimiento de la lectura (ENCAMINADO, v1.4):** resaltar (el dato se pinta de izquierda a derecha, curva decidida) → marcar (el punto aterriza con el rebote de llegada) → etiquetar (la línea se dibuja y la etiqueta aparece) → llevar (la etiqueta viaja hasta la interfaz y desaparece ahí). Las escenas atadas al scroll avanzan por estados, no por interpolación continua, salvo el enredo. Entre escena y escena hay pausas: no todo se mueve.
+
+**`prefers-reduced-motion` (DEFINIDO, v1.4):** todo queda en su estado final y las escenas fijas pasan a leerse una debajo de la otra.
+
+**Todavía abierto:** loaders definitivos, motion aplicado a producto en detalle.
 
 **Lista original de temas a explorar:** velocidad; easing; transiciones; microinteracciones; loaders; hover; aparición de contenido; animación del logo; posible comportamiento del punto; motion aplicado a producto y marketing.
 
@@ -992,6 +1018,8 @@ Dirección para el próximo tagline o promesa principal: centrado en el cliente,
 - **"Del enredo al punto."** Para sistemas desconectados, procesos manuales, integraciones e información fragmentada, en campañas, storytelling, partes de la web y casos específicos. Puede llevar la itálica de acento en "al punto.".
 - **"¿Vamos al punto?"** Expresión de cierre para invitar a contactar. Suma el sentido de "sin vueltas", que es el tono de la marca.
 - **"El problema primero."** Filosofía de trabajo (ver 13).
+
+**Promesa de la web (ENCAMINADO, v1.4):** "Construimos el software que tu empresa todavía hace *a mano*." Dice qué hacemos (software), para quién (tu empresa) y dónde está el problema (lo que se hace a mano), centrada en el cliente. Es el titular del hero; que sea también el tagline sigue abierto. Apoyo: "Sistemas, herramientas, integraciones y automatizaciones hechos alrededor de cómo trabaja tu empresa. Empezamos por entender el problema. A veces alcanza con algo chico."
 
 Alternativas evaluadas en v1.0: "Vamos al punto." (quedó como expresión de cierre), "Hagamos que funcione." (genérica), "Tu negocio, conectado." (genérica), "Ingenio bien terminado." (autorreferencial: sirve adentro, no afuera).
 
@@ -1108,13 +1136,29 @@ Regla: el llamado dice qué pasa y empieza por el problema del cliente. Evitar "
 
 ## 25. Experiencia digital
 
-**Estado: ENCAMINADO (v1.0)** · la web publicada (v3) se rediseña desde el canon v1.3.
+**Estado: ENCAMINADO (v1.0)** · la web v4 ("La lectura") implementa el canon v1.3.
+
+### Web v4: dirección "La lectura" (ENCAMINADO, v1.4)
+
+Rediseño integral desde el canon v1.3: una compañía chica que construye software a medida, con una forma moderna de pensar los problemas y una dirección. Documentación técnica en `web/README.md`.
+
+- **Orden de percepción (12):** construyen software → entienden cómo trabajan las empresas de acá → diseño y tecnología poco comunes → una visión sobre hacia dónde va el software → "tengo un problema para traerles".
+- **Recorrido:** hero (qué hacemos) → 01 Así se trabaja acá (la tesis como observación, siete láminas) → 02 Qué construimos (tres casos en una escena fija) → 03 Cómo pensamos (principios, software que actúa, cada proyecto nos deja algo) → 04 Lo que nos preguntamos (tres bocetos) → 05 Cómo empezamos (orden de trabajo y preguntas) → contacto.
+- **Hero:** "Construimos el software que tu empresa todavía hace *a mano*." Llamado principal "Traenos un problema"; secundario, WhatsApp directo. La mesa muestra el pedido de Marta leído y convertido en pedido.
+- **Casos (ejemplos ilustrativos, no clientes):** de un audio a un pedido (sistema de pedidos; la IA se nombra una sola vez: "la que entiende el audio; el resto es buen software"), de cinco pantallas a una respuesta (integraciones, la única escena con el enredo) y de una planilla a una herramienta para todo el equipo (herramienta interna). Una fila de piezas muestra lo que queda de cada proyecto y marca "Pedidos" como reutilizada.
+- **Software que actúa (13):** registra → entiende → actúa, con un botón de aprobar: vos decidís.
+- **Exploraciones (24):** tres preguntas como bocetos sobre campo celeste (aviso cuando algo cambia, qué sigue a mano, agentes que compran). Sin nombres de producto, estados ni fechas.
+- **Honestidad de etapa:** "`.argy` está empezando. Buscamos empresas con problemas interesantes para resolver de cerca." Sin casos, clientes, métricas ni equipo.
+- **Celular:** las láminas se deslizan de costado, los casos ponen el paso activo abajo y un llamado flotante reemplaza al del encabezado.
+- **Contacto:** el ticket arma el mensaje de WhatsApp con temas (pedidos, stock, cobros, facturación…) y una vista previa.
+- **Sale de la v3:** los objetos como materia prima (ahora con más materia y recorte), el punto que llega último, "Traenos un problema", el formulario-ticket y el piso técnico. **Se retiró:** productos, estados, demo de `data.argy`, índice de productos, la tesis como caos y el hilo atravesando la página.
+- **Imagen para redes:** `web/assets/og.png`, generada con `web/scripts/og.mjs`.
 
 ### Criterios para la próxima web (ENCAMINADO, v1.3)
 
-No son un diseño: son lo que la próxima versión tiene que cumplir. Todavía no se decidieron narrativa, arquitectura, copy ni dirección visual (ver 30).
+No son un diseño: son lo que la próxima versión tiene que cumplir. *(v1.4: cumplidos por la web v4.)*
 
-- **Estado actual:** `web/` todavía publica la v3, que adelantó la narrativa de product company (ver la revisión de la v3, más abajo).
+- **Estado (v1.3):** `web/` publicaba la v3, que adelantó la narrativa de product company (ver la revisión de la v3, más abajo).
 - **Público prioritario:** quien puede convertirse en cliente y llega pensando "tengo este problema, ¿me podrían ayudar?" (ver 9). El público secundario encuentra profundidad, no una barrera.
 - **Qué tiene que comunicar:** qué hacemos; cómo pensamos; cómo se empieza a trabajar con una empresa; qué tipo de problemas queremos resolver; hacia dónde queremos llevar progresivamente la compañía. En el orden de percepción de 12.
 - **Servicios primero.** No aparecen después de los productos ni como algo que se hace "mientras tanto".
@@ -1126,7 +1170,7 @@ No son un diseño: son lo que la próxima versión tiene que cumplir. Todavía n
 - **Piso técnico** que se mantiene de la v3: rendimiento, accesibilidad, HTML semántico, `prefers-reduced-motion` y contenido visible aunque el JavaScript falle.
 - **A revisar en el rediseño:** narrativa; arquitectura; copy; dirección visual; relación entre presente y futuro; rol de los objetos; rol del punto; rol del enredo; cómo se siente una empresa chica de software que construye capacidad para volverse algo más grande.
 
-### Web v3: dirección "La mesa" (v1.2, superada en su posicionamiento en v1.3)
+### Web v3: dirección "La mesa" (v1.2, superada por la v4)
 
 Rediseño integral pensado para que `.argy` se leyera como una compañía de productos en construcción y no como una agencia. Referencia de ambición (no de estética): The Mobile First Company, por cómo arma una tesis de compañía, usa objetos físicos y alterna relato y producto.
 
@@ -1151,7 +1195,7 @@ Rediseño integral pensado para que `.argy` se leyera como una compañía de pro
 
 **Lo que sigue sirviendo como insumo:** la tesis como observación; los objetos reales de la operación; "Nunca tus datos"; "Traenos un problema"; "Cómo arrancamos"; las preguntas frecuentes; el formulario que arma el mensaje para WhatsApp; el piso técnico.
 
-La v2 ("El hilo") queda en el historial de git. Sus imágenes editoriales siguen en `web/assets/img/`, fuera del recorrido.
+La v2 ("El hilo") queda en el historial de git, igual que sus imágenes editoriales (retiradas de `web/assets/img/` en v1.4).
 
 ### Web v2: dirección "El hilo" (superada por v3)
 
@@ -1312,11 +1356,21 @@ Las **observaciones** y **notas técnicas** marcadas como "no es decisión" son 
 
 ## 30. Próximo objetivo
 
+### Desde v1.4
+
+La web v4 ("La lectura") implementa el canon. Lo siguiente:
+
+1. **Publicar la v4** y medir si llegan conversaciones: qué problemas trae la gente y desde dónde llega.
+2. **Tagline:** decidir si la promesa de la web ("Construimos el software que tu empresa todavía hace a mano.") pasa a ser el tagline (24).
+3. **Llevar la lectura a otras piezas:** propuestas comerciales, redes y presentaciones (19.3).
+4. **Casos reales:** cuando existan, reemplazar ejemplos por proyectos de `.argy` con datos reales.
+5. Siguen vigentes los puntos 3 y 4 de v1.3 (legal y golden path).
+
 ### Desde v1.3
 
 El canon estratégico está corregido: presente, método y visión quedan separados. Primero se definió qué compañía se está diseñando; después se decide cómo debería verse. Lo siguiente:
 
-1. **Revisar la web desde este canon:** narrativa; arquitectura; copy; dirección visual; relación entre presente y futuro; rol de los objetos; rol del punto; rol del enredo; y cómo se siente una empresa chica de software que construye capacidad para volverse algo más grande. Criterios en 25.
+1. ~~**Revisar la web desde este canon.**~~ *(Hecho en v1.4: web v4, ver 25.)*
 2. **Promesa principal y tagline:** centrados en el cliente (12 y 24).
 3. **Legal:** cláusula sobre componentes genéricos y propiedad intelectual (4.5); confirmar que el sol propio no traiga problemas al registrar la marca.
 4. **Operación:** documentar el golden path técnico a medida que se use (4.6), sin adelantarse.
@@ -1359,6 +1413,17 @@ Ese es el problema de diseño central de `.argy` en la próxima etapa.
 ---
 
 ## 31. Registro de cambios
+
+### v1.4 — 2026-09-25
+
+Web v4 "La lectura": rediseño integral desde el canon v1.3.
+- **25** Web v4 (ENCAMINADO): recorrido, hero, casos ilustrativos, software que actúa, exploraciones como bocetos, honestidad de etapa, celular y contacto. La v3 queda superada; se retiran de `web/` las imágenes de la v2 y los íconos de producto.
+- **19.3** Nueva gramática "La lectura" (ENCAMINADO): mundo real, lectura, software y boceto como cuatro registros; el punto como primitiva; el enredo en una sola escena.
+- **18** Se suma Nanum Pen Script para lo escrito a mano dentro de los objetos. DM Mono pasa a ser también la voz de las etiquetas de lectura.
+- **23** Movimiento de la lectura (resaltar, marcar, etiquetar, llevar). `prefers-reduced-motion` → DEFINIDO.
+- **24** Promesa de la web (ENCAMINADO): "Construimos el software que tu empresa todavía hace a mano." El tagline sigue abierto.
+- **20** Nota sobre imagery: los objetos de la web son láminas en HTML y CSS; los bodegones del hilo quedan en pausa.
+- **30** Próximo objetivo desde v1.4.
 
 ### v1.3 — 2026-09-25
 

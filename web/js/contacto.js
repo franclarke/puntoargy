@@ -22,13 +22,14 @@ export function iniciarContacto() {
   document.querySelectorAll('[data-interes]').forEach((a) => {
     a.addEventListener('click', () => {
       if (!problema.value.trim()) problema.value = a.dataset.interes + ' ';
+      actualizarPrevia();
     });
   });
 
   const leer = () => {
     const f = new FormData(form);
     const v = (k) => String(f.get(k) || '').trim();
-    return { nombre: v('nombre'), empresa: v('empresa'), problema: v('problema'), contacto: v('contacto') };
+    return { nombre: v('nombre'), empresa: v('empresa'), temas: f.getAll('tema'), problema: v('problema'), contacto: v('contacto') };
   };
   const campos = [['f-nombre', 'nombre', 'error-nombre'], ['f-problema', 'problema', 'error-problema']];
   const validar = (d) => {
@@ -44,12 +45,24 @@ export function iniciarContacto() {
     return !primero;
   };
   const mensaje = (d) => [
-    `Hola, soy ${d.nombre}${d.empresa ? `, de ${d.empresa}` : ''}.`,
+    `Hola, soy ${d.nombre || '…'}${d.empresa ? `, de ${d.empresa}` : ''}.`,
+    d.temas.length ? `Tema: ${d.temas.join(', ')}.` : '',
     '',
     'Me gustaría resolver esto:',
-    d.problema,
+    d.problema || '…',
     d.contacto ? `\nMe pueden contactar por: ${d.contacto}` : '',
-  ].join('\n').trim();
+  ].filter((l, i) => l !== '' || i === 2).join('\n').trim();
+
+  // Vista previa: así va a llegar el mensaje por WhatsApp.
+  const previa = document.getElementById('vp-burbuja');
+  const actualizarPrevia = () => {
+    if (!previa) return;
+    const d = leer();
+    const vacio = !d.nombre && !d.problema && !d.empresa && !d.temas.length;
+    previa.textContent = vacio ? '' : mensaje(d);
+  };
+  form.addEventListener('input', actualizarPrevia);
+  form.addEventListener('change', actualizarPrevia);
 
   campos.forEach(([id, , err]) => {
     document.getElementById(id).addEventListener('input', (e) => {

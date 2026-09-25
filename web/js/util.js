@@ -1,38 +1,11 @@
-// Utilidades compartidas: curvas de marca, azar con semilla y un motor
-// mínimo de escenas atadas al scroll (sin dependencias).
+// Utilidades compartidas: azar con semilla, esperas, observadores y un motor
+// mínimo de escenas atadas al scroll (sin dependencias). Las curvas de marca viven en el CSS.
 
 export const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const puedeHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 export const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
 export const lerp = (a, b, t) => a + (b - a) * t;
-/** Progreso local de t dentro del tramo [a, b]. */
-export const tramo = (t, a, b) => clamp((t - a) / (b - a));
-
-function bezier(x1, y1, x2, y2) {
-  const A = (a, b) => 1 - 3 * b + 3 * a;
-  const B = (a, b) => 3 * b - 6 * a;
-  const C = (a) => 3 * a;
-  const f = (t, a, b) => ((A(a, b) * t + B(a, b)) * t + C(a)) * t;
-  const d = (t, a, b) => 3 * A(a, b) * t * t + 2 * B(a, b) * t + C(a);
-  return (x) => {
-    if (x <= 0) return 0;
-    if (x >= 1) return 1;
-    let t = x;
-    for (let i = 0; i < 8; i++) {
-      const s = d(t, x1, x2);
-      if (Math.abs(s) < 1e-6) break;
-      t -= (f(t, x1, x2) - x) / s;
-    }
-    return f(t, y1, y2);
-  };
-}
-/** Curva "decidida": arranque firme, frenado suave (sección 23). */
-export const decidida = bezier(.65, 0, .15, 1);
-/** Curva "llegada": solo para el punto. */
-export const llegada = bezier(.34, 1.56, .64, 1);
-export const salida = bezier(.2, .7, .15, 1);
-
 /** Generador pseudoaleatorio con semilla (mulberry32): el enredo es siempre el mismo. */
 export function azar(semilla = 1) {
   let a = semilla >>> 0;
@@ -45,19 +18,6 @@ export function azar(semilla = 1) {
   };
 }
 
-/** Animación por tiempo con requestAnimationFrame. Devuelve una promesa. */
-export function tween(ms, fn, ease = decidida) {
-  return new Promise((res) => {
-    if (reduce) { fn(1); res(); return; }
-    const t0 = performance.now();
-    const paso = (now) => {
-      const k = clamp((now - t0) / ms);
-      fn(ease(k));
-      if (k < 1) requestAnimationFrame(paso); else res();
-    };
-    requestAnimationFrame(paso);
-  });
-}
 export const espera = (ms) => new Promise((r) => setTimeout(r, reduce ? 0 : ms));
 
 /** Llama a `entra` / `sale` cuando el elemento aparece o deja la pantalla. */

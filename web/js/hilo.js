@@ -1,8 +1,8 @@
-// Geometría del hilo (sección 19.1: trazo híbrido).
-// El problema es orgánico: curvas irregulares que dan vueltas alrededor de las herramientas.
-// La solución es geométrica: tramos rectos con esquinas redondeadas.
+// Geometría de la línea (sección 19.1: trazo híbrido).
+// El enredo es orgánico: curvas irregulares que dan vueltas alrededor de las herramientas.
+// La ruta es geométrica: tramos rectos con esquinas redondeadas. También la usan las líneas de la lectura.
 
-import { NS, lerp } from './util.js';
+import { lerp } from './util.js';
 
 /**
  * Puntos de un enredo que pasa por cada ancla dando vueltas a su alrededor.
@@ -71,42 +71,6 @@ export function suave(pts, tension = 1) {
   return d;
 }
 
-/** Puntos cada `paso` px a lo largo de la curva suave. Se calcula en JS:
-    getPointAtLength recorre todo el trazado en cada llamada y en hilos largos tarda segundos. */
-export function muestrearCurva(pts, paso = 5) {
-  const denso = [pts[0]];
-  tramos(pts).forEach(([a, b, c, d]) => {
-    const n = Math.max(4, Math.ceil(Math.hypot(d[0] - a[0], d[1] - a[1]) / 2) + Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / 4) + Math.ceil(Math.hypot(d[0] - c[0], d[1] - c[1]) / 4));
-    for (let k = 1; k <= n; k++) {
-      const t = k / n;
-      const u = 1 - t;
-      denso.push([
-        u * u * u * a[0] + 3 * u * u * t * b[0] + 3 * u * t * t * c[0] + t * t * t * d[0],
-        u * u * u * a[1] + 3 * u * u * t * b[1] + 3 * u * t * t * c[1] + t * t * t * d[1],
-      ]);
-    }
-  });
-  // Remuestreo a distancia constante.
-  const out = [denso[0]];
-  let resto = paso;
-  for (let i = 1; i < denso.length; i++) {
-    let [x0, y0] = denso[i - 1];
-    const [x1, y1] = denso[i];
-    let seg = Math.hypot(x1 - x0, y1 - y0);
-    while (seg >= resto) {
-      const t = resto / seg;
-      x0 += (x1 - x0) * t;
-      y0 += (y1 - y0) * t;
-      out.push([x0, y0]);
-      seg -= resto;
-      resto = paso;
-    }
-    resto -= seg;
-  }
-  out.push(denso[denso.length - 1]);
-  return out;
-}
-
 /** Ruta geométrica: tramos rectos unidos por esquinas redondeadas de radio R. */
 export function ruta(pts, R = 28) {
   const f = (n) => n.toFixed(1);
@@ -124,31 +88,6 @@ export function ruta(pts, R = 28) {
   }
   const u = pts[pts.length - 1];
   d += `L${f(u[0])} ${f(u[1])}`;
-  return d;
-}
-
-// Un único <svg> oculto para medir trazados.
-let medidor;
-function lienzo() {
-  if (!medidor) {
-    medidor = document.createElementNS(NS, 'svg');
-    medidor.setAttribute('aria-hidden', 'true');
-    medidor.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;pointer-events:none';
-    document.body.appendChild(medidor);
-  }
-  return medidor;
-}
-export function medir(d) {
-  const p = document.createElementNS(NS, 'path');
-  p.setAttribute('d', d);
-  lienzo().appendChild(p);
-  const L = p.getTotalLength();
-  p.remove();
-  return L;
-}
-export function polilinea(pts) {
-  let d = `M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
-  for (let i = 1; i < pts.length; i++) d += `L${pts[i][0].toFixed(1)} ${pts[i][1].toFixed(1)}`;
   return d;
 }
 
