@@ -98,7 +98,39 @@
   if (anio) anio.textContent = String(new Date().getFullYear());
   var cabecera = document.getElementById('cabecera');
   window.addEventListener('scroll', function () { cabecera.classList.toggle('con-scroll', window.scrollY > 50); }, { passive: true });
-
+  var menuToggle = document.getElementById('menu-toggle');
+  var navPrincipal = document.getElementById('nav-principal');
+  if (menuToggle && navPrincipal) {
+    function cerrarMenu() {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      navPrincipal.classList.remove('abierta');
+    }
+    menuToggle.addEventListener('click', function () {
+      var abierto = menuToggle.getAttribute('aria-expanded') !== 'true';
+      menuToggle.setAttribute('aria-expanded', String(abierto));
+      navPrincipal.classList.toggle('abierta', abierto);
+      if (abierto) {
+        var primerEnlace = navPrincipal.querySelector('a');
+        if (primerEnlace) primerEnlace.focus();
+      }
+    });
+    navPrincipal.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        cerrarMenu();
+        var destino = document.querySelector(link.getAttribute('href'));
+        if (destino) {
+          destino.setAttribute('tabindex', '-1');
+          destino.focus({ preventScroll: true });
+        }
+      });
+    });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+        cerrarMenu(); menuToggle.focus();
+      }
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth > 760) cerrarMenu(); });
+  }
   /* ---------- Imágenes ---------- */
   function revisarFotos() {
     document.querySelectorAll('.foto').forEach(function (fig) {
@@ -114,9 +146,6 @@
         if (!todas) fig.classList.add(CONFIG.IMAGENES_MAQUETA ? 'vacia' : 'oculta');
         var muestra = todas || CONFIG.IMAGENES_MAQUETA;
         if (fig.classList.contains('foto-desenredo') && todas) document.getElementById('desenredo-fijo').classList.add('con-fotos');
-        if (fig.classList.contains('foto-deposito') && muestra) fig.parentNode.classList.add('con-foto');
-        if (fig.classList.contains('foto-taller') && !muestra) fig.closest('.franja').hidden = true;
-        if (fig.classList.contains('foto-construyendo') && !muestra) fig.parentNode.classList.add('sin-foto');
       });
     });
   }
@@ -621,32 +650,6 @@
     };
   });
 
-  demo('sistemas', function (el) {
-    var nums = [].slice.call(el.querySelectorAll('[data-cuenta]'));
-    var activo = false, timer = 0, primera = true;
-    function contar(nodo, hasta) {
-      var desde = Number(nodo.textContent) || 0;
-      tween(900, function (k) { nodo.textContent = Math.round(lerp(desde, hasta, k)); });
-    }
-    function latido() {
-      if (!activo) return;
-      var n = nums[0];
-      n.textContent = Number(n.textContent) + 1;
-      n.classList.add('cambio'); setTimeout(function () { n.classList.remove('cambio'); }, 600);
-      timer = setTimeout(latido, 3200);
-    }
-    return {
-      iniciar: function () {
-        if (activo) return; activo = true;
-        el.classList.add('activo');
-        if (primera) { primera = false; nums.forEach(function (n) { var v = Number(n.getAttribute('data-cuenta')); n.textContent = '0'; contar(n, v); }); }
-        timer = setTimeout(latido, 2600);
-      },
-      detener: function () { activo = false; clearTimeout(timer); },
-      quieto: function () { el.classList.add('activo'); }
-    };
-  });
-
   demo('tienda', function (el) {
     var boton = el.querySelector('.pm-boton'), carrito = el.querySelector('.pm-carrito'), stock = el.querySelector('.pm-stock');
     var activo = false, timer = 0, c = 0, s = 12;
@@ -664,152 +667,13 @@
     return { iniciar: function () { if (activo) return; activo = true; timer = setTimeout(comprar, 600); }, detener: function () { activo = false; clearTimeout(timer); } };
   });
 
-  demo('ia', function (el) {
-    var scan = el.querySelector('.pdf-scan');
-    var activo = false, timer = 0;
-    function leer() {
-      if (!activo) return;
-      el.classList.remove('leido');
-      scan.classList.remove('escaneando'); void scan.offsetWidth; scan.classList.add('escaneando');
-      timer = setTimeout(function () { el.classList.add('leido'); timer = setTimeout(leer, 3200); }, 1250);
-    }
-    return {
-      iniciar: function () { if (activo) return; activo = true; timer = setTimeout(leer, 400); },
-      detener: function () { activo = false; clearTimeout(timer); },
-      quieto: function () { el.classList.add('leido'); }
-    };
-  });
-
-  demo('ordenar', function (el) {
-    var vis = el.querySelector('.vis-ordenar');
-    var camino = vis.querySelector('.o-morph');
-    var A = muestrear(camino.getAttribute('d'), 150);
-    var B = muestrear('M30 110 L200 110 Q230 110 230 80 L230 70 Q230 50 250 50 L400 50 Q430 50 430 80 L490 80', 150);
-    var estadoActual = 0, objetivo = 0, anim = null, activo = false, timer = 0;
-    function pintar(e) {
-      camino.setAttribute('d', aD(mezclar(A, B, e)));
-      camino.style.stroke = color(C.hilo, C.celeste, e);
-      camino.style.strokeWidth = (3 + 5 * e).toFixed(2);
-    }
-    function ir(meta) {
-      objetivo = meta;
-      var desde = estadoActual, id = {};
-      anim = id;
-      vis.classList.toggle('ordenado', meta === 1);
-      tween(650, function (k) { if (anim !== id) return; estadoActual = lerp(desde, meta, k); pintar(estadoActual); });
-    }
-    vis.addEventListener('mouseenter', function () { ir(1); });
-    vis.addEventListener('mouseleave', function () { ir(0); });
-    vis.addEventListener('focus', function () { ir(1); });
-    vis.addEventListener('blur', function () { ir(0); });
-    function alternar() { if (!activo) return; ir(objetivo ? 0 : 1); timer = setTimeout(alternar, 2600); }
-    return {
-      iniciar: function () { if (puedeHover || activo) return; activo = true; timer = setTimeout(alternar, 600); },
-      detener: function () { activo = false; clearTimeout(timer); },
-      quieto: function () { pintar(1); vis.classList.add('ordenado'); }
-    };
-  });
-
-  /* ---------- Tablero de pedidos en vivo ---------- */
-  (function tablero() {
-    var el = document.getElementById('tablero');
-    if (!el || reduce) return;
-    var cols = [].slice.call(el.querySelectorAll('.col'));
-    var total = document.getElementById('tablero-total');
-    var activo = false, timer = 0, paso = 0, numero = 1047, cuenta = 8;
-    var origenes = ['WhatsApp', 'Tienda', 'Tienda', 'WhatsApp'];
-    function actualizarCuentas() {
-      cols.forEach(function (c) { c.querySelector('.col-t span').textContent = c.querySelectorAll('.tarjeta').length; });
-      total.textContent = cuenta;
-    }
-    function resaltar(t) { t.classList.add('movida'); setTimeout(function () { t.classList.remove('movida'); }, 1500); }
-    function mover(t, destino) {
-      var antes = t.getBoundingClientRect();
-      destino.insertBefore(t, destino.firstChild);
-      var despues = t.getBoundingClientRect();
-      t.animate([{ transform: 'translate(' + (antes.left - despues.left) + 'px,' + (antes.top - despues.top) + 'px)' }, { transform: 'none' }], { duration: 700, easing: DECIDIDA });
-      resaltar(t);
-    }
-    function avanzar() {
-      if (!activo) return;
-      var k = paso++ % 4;
-      if (k === 0) {
-        var t = document.createElement('div');
-        t.className = 'tarjeta';
-        var n = 1 + Math.floor(Math.random() * 6);
-        t.innerHTML = '<b>#' + (numero++) + '</b><span>' + n + (n === 1 ? ' producto' : ' productos') + '</span><span class="origen">' + origenes[numero % 4] + '</span>';
-        cols[0].querySelector('.col-tarjetas').insertBefore(t, cols[0].querySelector('.tarjeta'));
-        t.animate([{ opacity: 0, transform: 'translateY(-12px)' }, { opacity: 1, transform: 'none' }], { duration: 500, easing: DECIDIDA });
-        resaltar(t); cuenta++;
-      } else {
-        var desde = cols[k - 1].querySelectorAll('.tarjeta');
-        if (desde.length) mover(desde[desde.length - 1], cols[k].querySelector('.col-tarjetas'));
-        if (k === 3) {
-          var entregados = cols[3].querySelectorAll('.tarjeta');
-          if (entregados.length > 3) {
-            var viejo = entregados[entregados.length - 1];
-            viejo.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 300 }).finished.then(function () { viejo.remove(); actualizarCuentas(); });
-          }
-        }
-      }
-      actualizarCuentas();
-      timer = setTimeout(avanzar, 2400);
-    }
-    enPantalla(el, function () { if (activo) return; activo = true; timer = setTimeout(avanzar, 900); }, function () { activo = false; clearTimeout(timer); }, 0.35);
-  })();
-
-  /* ---------- Asistente: preguntas de ejemplo ---------- */
-  (function agente() {
-    var cont = document.getElementById('agente');
-    if (!cont) return;
-    var RESPUESTAS = [
-      'Vendiste 12% más que en agosto, pero el margen bajó: el aceite subió y todavía no actualizaste el precio.',
-      'Yerba, aceite y azúcar. Con lo que venís vendiendo, se terminan antes del viernes.',
-      'Tres clientes, $ 1.240.000 en total. El más atrasado es Almacén Rivas, con 45 días. ¿Les mando un recordatorio?'
-    ];
-    var botones = [].slice.call(cont.querySelectorAll('.pregunta'));
-    var pregunta = document.getElementById('chat-pregunta'), texto = document.getElementById('chat-texto');
-    var burbuja = cont.querySelector('.burbuja'), puntoChat = cont.querySelector('.chat-punto');
-    var actual = 0, tocado = false, timer = 0, visible = false;
-    function mostrar(i) {
-      actual = i;
-      botones.forEach(function (b, k) { b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
-      pregunta.textContent = botones[i].textContent;
-      texto.textContent = RESPUESTAS[i];
-      if (reduce) return;
-      anima(pregunta, [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 320 });
-      burbuja.classList.add('escribe');
-      anima(puntoChat, [{ transform: 'scale(0)' }, { transform: 'scale(1)' }], { duration: 560, delay: 200, easing: LLEGADA });
-      setTimeout(function () {
-        burbuja.classList.remove('escribe');
-        anima(texto, [{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }], { duration: 360 });
-      }, 1000);
-    }
-    botones.forEach(function (b, i) { b.addEventListener('click', function () { tocado = true; clearTimeout(timer); mostrar(i); }); });
-    function auto() { if (tocado || !visible) return; mostrar((actual + 1) % botones.length); timer = setTimeout(auto, 6500); }
-    if (!reduce) enPantalla(cont, function () { if (visible) return; visible = true; timer = setTimeout(auto, 3500); }, function () { visible = false; clearTimeout(timer); }, 0.4);
-  })();
-
-  /* ---------- Franja: parallax suave de la imagen ---------- */
-  (function franja() {
-    var fig = document.querySelector('.foto-taller');
-    if (!fig || reduce) return;
-    function mover() {
-      var r = fig.getBoundingClientRect();
-      if (r.bottom < 0 || r.top > window.innerHeight) return;
-      var p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
-      fig.style.setProperty('--py', (p * -36).toFixed(1) + 'px');
-    }
-    window.addEventListener('scroll', function () { requestAnimationFrame(mover); }, { passive: true });
-    mover();
-  })();
-
   /* ---------- Formulario ---------- */
   (function formulario() {
     var form = document.getElementById('form-contacto');
     if (!form) return;
     var estado = document.getElementById('form-estado');
     var botonWhatsapp = document.getElementById('btn-whatsapp');
+    var botonCopiar = document.getElementById('btn-copiar');
     if (CONFIG.whatsapp) botonWhatsapp.hidden = false;
     function leer() {
       var f = new FormData(form);
@@ -818,9 +682,10 @@
     }
     function validar(d) {
       var faltan = false;
-      [['f-nombre', d.nombre], ['f-problema', d.problema]].forEach(function (c) {
+      [['f-nombre', d.nombre, 'error-nombre'], ['f-problema', d.problema, 'error-problema']].forEach(function (c) {
         var campo = document.getElementById(c[0]);
         campo.setAttribute('aria-invalid', c[1] ? 'false' : 'true');
+        document.getElementById(c[2]).hidden = !!c[1];
         if (!c[1]) faltan = true;
       });
       estado.classList.toggle('error', faltan);
@@ -831,6 +696,27 @@
     function mensaje(d) {
       return ['Hola, soy ' + d.nombre + (d.empresa ? ', de ' + d.empresa : '') + '.', '', 'Me gustaría resolver esto:', d.problema, d.contacto ? '\nMe pueden contactar por: ' + d.contacto : ''].join('\n').trim();
     }
+    [['f-nombre', 'error-nombre'], ['f-problema', 'error-problema']].forEach(function (par) {
+      document.getElementById(par[0]).addEventListener('input', function () {
+        if (this.value.trim()) { this.setAttribute('aria-invalid', 'false'); document.getElementById(par[1]).hidden = true; }
+      });
+    });
+    botonCopiar.addEventListener('click', function () {
+      var d = leer();
+      if (!validar(d)) return;
+      var asunto = 'Consulta desde puntoargy.com' + (d.empresa ? ' · ' + d.empresa : '');
+      var texto = 'Para: ' + CONFIG.email + '\nAsunto: ' + asunto + '\n\n' + mensaje(d);
+      if (!navigator.clipboard || !navigator.clipboard.writeText) {
+        estado.textContent = 'No pudimos copiar el mensaje. Usá el botón Enviar por email o escribinos a ' + CONFIG.email + '.';
+        return;
+      }
+      navigator.clipboard.writeText(texto).then(function () {
+        estado.classList.remove('error');
+        estado.textContent = 'Mensaje copiado. Pegalo en tu email para enviarlo a ' + CONFIG.email + '.';
+      }).catch(function () {
+        estado.textContent = 'No pudimos copiar el mensaje. Usá el botón Enviar por email o escribinos a ' + CONFIG.email + '.';
+      });
+    });
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
       var d = leer();

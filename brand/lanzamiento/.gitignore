@@ -1,0 +1,4 @@
+node_modules/
+salida/*
+!salida/la-punta.mp4
+!salida/la-punta-hoja.png

@@ -6,6 +6,12 @@
       "runtimeExecutable": "node",
       "runtimeArgs": ["web/scripts/serve.mjs", "4321"],
       "port": 4321
+    },
+    {
+      "name": "film",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["brand/lanzamiento/herramientas/servir.mjs", "4330"],
+      "port": 4330
     }
   ]
 }

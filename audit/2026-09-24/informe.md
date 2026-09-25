@@ -1,0 +1,67 @@
+# Auditoría visual y UX de .argy
+Fecha: 24/09/2026. Sitio: https://www.puntoargy.com/
+Método: dos evaluaciones independientes (A: /root/design_review; B: /root/technical_review), síntesis y capturas desktop/móvil con Product Design e Impeccable. Sin cambios al sitio.
+
+## Veredicto
+La identidad ya es distintiva. El hilo celeste, el punto, el fondo cálido y la combinación de tipografía pesada con serif cursiva funcionan juntos. La mejora principal es convertir esa buena presentación en un recorrido más corto, más demostrable y con un contacto fiable.
+
+## Fortalezas
+- Promesa memorable y lenguaje concreto para pymes argentinas.
+- CTA principal claro, con garantías relevantes cerca.
+- Transparencia sobre ejemplos y productos aún en exploración.
+
+## Prioridades
+1. **P1 — Completar el contacto dentro del sitio.** El botón arma un mailto y depende del programa de correo. Implementar envío con estado de progreso, confirmación real y recuperación. Mientras tanto, explicar el mecanismo antes de los campos y ofrecer copiar el mensaje. El riesgo es abandono; no se probó ni se afirma un fallo de entrega.
+2. **P2 — Mostrar evidencia antes.** El proyecto real aparece tras extensas explicaciones y usa imágenes ilustrativas. Acercarlo a servicios, con problema anterior → solución → resultado, captura anonimizada autorizada y resultados verificables. No inventar métricas ni testimonios.
+3. **P2 — Acortar y ordenar por intención.** El anuncio superior de data.argy, tres futuros productos y demo de asistente compiten con contratar servicios hoy. Reducir exploraciones a un bloque secundario. En móvil de 390×844, el documento midió 17.717 px: unas 21 pantallas; es extensión total, no obligación de leer todo. El header mantiene Hablemos pero oculta los enlaces de secciones. Agregar menú accesible breve y reducir repetición.
+4. **P2 — Legibilidad y movimiento.** Los síntomas atenuados durante el scroll pierden legibilidad. Mantener texto oscuro; usar el hilo o un indicador para señalar el paso activo. La etiqueta Ejemplo mide 10,5 px: llevarla a 12–13 px. Dos textos de la mini tienda ilustrativa rondan 4,2:1; aumentar contraste. Ofrecer pausa visible o demos activadas por la persona: el marquee sólo pausa con hover, aunque existe soporte de movimiento reducido.
+5. **P2 — Mejorar requisitos y errores del formulario.** Nombre/problema requeridos sin indicación previa; contacto opcional sin aclaración equivalente a empresa. Etiquetar requisitos y mostrar errores junto al campo, asociados semánticamente. Mantener foco y valores. La validación vacía funciona, pero su mensaje se ubica al final.
+
+## Dirección visual propuesta
+Conservar logo, paleta, metáfora del hilo y tipografías. Dar a cada sección una función clara y ajustar espacios según su contenido. Reservar los grandes espacios y la serif para portada y cierre. Cambiar la prueba comercial de ilustración conceptual a evidencia de producto real. Simplificar el bloque de servicios a tres familias si encaja con la oferta: conectar, automatizar, construir; presentar webs/IA como ejemplos dentro de esas familias.
+
+Secuencia sugerida: portada → problemas y servicios → caso real → proceso → preguntas → contacto. Calculadora como apoyo opcional y exploraciones en bloque secundario o página propia.
+
+## Recorrido capturado
+1. Portada — sólido: buena identidad, jerarquía y CTA.
+2. Problema — mejorable: texto atenuado y recorrido extendido.
+3. Calculadora — sólido: interacción por teclado verificada; 21 pedidos × 4 min × 22 días ≈31 horas. Permitir ingreso numérico además de sliders mejoraría precisión.
+4. Servicios — claro: diagramas comprensibles; seis ofertas pueden agruparse.
+5. Proceso — sólido: cuatro pasos claros y alineados.
+6. Caso — mejorable: requiere prueba verificable. Captura parcial del inicio del bloque.
+7. Productos futuros — honesto, pero demasiado prominente para contratar servicios actuales.
+8. Preguntas — sólido: acordeones accesibles; precio sigue siendo cualitativo.
+9. Contacto desktop — visualmente sólido; dependencia de correo externo.
+10. Portada móvil — buena adaptación; sin navegación por secciones.
+11. Contacto móvil — apilado correcto; introducción larga antes de completar.
+12. Formulario móvil — usable; aclaración sobre correo alejada del comienzo.
+
+## Evaluación heurística
+Escala positiva: 4 excelente. Orientativa, no medición de conversión.
+| Heurística | Nota | Observación |
+|---|---:|---|
+| Estado del sistema | 3 | Ejemplos claros; no confirma recepción de correo |
+| Lenguaje real | 4 | Concreto y local |
+| Control y libertad | 3 | Anclas claras; salto externo al final |
+| Consistencia | 3 | Identidad coherente; requisitos desiguales |
+| Prevención de errores | 2 | Campos requeridos poco explícitos |
+| Reconocimiento | 3 | Oferta entendible; prueba comercial tardía |
+| Eficiencia de uso repetido | n/a | Landing comercial |
+| Estética y síntesis | 3 | Buena jerarquía, demasiada repetición |
+| Recuperación de errores | 2 | Foco correcto; mensaje lejos del campo |
+| Ayuda | 3 | FAQ útil, próximo paso poco concreto |
+| Total | 26/36 | Buena base |
+
+Carga cognitiva moderada: conviven contratar servicios y explorar futuros productos, seis servicios y numerosas demostraciones. El recorrido comienza con reconocimiento/alivio y pierde fuerza cuando crecen las promesas sin nueva evidencia. Un dueño apurado necesita atajos; un comprador escéptico necesita el caso; alguien sin correo configurado necesita otra vía.
+
+## Detector y límites
+37 señales brutas: 35 advertencias y 2 sugerencias, 13 reglas. No equivalen a 37 defectos. Los 5 avisos de imágenes rotas son falsos positivos en la web con JS: se verificaron imágenes cargadas. Los 18 de padding son mayormente limitaciones del parser con clamp/max y contenedores. El crossfade es intencional; fuentes, sombras y mayúsculas breves no prueban un problema. Contraste pequeño, etiqueta Ejemplo y marquee sí merecen atención.
+JSON: ../impeccable-detector-b.json.
+
+No se enviaron mensajes ni se midió conversión, rendimiento o cumplimiento WCAG completo. No se probó lector de pantalla ni dispositivo móvil físico. La revisión móvil usa viewport 390×844. Capturas desktop con anchos distintos por ajuste del panel; no se inferieron defectos a partir de cambios de ancho entre capturas.
+Sin overlay: la API permite evaluación de sólo lectura; se usó DOM, capturas y detector local. Sin servidores temporales. Viewport restaurado. No había contexto guardado de Product Design ni lista de exclusión de critique. Objetivo de código: web/index.html; slug web-index-html.
+
+## Decisiones para una siguiente iteración
+- Prioridad comercial: proyectos a medida / interesados en futuros productos.
+- Alcance: contacto y navegación / recorrido completo conservando identidad.
+

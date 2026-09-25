@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La punta · .argy</title>
+<style>
+  :root { --piedra: #F2F1ED; --tinta: #1C1B19; --texto-2: #625E57; --linea: #E1DED7; --celeste: #74ACDF; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--tinta); color: var(--piedra); font: 500 14px/1.4 system-ui, sans-serif; }
+  .render body, html.render { background: var(--piedra); }
+  canvas { display: block; width: 100%; max-width: 1920px; aspect-ratio: 16 / 9; margin: 0 auto; background: var(--piedra); }
+  html.render canvas { width: 1920px; height: 1080px; max-width: none; }
+  .controles { display: flex; gap: 12px; align-items: center; max-width: 1920px; margin: 10px auto; padding: 0 16px; }
+  .controles input[type=range] { flex: 1; accent-color: var(--celeste); }
+  button { background: var(--piedra); color: var(--tinta); border: 0; border-radius: 999px; padding: 8px 16px; font: inherit; cursor: pointer; }
+  output { font-variant-numeric: tabular-nums; min-width: 9em; text-align: right; color: #C9C5BD; }
+  html.render .controles { display: none; }
+</style>
+</head>
+<body>
+<canvas id="film" width="1920" height="1080"></canvas>
+<div class="controles">
+  <button id="play" type="button">Reproducir</button>
+  <input id="scrub" type="range" min="0" max="1379" value="0" step="1" aria-label="Cuadro">
+  <output id="tc">0.00 s · 0</output>
+</div>
+<script type="module">
+  import { crearEscena, FUENTES } from './escena.js';
+  import * as G from './guion.js';
+
+  const render = new URLSearchParams(location.search).has('render');
+  if (render) document.documentElement.classList.add('render');
+
+  await Promise.all(FUENTES.map(([nombre, url, desc]) => new FontFace(nombre, `url(${url})`, desc).load().then(f => document.fonts.add(f))));
+  const canvas = document.getElementById('film');
+  const escena = crearEscena(canvas);
+
+  window.dibujarCuadro = n => escena.dibujar(n / G.FPS);
+  window.dibujarTiempo = t => escena.dibujar(t);
+  window.filmInfo = { fps: G.FPS, cuadros: G.CUADROS, ancho: G.ANCHO, alto: G.ALTO, info: G.INFO };
+  window.eventos = G.EVENTOS;
+  window.filmListo = true;
+
+  const scrub = document.getElementById('scrub'), tc = document.getElementById('tc'), play = document.getElementById('play');
+  scrub.max = G.CUADROS - 1;
+  const hash = parseFloat(location.hash.slice(1));
+  let cuadro = isNaN(hash) ? 0 : Math.round(hash * G.FPS);
+  function mostrar(n) { cuadro = n; scrub.value = n; tc.value = `${(n / G.FPS).toFixed(2)} s · ${n}`; escena.dibujar(n / G.FPS); }
+  mostrar(cuadro);
+  scrub.addEventListener('input', () => mostrar(+scrub.value));
+  let corriendo = false, t0 = 0, c0 = 0;
+  function paso(now) {
+    if (!corriendo) return;
+    const n = c0 + Math.floor((now - t0) / 1000 * G.FPS);
+    if (n >= G.CUADROS) { corriendo = false; play.textContent = 'Reproducir'; return; }
+    if (n !== cuadro) mostrar(n);
+    requestAnimationFrame(paso);
+  }
+  play.addEventListener('click', () => {
+    corriendo = !corriendo; play.textContent = corriendo ? 'Pausa' : 'Reproducir';
+    if (corriendo) { if (cuadro >= G.CUADROS - 1) cuadro = 0; t0 = performance.now(); c0 = cuadro; requestAnimationFrame(paso); }
+  });
+  addEventListener('keydown', e => {
+    if (e.key === ' ') { e.preventDefault(); play.click(); }
+    if (e.key === 'ArrowRight') mostrar(Math.min(G.CUADROS - 1, cuadro + (e.shiftKey ? 30 : 1)));
+    if (e.key === 'ArrowLeft') mostrar(Math.max(0, cuadro - (e.shiftKey ? 30 : 1)));
+  });
+</script>
+</body>
+</html>

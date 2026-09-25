@@ -16,7 +16,7 @@ Después abrir http://localhost:4321.
 |---|---|
 | `index.html` | La página completa |
 | `css/styles.css` | Estilos. Los tokens de marca (colores, tipografías, curvas de movimiento) están al principio |
-| `js/main.js` | Animaciones, preguntas del agente de ejemplo y formulario de contacto |
+| `js/main.js` | Animaciones, demos interactivas de los servicios y formulario de contacto |
 | `assets/` | Logo, íconos de producto, símbolo e imagen para redes (`og.png`) |
 | `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `site.webmanifest` | Íconos |
 | `robots.txt`, `sitemap.xml` | Buscadores |
@@ -32,7 +32,7 @@ La v1 quedó guardada en `../brand/exploraciones/web-v1/`.
 
 ## Imágenes
 
-Van en `assets/img/` con los nombres de `../brand/imagenes/guia-de-imagenes.md` (`enredo.webp`, `conectado.webp`, `taller.webp`, `deposito.webp`, `construyendo.webp`). Mientras falten, la web muestra espacios reservados con el nombre del archivo. Antes de publicar, en `js/main.js` poner `IMAGENES_MAQUETA: false`: las que falten se ocultan solas.
+Van en `assets/img/` y siguen la guía `../brand/imagenes/guia-de-imagenes.md`. La portada usa `enredo.webp` y `conectado.webp` en la sección que explica el problema actual. Los assets editoriales de proyectos y productos futuros siguen preservados en la carpeta, pero ya no forman parte del recorrido principal. Las imágenes bajo el primer pliegue se cargan de forma diferida. Si se reemplazan, conservá las rutas del HTML o actualizalas junto con este inventario.
 
 ## Configurar el contacto
 
@@ -42,11 +42,11 @@ En `js/main.js`, al principio:
 var CONFIG = {
   email: 'hola@puntoargy.com',
   whatsapp: '', // por ejemplo '5491122334455'; vacío oculta el botón
-  IMAGENES_MAQUETA: true
+  IMAGENES_MAQUETA: false
 };
 ```
 
-El formulario no envía datos a ningún servidor: arma un email (o un mensaje de WhatsApp, si está configurado) con lo que escribió la persona. Los links de email de la página también toman la dirección de ahí.
+El formulario no envía datos a ningún servidor: arma un email (o un mensaje de WhatsApp, si está configurado) con lo que escribió la persona. También permite copiar el mensaje para enviarlo desde otro programa. Los links de email de la página toman la dirección de esta configuración.
 
 ## Publicar
 
@@ -56,7 +56,7 @@ Cualquier hosting estático sirve: Cloudflare Pages, Netlify, Vercel o GitHub Pa
 
 - [ ] Comprar `puntoargy.com` (y `puntoargy.ar`, `puntoargy.com.ar` para redirigir).
 - [ ] Crear la casilla `hola@puntoargy.com`.
-- [ ] Confirmar el texto de "Un proyecto real".
+- [ ] Revisar el texto final de servicios, preguntas y contacto antes de publicar.
 - [ ] Cargar el número de WhatsApp en `js/main.js`, si se quiere usar.
 
 ## Reglas de marca
