@@ -5,7 +5,7 @@ Letras convertidas a trazos (no dependen de tener la fuente instalada). Especifi
 | Carpeta | Contenido |
 |---|---|
 | `logotipo/` | `.argy` en color (fondos claros), sobre oscuro, sobre celeste (punto blanco), una tinta y blanco. PNG de 1200 px para color y sobre oscuro |
-| `productos/` | `[producto].argy` en color y sobre oscuro, para los ocho nombres provisorios |
+| `productos/` | `[producto].argy` en color y sobre oscuro, para los ocho nombres de prueba del sistema (no son productos: ver sección 26 del documento de marca) |
 | `productos/iconos/` | Ícono de cada producto (punto + código) en SVG y PNG de 512 px |
 | `simbolo/` | Símbolo "punto y a": SVG y PNG de 16, 32, 48, 180 (Apple), 192 y 512 px. `simbolo-cuadrado` sin esquinas redondeadas, para tiendas de apps que aplican su propia máscara (1024 px) |
 | `favicon.svg` | Favicon (igual al símbolo) |

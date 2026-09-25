@@ -1,20 +1,18 @@
-/* .argy — web v3 · "La mesa"
+/* .argy — web v4 · "La lectura"
    Cada módulo arma una parte del recorrido. Si uno falla, el resto sigue funcionando. */
 
 import { iniciarObjetos } from './objetos.js';
+import { iniciarContacto } from './contacto.js';
 import { iniciarCabecera } from './cabecera.js';
 import { iniciarRevelados } from './revelar.js';
 import { iniciarHero } from './hero.js';
-import { iniciarEnredo } from './enredo.js';
-import { iniciarFlujo } from './flujo.js';
-import { iniciarDemo } from './data-demo.js';
-import { iniciarSellos } from './sellos.js';
-import { iniciarModelo } from './modelo.js';
-import { iniciarCambios } from './cambios.js';
-import { iniciarContacto } from './contacto.js';
+import { iniciarFiguras } from './figuras.js';
+import { iniciarObra } from './obra.js';
+import { iniciarPensamos } from './pensamos.js';
+import { iniciarPlanos } from './planos.js';
 import { pedirCalculo } from './util.js';
 
-const modulos = [iniciarObjetos, iniciarContacto, iniciarCabecera, iniciarRevelados, iniciarHero, iniciarEnredo, iniciarFlujo, iniciarDemo, iniciarSellos, iniciarModelo, iniciarCambios];
+const modulos = [iniciarObjetos, iniciarContacto, iniciarCabecera, iniciarRevelados, iniciarHero, iniciarFiguras, iniciarObra, iniciarPensamos, iniciarPlanos];
 
 function arrancar() {
   modulos.forEach((m) => {

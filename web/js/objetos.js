@@ -1,4 +1,4 @@
-// Detalles impresos de los objetos de la mesa: códigos QR y de barras.
+// Detalles de los objetos: códigos QR y de barras, y la onda de los audios.
 // Son decorativos: se generan con una semilla para que siempre salgan iguales.
 
 import { NS, azar } from './util.js';
@@ -61,7 +61,35 @@ function barras(cantidad, semilla) {
   return svg;
 }
 
+/** Onda de un audio de WhatsApp: barras redondeadas. Se dibuja dos veces: la segunda es la parte ya escuchada. */
+function onda(semilla) {
+  const rand = azar(semilla);
+  const n = 34;
+  let d = '';
+  for (let i = 0; i < n; i++) {
+    const env = Math.sin((i / (n - 1)) * Math.PI) * .6 + .4;
+    const h = Math.max(1.4, (rand() * .75 + .25) * env * 10);
+    d += `M${i * 3 + 1} ${(6 - h / 2).toFixed(2)}v${h.toFixed(2)}`;
+  }
+  const svg = (clase) => {
+    const s = document.createElementNS(NS, 'svg');
+    s.setAttribute('viewBox', `0 0 ${n * 3} 12`);
+    s.setAttribute('preserveAspectRatio', 'none');
+    s.setAttribute('aria-hidden', 'true');
+    if (clase) s.classList.add(clase);
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('d', d);
+    p.setAttribute('stroke', 'currentColor');
+    p.setAttribute('stroke-width', '1.7');
+    p.setAttribute('stroke-linecap', 'round');
+    s.appendChild(p);
+    return s;
+  };
+  return [svg(), svg('oir')];
+}
+
 export function iniciarObjetos() {
   document.querySelectorAll('[data-qr]').forEach((el) => el.appendChild(qr(Number(el.dataset.qr) || 1)));
   document.querySelectorAll('[data-barras]').forEach((el, i) => el.appendChild(barras(Number(el.dataset.barras) || 40, 11 + i)));
+  document.querySelectorAll('[data-onda]').forEach((el) => el.append(...onda(Number(el.dataset.onda) || 1)));
 }
